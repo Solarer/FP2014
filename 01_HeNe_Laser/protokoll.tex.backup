@@ -1,0 +1,165 @@
+% ========================================
+%	Header einbinden
+% ========================================
+
+\input{longheader.tex}
+
+% ========================================
+%	Angaben für das Titelblatt
+% ========================================
+
+\title{Versuch 61 - Der HeNe-LASER\\				% Titel des Versuchs 
+\large TU Dortmund, Fakultät Physik\\ 
+\normalsize Fortgeschrittenen-Praktikum}
+
+\author{Jan Adam\\			% Name Praktikumspartner A
+{\small \href{jan.adam@tu-dortmund.de}{jan.adam@tu-dortmund.de}}	% Erzeugt interaktiven einen Link
+\and						% um einen weiteren Author hinzuzfügen
+Dimitrios Skodras\\					% Name Praktikumspartner B
+{\small \href{dimitrios.skodras@tu-dortmund.de}{dimitrios.skodras@tu-dortmund.de}}		% Erzeugt interaktiven einen Link
+}
+\date{21. Februar 2014}				% Das Datum der Versuchsdurchführung
+
+% ========================================
+%	Das Dokument beginnt
+% ========================================
+
+\begin{document}
+
+% ========================================
+%	Titelblatt erzeugen
+% ========================================
+
+\maketitle					% Jetzt wird die Titelseite erzeugt
+\thispagestyle{empty} 				% Weder Kopfzeile noch Fußzeile
+
+% ========================================
+%	Der Vorspann
+% ========================================
+
+%\newpage					% Wenn Verzeichnisse auf einer neuen Seite beginnen sollen
+%\pagestyle{empty}				% Weder Kopf- noch Fußzeile für Verzeichnisse
+
+\tableofcontents
+
+%\newpage					% eine neue Seite
+%\thispagestyle{empty}				% Weder Kopf- noch Fußzeile für Verzeichnisse
+%\listoffigures					% Abbildungsverzeichnis
+
+%\newpage					% eine neue Seite
+%\thispagestyle{empty}				% Weder Kopf- noch Fußzeile für Verzeichnisse
+%\listoftables					% Tabellenverzeichnis
+\newpage					% eine neue Seite
+
+
+% ========================================
+%	Kapitel
+% ========================================
+
+%\section{Einleitung}				% Bei Bedarf
+
+\section{Theorie}
+Ein LASER verstärkt kohärentes Licht einer bestimmten Wellenlänge, das durch angeregte Emission erzeugt und 
+verstärkt wird (\textbf{L}ight \textbf{A}mplification by \textbf{S}timulated \textbf{E}mission of \textbf{R}adiation). Er besteht
+dabei aus drei notwendigen Komponenten. Das aktive Lasermedium zur Bestimmung des Strahlungsspektrums und die Pumpquelle 
+für die stimulierte Emission, sowie ein Resonator zur Verstärkung des Strahls.
+
+
+\subsection{Absorbtion und Emission}
+Grundsätzlich wird versucht, einfallendes Licht bei Wechselwirkung des Strahlungsfelds $\rho(\nu)$ mit dem Lasermedium zu verstärken. 
+Vorzustellen ist sich ein System aus zwei möglichen Zuständen - Grundzustand und 1. angeregter Zustand - mit den zugehörigen 
+Besetzungszahlen $n_1$ und $n_2$, sowie einer Energiedifferenz $\Delta E$. Das Zwei-Niveau-System ist zwar für die LASER-Konstruktion unzureichend,
+soll hier jedoch zur Anschauung genügen.
+
+Wenn nun ein Photon eine $\Delta E$ entsprechende Energie hat, kann es vom Medium absorbiert werden und das Atom anregen. 
+Angeregte Atome können durch spontane Emission wiederum ein Photon jener Energie emittieren. Alternativ dazu ist es möglich,
+dass mittels eines einfallenden Photons das Atom unter stimulierter Emission in den Grundzustand übergeht. Das hierbei
+emittierte Photon ist in Energie, Phase und Ausbreitungsrichtung dem stimulierenden identisch. 
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{pics/AbsEmi.png}
+\caption{Absorbtion und Emission eines Zwei-Niveau-Systems}
+\label{pic_AbsEmi}
+\end{figure}
+Die in Abbildung \ref{pic_AbsEmi} aufgeführten Ausdrücke stehen jeweils für die absorbierten bzw. emittierten Photonen $\dot N$,
+bestimmt durch die Besetzungszahlen, das Strahlungsfeld und den nun hinzugekommenen konstanten Einsteinkoeffizienten $B_{12}, B_{21}$ und $A_{21}$, 
+die jeweils als ein Maß der Übergangswahrscheinlichkeit zwischen den Niveaus 1 und 2 angesehen werden können. Sofern keine Verluste auftreten, lassen
+sich zeitlichen Änderungen der Besetzungsdichten wie folgt formulieren
+\begin{align*}
+  \frac{\dx n_1}{\dx t} = -n_1\, B_{12}\, \rho + n_2\, B_{21} \rho + n_2\, A_{21}\\
+  \frac{\dx n_2}{\dx t} = +n_1\, B_{12}\, \rho - n_2\, B_{21} \rho - n_2\, A_{21}
+\end{align*}
+Um die Kohärenz und die stete Verstärkung des Felds $\rho$ zu gewährleisten, ist ein Überwiegen von stimulierter Emission gegenüber spontaner Emission
+erforderlich. Hierfür muss die Besetzungszahl des angeregten Zustands $n_2$ höher sein als die, des Grundzustands (Besetzungsinversion), was im thermischen Gleichgewicht
+nicht mit der Maxwell-Boltzmann-Verteilung vereinbar ist. Daher muss dem LASER-Medium permanent Energie in Form von Elektronenstößen oder optischen
+Anregungen zugeführt werden. 
+
+
+\subsection{Aufbau des LASER}
+Da die Verstärkung exponenziell mit dem Laufweg durchs LASER-Medium anwächst, ist es von hohem Interesse, diesen zu vergrößern. Dies geschieht durch
+einen Resonator, der den Strahl mithilfe von zwei Spiegeln entsprechend Abbildung \ref{pic_Res} immer wieder durch das Medium führt. Beide Spiegel
+können hierbei jeweils planparallel oder sphärisch sein. 
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{pics/Res.png}
+\caption{Konzeptioneller Aufbau eines LASERs}
+\label{pic_Res}
+\end{figure}
+Bei einem konfokalen Resonator, dessen Spiegelbrennpunkte aufeinander fallen, sind die
+unvermeidbaren formabhängigen Intensitätsverluste an den Spiegeln möglichst gering. Sind sie kleiner als die Verstärkung, so hat man einen selbsterregenden Oszillator
+und damit einen optisch stabilen Resonator. Hierfür notwendig ist die Einhaltung des Bereichs \eqref{eq_ResBedingung} der Resonatorparameter $g_i = 1- \frac{L}{r_i}$, mit $L$ 
+als Resonatorlänge und $r_i$ als Krümmungsradien der Spiegel.
+\begin{align}
+ 0 \le g_1 \cdot g_2 < 1
+ \label{eq_ResBedingung}
+\end{align}
+Der HeNe-LASER funktioniert mit einem Gasgemisch aus Helium und Neon im Verhältnis von 5 zu 1 bei einem Druck von etwa 133 Pa. Das Neon ist das 
+LASER-Material und Helium wird Pumpgas benutzt. Die Besetzungsinversion wird durch elektrische Entladung realisiert, wobei das Helium in
+metastabile Zustände angeregt wird. Diese Anregungsenergie wird durch STöße zweiter Art an das Neon übertragen, woraufhin Inversion auftritt. 
+Ein Brewsterfenster ermöglicht einen verlustarmen Lichtaustritt. LASER-Aktivität wird bei mehreren Wellenlängen festgestellt, mit der roten $\lambda = 632,8$ nm
+als intensivste.
+
+\subsection{Eigenschwingungen des Resonators}
+Die Resonanzbedingung \eqref{eq_ResBedingung} können wegen $L \gg \lambda_{\text{LASER}}$ viele Wellenlängen erfüllen. Die Anzahl $q$ der Wellenlängen
+wird longitudinale Mode genannt. Transversale Moden sind durch Imperfektionen ebenfalls möglich und werden angelehnt an Hohlleitern mit TEM${_lpq}$ 
+bezeichnet, mit $l$ und $p$ als transversale Modenzahlen und Knoten der x- bzw. y-Richtung. Aufgrund von zunehmenden Verlusten bei höheren Moden mit
+geringerer Symmetrie, können nur wenige transversale Moden isoliert und verstärkt werden. Die Feldverteilungen für konfokale Resonatoren mit runden
+Spiegeln werden angenähert durch
+\begin{align*}
+ E_{lpq} \propto& \cos(l \varphi) \frac{4\rho^2}{(1+Z^2)^(1+l)/2}L_p^q\left(\frac{4\rho^2}{1+Z^2} \right) \exp \left(-\frac{\rho^2}{1+Z^2} \right)\\
+ &\exp \left(-i\left(\frac{(1+Z)\pi R}{\lambda} + \frac{\rho^2Z}{1+Z^2} - (l-2p+1)\left(\frac{\pi}{2}-\arctan \left(\frac{1-Z}{1+Z}\right)\right)\right)\right)\\ 
+ &\hspace{6cm} \text{mit: } \rho = \left(\frac{2\pi}{\lambda R}\right)^\frac12\hspace{0.5 cm} \text{ und }\hspace{0.5 cm} Z = \frac{2z}{R}
+\end{align*}
+mit $L_p^q(x)$, denzugeordnete Laguerre-Polynomen. Hierdurch lassen sich beobachtbare Intensitätsverteilungen berechnen. Die verlustärmste Mode höchtster
+Symmetrie ist die TEM$_{00}$ Grundmode ohne Nullstellen in transversaler Richtung. Beschrieben wird sie durch die Gaußverteilung
+\begin{equation}
+ I(r) = I_0 \e^{-2\frac{r^2}{w^2}},
+\end{equation}
+mit $I_0$ als Maximalintensität, $r$ als Abstand zur optischen Achse und 2$w$ als doppelten Strahlradius. Berechnen lässt sich der Strahlradius im
+Abstand $z$ von der minimalen Taille $w_0$ durch
+\begin{equation}
+ w(z) = w_0 \sqrt{1+\left(\frac{\theta z}{w_0}\right)^2}, \hspace{1cm} \text{mit der Strahldivergenz } \theta = \frac{\lambda}{\pi}w_0. 
+\end{equation}
+
+\section{Durchführung}
+Zur Justage des HeNe-LASERs befindet sich ein Justier-LASER auf einer optischen Schiene. Zudem können zwei Schirme mit Fadenkreuz und Beugungsblende
+hinter den Justier-LASER und ans andere Ende der optischen Schine angebracht werden. Sind entsehende Beugungsringe direkt im Fadenkreuz, ist der 
+LASER auf die optische Achse justiert. Nun werden Plasmarohr und Resonatorspiegel auf die optische Schiene gebracht und der Justier-LASER ausgestellt.
+Nach Anstellen des Stroms auf $I$ = 6,5 mA leuchtet 
+
+
+\section{Auswertung}
+
+\parskip 340pt
+\Large{Literatur}\\\\
+
+% ========================================
+%	Literaturverzeichnis
+% ========================================
+
+%\bibliographystyle{plainnat}			% Bibliographie-Style auswählen
+%\bibliography{BIBDATEI}			% Literaturverzeichnis
+
+% ========================================
+%	Das Dokument endent
+% ========================================
+
+\end{document}
