@@ -1,0 +1,93 @@
+% ========================================
+%	Header einbinden
+% ========================================
+
+\input{longheader.tex}
+
+% ========================================
+%	Angaben für das Titelblatt
+% ========================================
+
+\title{Versuch 21 - Optisches Pumpen\\				% Titel des Versuchs 
+\large TU Dortmund, Fakultät Physik\\ 
+\normalsize Fortgeschrittenen-Praktikum}
+
+\author{Jan Adam\\			% Name Praktikumspartner A
+{\small \href{jan.adam@tu-dortmund.de}{jan.adam@tu-dortmund.de}}	% Erzeugt interaktiven einen Link
+\and						% um einen weiteren Author hinzuzfügen
+Dimitrios Skodras\\					% Name Praktikumspartner B
+{\small \href{dimitrios.skodras@tu-dortmund.de}{dimitrios.skodras@tu-dortmund.de}}		% Erzeugt interaktiven einen Link
+}
+\date{05. März 2014}				% Das Datum der Versuchsdurchführung
+
+% ========================================
+%	Das Dokument beginnt
+% ========================================
+
+\begin{document}
+
+% ========================================
+%	Titelblatt erzeugen
+% ========================================
+
+\maketitle					% Jetzt wird die Titelseite erzeugt
+\thispagestyle{empty} 				% Weder Kopfzeile noch Fußzeile
+
+% ========================================
+%	Der Vorspann
+% ========================================
+
+%\newpage					% Wenn Verzeichnisse auf einer neuen Seite beginnen sollen
+%\pagestyle{empty}				% Weder Kopf- noch Fußzeile für Verzeichnisse
+
+\tableofcontents
+
+%\newpage					% eine neue Seite
+%\thispagestyle{empty}				% Weder Kopf- noch Fußzeile für Verzeichnisse
+%\listoffigures					% Abbildungsverzeichnis
+
+%\newpage					% eine neue Seite
+%\thispagestyle{empty}				% Weder Kopf- noch Fußzeile für Verzeichnisse
+%\listoftables					% Tabellenverzeichnis
+\newpage					% eine neue Seite
+
+
+% ========================================
+%	Kapitel
+% ========================================
+
+%\section{Einleitung}				% Bei Bedarf
+
+\section{Theorie}
+\setcounter{page}{1}
+
+\section{Durchführung}
+
+\section{Auswertung}
+\subsection{Vertikalkomponente des Erdmagnetfelds}
+Um dem Einfluss des vertikalen Magnetfelds entgegenzuwirken, wird eine Helmholtz-Spule in die entsprechende Richtung orientiert, sodass das vom 
+Stromfluss $I$ induzierte Magnetfeld $B$ genau dem des Erdmagnetfelds entspricht. $N$=20 ist dabei die Windungszahl und $r$=11,735 cm der Radius
+der Spule. $\mu_0$ ist die Vakuumpermeabilität. Bei einer Spannung von $U$=1,99 V und einem Widerstand von $R$ = 1 $\Omega$ wird kein Einfluss
+des vertikalen Erdmagnetfelds mehr festgestellt. Die Feldstärke $B_{\text{vert,Erde}}$ lässt nach Biot-Savart berechnen mit
+\begin{equation}
+ B_{\text{vert,Erde}} = \mu_0 \frac{8}{\sqrt{125}}\frac{I N}{R} = 30,5 \, \mu\text{T}.
+\end{equation}
+\subsection{Horizontalkomponente des Erdmagnetfelds}
+
+
+
+\parskip 340pt
+\Large{Literatur}\\\\
+
+% ========================================
+%	Literaturverzeichnis
+% ========================================
+
+%\bibliographystyle{plainnat}			% Bibliographie-Style auswählen
+%\bibliography{BIBDATEI}			% Literaturverzeichnis
+
+% ========================================
+%	Das Dokument endent
+% ========================================
+
+\end{document}
