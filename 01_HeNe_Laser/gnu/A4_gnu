@@ -1,17 +1,17 @@
 #-----Beschriftungen-----#
 set terminal pdf
 set title ""
-set xlabel "Resonatorlänge L [m]"
+set xlabel "Resonatorlänge L [cm]"
 set ylabel "Stabilitätsparameter"
 
-set key top left 
+set key top right
 set output 'stabilitaetsparameter.pdf'
 
 
 #-----Formatierung-----#
 set grid
-set xrange [0:3]
-set yrange [0.0:1.5]
+set xrange [40:180]
+set yrange [0:0.6]
 #set logscale x
 #set logscale y
 
@@ -39,8 +39,8 @@ c=1; d=1
 
 u=1.7
 p(x)=(1.57**2*x)/(x+17.2)**2
-f(x)=1/(r1*r2)*x**2-x*((r1+r2)/(r1*r2))+1
-g(x)=1/(r3*r4)*x**2-x*((r3+r4)/(r3*r4))+1
+f(x)=1/(r1*r2)*(x/100)**2-(x/100)*((r1+r2)/(r1*r2))+1
+g(x)=1/(r3*r4)*(x/100)**2-(x/100)*((r3+r4)/(r3*r4))+1
 
 #-----Fitting-----#
 #fit f(x) "daten" index 0 using (($2)/1000):($1) via a,b 
@@ -64,7 +64,7 @@ g(x)=1/(r3*r4)*x**2-x*((r3+r4)/(r3*r4))+1
 #Leistung
 #plot "daten" index 0 using ($1/($2/1000)):($1*($2/1000)) title "Leistung gegen Widerstand", p(x) title "theoretische Leistungskurve"
 
-plot f(x) title "r1=1,4m r2=1,4m" linecolor rgb "red", g(x) title "r1=1,4m r2=1,0m" linecolor rgb "green", 1 title "g1*g2=1" linecolor rgb "black"
+plot f(x) title "r1=1,4m r2=1,4m" linecolor rgb "blue", g(x) title "r1=1,4m r2=1,0m" linecolor rgb "red"
 
 #-----Sonderkram-----#
 #set arrow from 0,-26 to 1.6,-26 lc 2 lw 3 front nohead
