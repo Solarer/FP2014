@@ -1,14 +1,14 @@
 #-----Beschriftungen-----#
 set encoding iso_8859_1
 
-set terminal pdf
-set output 'Polarisation.pdf'
+#set terminal pdf
+#set output 'Polarisation.pdf'
 
 set title ""
 set xlabel "Polarisation [°]"
-set ylabel "Strom [ {/Symbol m} A]"
+set ylabel "Strom [micro Ampere]"
 
-set key top left
+set key top right
 
 
 #-----Formatierung-----#
@@ -28,25 +28,24 @@ r1=1.4
 r2=1.4
 r3=1.4
 r4=1.0
-D=0.072450974
 
 
 #-----Rechenfunktionen-----#
 
 
 #-----Fitfunktion-----#
-f(x)=exp(a*(x-b)**2)
+f(x)=a*sin(b*x+c)+d
 g(x)=c*(x)+d
-a=1; b=1
-c=1; d=1
+a=30; b=0.01
+c=-40; d=40
 
 u=1.7
 p(x)=(1.57**2*x)/(x+17.2)**2
-f(x)=1/(r1*r2)*x**2-x*((r1+r2)/(r1*r2))+1
+#f(x)=1/(r1*r2)*x**2-x*((r1+r2)/(r1*r2))+1
 g(x)=1/(r3*r4)*x**2-x*((r3+r4)/(r3*r4))+1
 
 #-----Fitting-----#
-#fit f(x) "daten" index 0 using (($2)/1000):($1) via a,b 
+fit f(x) "data" index 3 using 1:2 via a,b,c,d
 #fit g(x) "daten" index 3 using ($4):($2+3.5) via c,d
 
 #fit f(x) "daten" index 1 using (($2)/1000):($1) via a,b
@@ -62,7 +61,7 @@ g(x)=1/(r3*r4)*x**2-x*((r3+r4)/(r3*r4))+1
 #plot "data" index 1 using 1:2 title "X-Koordinate gegen Strom"
 
 #Polarisation
-plot "data" index 3 using 1:2 title "Grad° gegen Strom"
+plot "data" index 3 using 1:2 pt 2 title "Messpunkte", f(x) title "Fit: Sinus(x)" lc rgb "blue"
 
 ####Spiegelabstand
 #konkav-konkav

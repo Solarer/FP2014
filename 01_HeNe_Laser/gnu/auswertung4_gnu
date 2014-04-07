@@ -1,12 +1,12 @@
 #-----Beschriftungen-----#
 set encoding iso_8859_1
 
-#set terminal pdf
-#set output 'Polarisation.pdf'
+set terminal pdf
+set output 'Abstand.pdf'
 
 set title ""
-set xlabel "Polarisation [°]"
-set ylabel "Strom [ {/Symbol m} A]"
+set xlabel "Spiegelabstand [cm]"
+set ylabel "Strom [nA]"
 
 set key top right
 
@@ -23,28 +23,22 @@ set grid
 #-----Konstanten definieren-----#
 pi=3.1415926
 c0=299792458
-U0=1.57
 r1=1.4
 r2=1.4
 r3=1.4
 r4=1.0
-D=0.072450974
 
 
 #-----Rechenfunktionen-----#
 
 
 #-----Fitfunktion-----#
-#f(x)=exp(a*(x-b)**2)
-g(x)=c*(x)+d
 a=1; b=1
 c=1; d=1
 
-u=1.7
-p(x)=(1.57**2*x)/(x+17.2)**2
-f(x)=(1-x/r1)*(1-x/r2)
+#f(x)=(1-x/r1)*(1-x/r2)
 #f(x)=1/(r1*r2)*x**2-x*((r1+r2)/(r1*r2))+1
-g(x)=1/(r3*r4)*x**2-x*((r3+r4)/(r3*r4))+1
+#g(x)=1/(r3*r4)*x**2-x*((r3+r4)/(r3*r4))+1
 
 #-----Fitting-----#
 #fit f(x) "data" index 3 using 1:2 via a,b 
@@ -67,10 +61,7 @@ g(x)=1/(r3*r4)*x**2-x*((r3+r4)/(r3*r4))+1
 
 ####Spiegelabstand
 #konkav-konkav
-plot "data" index 4 using 1:2 title "Spiegelabstand gegen Strom", f(x) title "fit"
-
-#konkav-flach
-#plot "data" index 5 using 1:2 title "Spiegelabstand gegen Strom"
+plot "data" index 4 using 1:2 pt 12 lc rgb "blue" title "konkav-konkav", "data" index 5 using 1:2 pt 12 lc rgb "red" title "konkav-flach"
 
 
 
