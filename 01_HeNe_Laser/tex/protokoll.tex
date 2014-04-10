@@ -77,7 +77,7 @@ Angeregte Atome können durch spontane Emission wiederum ein Photon jener Energi
 dass mittels eines einfallenden Photons das Atom unter stimulierter Emission in den Grundzustand übergeht. Das hierbei
 emittierte Photon ist in Energie, Phase und Ausbreitungsrichtung dem stimulierenden identisch. 
 \begin{figure}[H]
-\includegraphics[width=\textwidth]{pics/AbsEmi.png}
+\includegraphics[width=\textwidth]{../pics/AbsEmi.png}
 \caption{Absorbtion und Emission eines Zwei-Niveau-Systems}
 \label{pic_AbsEmi}
 \end{figure}
@@ -100,7 +100,7 @@ Da die Verstärkung exponenziell mit dem Laufweg durchs LASER-Medium anwächst, 
 einen Resonator, der den Strahl mithilfe von zwei Spiegeln entsprechend Abbildung \ref{pic_Res} immer wieder durch das Medium führt. Beide Spiegel
 können hierbei jeweils planparallel oder sphärisch sein. 
 \begin{figure}[H]
-\includegraphics[width=\textwidth]{pics/Res.png}
+\includegraphics[width=\textwidth]{../pics/Res.png}
 \caption{Konzeptioneller Aufbau eines LASERs}
 \label{pic_Res}
 \end{figure}
@@ -153,6 +153,63 @@ entlang des Strahlquerschnitts indirekt durch die Stromstärke gemessen.Die Pola
 der Photodiode ermittelt in Abhängigkeit der Polarisationsrichtung. Die Wellenlänge lässt sich einfach durch den Abstand von Beugungsmaxima erzeugt
 durch ein Gitter bzw. einen Spalt berechnen.
 \section{Auswertung}
+\subsection{Stabilitätsbedingungen}
+Zunächst werden die Stabilitätsbedingungen überprüft. Folgenden Tabellen können die Aufgenommenen Wertepaare (Abstand/Stromstärke) entnommen werden, wobei die Werte aus Tabelle \ref{tab_kk} bei einem Aufbau mit zwei Konkavspiegeln und die Werte aus Tabelle \ref{tab_kf} mit einem Konkav- und einem Planspiegel aufgenommen wurden.
+\begin{table}[htbp]
+	% minipage mit (Blind-)Text
+	\begin{minipage}[t]{0.45\textwidth} 
+	\begin{tabular}[t]{c|c}
+	cm & nA\\ \hline
+	50,4 &   32,0\\
+ 	72    &  30,0\\
+ 	79     & 32,0\\
+ 	85      &33,0\\
+ 	90      &31,0\\
+ 	96      &30,0\\
+ 	101     &27,0\\
+ 	112     &13,0\\
+ 	123     &13,0\\
+ 	137     &21,0\\
+ 	143     &6,0\\
+ 	151     &4,7\\
+ 	155     &5,7\\
+ 	159     &6,2\\
+ 	166     &4,2\\
+ 	173     &2,0\\
+ 	176     &1,0
+	\end{tabular}
+	\caption{Messwerte konkav-konkav}
+	\label{tab_kk}
+	\end{minipage}
+	\begin{minipage}[t]{0.45\textwidth} 
+	\begin{tabular}[t]{c|c}
+	cm & nA\\ \hline
+	44,0&    26,0\\
+	53,0&    13,0\\
+	55,0&    16,0\\
+	57,0&    7,9\\
+	57,5&    4,5\\
+	59,5&    3,5\\
+	63,0&    4,0
+	\end{tabular}
+	\caption{Messwerte konkav-flach}
+	\label{tab_kf}
+	\end{minipage}
+\end{table}
+
+Eingetragen in ein Diagramm ergibt sich folgendes Bild:
+\begin{figure}[h!]
+\includegraphics[scale=1]{../gnu/Abstand.pdf}
+\caption{Beide Messreihen in ein Diagramm eingetragen}
+\label{gra_abstand}
+\end{figure}
+
+Wie deutlich zu erkennen ist, lässt sich der Laserstrahl bei zwei konkaven Spiegeln deutlich länger aufrecht erhalten, als bei einem konkaven und einem flachen. Als Referenz dazu die theoretisch berechneten Stabilitätsbedingungen entsprechend Gleichung \eqref{eq_ResBedingung}:
+\begin{figure}[h!]
+\includegraphics[scale=1]{../gnu/stabilitaetsparameter.pdf}
+\caption{Theoretische Stabilitätbedingungen}
+\label{gra_stabil}
+\end{figure}
 
 \parskip 340pt
 \Large{Literatur}\\\\
