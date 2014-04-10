@@ -62,17 +62,114 @@ Dimitrios Skodras\\					% Name Praktikumspartner B
 \setcounter{page}{1}
 
 \section{Durchführung}
+\label{sec_durch}
 
 \section{Auswertung}
 \subsection{Vertikalkomponente des Erdmagnetfelds}
+\begin{table}[H]
+ \begin{tabular}{l|c|c|c}
+  Spule & $r$ in cm & $N$ & $I/U$ in A/1\\
+  \hline
+  Vertikal & 11,735 & 20 & 1\\
+  Horizontal & 15,790 & 154 & 0,1\\
+  Sweep & 16,39 & 11 & 0,3
+ \end{tabular}
+\caption{Kenndaten benutzter Helmholtzspulen}
+\label{tab_SpulenHor}
+\end{table}
 Um dem Einfluss des vertikalen Magnetfelds entgegenzuwirken, wird eine Helmholtz-Spule in die entsprechende Richtung orientiert, sodass das vom 
-Stromfluss $I$ induzierte Magnetfeld $B$ genau dem des Erdmagnetfelds entspricht. $N$=20 ist dabei die Windungszahl und $r$=11,735 cm der Radius
-der Spule. $\mu_0$ ist die Vakuumpermeabilität. Bei einer Spannung von $U$=1,99 V und einem Widerstand von $R$ = 1 $\Omega$ wird kein Einfluss
-des vertikalen Erdmagnetfelds mehr festgestellt. Die Feldstärke $B_{\text{vert,Erde}}$ lässt nach Biot-Savart berechnen mit
+Stromfluss $I$ induzierte Magnetfeld $B$ genau dem des Erdmagnetfelds entspricht. $\mu_0$ ist die Vakuumpermeabilität, $r$ der Radius und $N$ die Windungszahl
+Bei einer Umdrehungszahl von $U$=1,99 V und einem Widerstand von $R$ = 1 $\Omega$ wird kein Einfluss des vertikalen Erdmagnetfelds mehr festgestellt. 
+Die Feldstärke $B_{\text{vert,Erde}}$ lässt nach Biot-Savart und mit Tabelle \ref{tab_SpulenHor} berechnen mit
 \begin{equation}
- B_{\text{vert,Erde}} = \mu_0 \frac{8}{\sqrt{125}}\frac{I N}{R} = 30,5 \, \mu\text{T}.
+ B_{\text{vert,Erde}} = \mu_0 \frac{8}{\sqrt{125}}\frac{I N}{r} = 30,5 \, \mu\text{T}.
 \end{equation}
+\subsection{Typisches Signalbild}
 \subsection{Horizontalkomponente des Erdmagnetfelds}
+Wie in \ref{sec_durch} beschrieben, wird die Resonanzfrequenz der RF-Spule stetig erhöht und ebenfalls das Magnetfeld der Horizontalspulen dahingehend,
+dass die Transmission der Dampfzelle stark abnimmt. In Tabelle \ref{tab_SpulenHor} sind die Kenndaten der Horizontalspulen aufgeführt, die zur Umrechnung
+der in den Tabellen \ref{tab_nuB1} und \ref{tab_nuB2} gelisteten Messwerte in Magnetfelder nötig sind.
+
+
+\begin{minipage}{0.5\textwidth}
+\begin{table}[H]
+\begin{tabular}{c|cc|c}
+$\nu$ in kHz & U$_{\text{sweep}}$ & U$_{\text{hor}}$ & $B_{r,1}$ in mT\\
+\hline
+ 20 &	1,75&	0,00&	0,011\\
+100&	3,70&	0,00&	0,022\\
+200&	1,05&	0,12&	0,038\\
+300&	1,55&	0,15&	0,049\\
+400&	3,82&	0,15&	0,063\\
+500&	2,48&	0,24&	0,078\\
+600&	2,13&	0,30&	0,092\\
+700&	2,27&	0,35&	0,106\\
+800&	2,38&	0,40&	0,120\\
+900&	2,60&	0,45&	0,134\\
+1000&	2,73&	0,50&	0,148 \\
+\end{tabular}
+\caption{$\nu$ und $B_r$ des 1. Isotops}
+\label{tab_nuB1}
+\end{table}
+\end{minipage}
+\begin{minipage}{0,5\textwidth}
+\begin{table}[H]
+\begin{tabular}{c|cc|c}
+$\nu$ in kHz & U$_{\text{sweep}}$ & U$_{\text{hor}}$ & $B_{r,2}$ in mT\\
+\hline
+20	&2,00&	0,00&	0,012\\
+100&	4,90&	0,00&	0,030\\
+200&	3,65&	0,12&	0,054\\
+300&	5,11&	0,15&	0,070\\
+400&	4,25&	0,25&	0,091\\
+500&	2,74&	0,37&	0,114\\
+600&	2,59&	0,45&	0,134\\
+700&	1,78&	0,55&	0,155\\
+800&	1,05&	0,65&	0,177\\
+900&	2,47&	0,70&	0,199\\
+1000&	1,55&	0,80&	0,220 \\
+\end{tabular}
+\caption{$\nu$ und $B_r$ des 2. Isotops}
+\label{tab_nuB2}
+\end{table}
+\end{minipage}
+
+Der Zusammenhang zwischen $\nu$ und $B_r$ wird zweimal mit einem linearen Ansatz
+\begin{equation*}
+ \nu = a\cdot B + b \hspace{2cm} \text{und} \hspace{2cm} \nu = c\cdot B + d
+\end{equation*}
+getestet und die Koeffizienten $a,b,c$ und $d$ durch GNUplot bestimmt. In Abbildung \ref{pic_nuB} sind die Messwerte dargestellt, sowie die eben
+genannten linearen Ansätze als Fitgeraden.
+\begin{figure}[h]
+\includegraphics[width=0.8\textwidth]{pics/v21B-nu.pdf}
+\caption{Zusammenhang zwischen Resonanzfrequenz und Magnetfeld}
+\label{pic_nuB}
+\end{figure}
+Hieraus ergeben sich die folgenden zwei Gleichungen
+\begin{align}
+ \nu_1 =& 7159(1\pm0,67\%)\frac{\text{kHz}}{\text{mT}}\cdot B - 58,6(1\pm6,1\%) \text{kHz}
+ \label{eq_nu1}
+ \end{align}
+ \begin{align}
+ \nu_2 =& 4741(1\pm0,70\%)\frac{\text{kHz}}{\text{mT}}\cdot B - 39,6(1\pm11,1\%) \text{kHz}.
+ \label{eq_nu2}
+\end{align}
+Mit diesen zwei Gleichungen ist es nun möglich die Horizontalkomponente des Erdmagnetfelds zu ermitteln. Sie ist genau das Magnetfeld $B$, welches
+die Gleichung \eqref{eq_nu1} bzw. \eqref{eq_nu2} 0 werden lässt. Aus den zwei Werten wird anschließend der Mittelwert genommen
+\begin{align}
+ B_1 = 8,19(1\pm6,1\%) \mu T \hspace{0.2cm} \text{und} \hspace{0.2cm} B_2 = 8,35(1\pm11,1\%) \mu T,
+\end{align}
+was schließlich zu einer Horizontalkomponente führt von
+\begin{equation}
+ B_{\text{hor}} = 8,27(1\pm12,7\% )\mu T.
+\end{equation}
+\subsection{Landé-Faktoren des Atoms}
+\subsection{Kernspin $I$ der Rubidiumisotope}
+\subsection{Isotopenverhältnis von $^{85}$Rb und $^{87}$Rb}
+
+\section{Diskussion}
+
+
 
 
 
