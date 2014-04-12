@@ -1,0 +1,42 @@
+set term wxt
+unset xrange
+unset yrange
+
+####
+#Shape
+set title "Resonanzfrequenz zweier Rhodiumisotope"
+set xlabel "Magnetfeld B in mT"
+set ylabel "Resonanzfrequenz {/Symbol n} in kHz"
+
+set key bottom right
+set grid
+#set xrange[a:b]
+set yrange[0:1100]
+
+#####
+#Functions
+f(x)=a*x+b
+g(x)=c*x+d
+
+####
+#Fitting
+fit f(x) "v21OP" using 2:1 index 0 via a,b
+fit g(x) "v21OP" using 2:1 index 1 via c,d
+
+####
+#Output
+set term png
+#set term pdfcairo enhanced
+
+set output 'Example1.png'
+#set output 'Example2.pdf'
+
+####
+#Plot
+plot "v21OP" using 2:1  title 'Measured Data', f(x) title 'Fit line_{Rh,1}', g(x) title 'Fit line_{Rh,2}'
+
+####
+#Reset
+set term wxt
+unset xrange
+unset yrange
