@@ -84,7 +84,6 @@ Die Feldstärke $B_{\text{vert,Erde}}$ lässt nach Biot-Savart und mit Tabelle \
 \begin{equation}
  B_{\text{vert,Erde}} = \mu_0 \frac{8}{\sqrt{125}}\frac{I N}{r} = 30,5 \, \mu\text{T}.
 \end{equation}
-\subsection{Typisches Signalbild}
 \subsection{Horizontalkomponente des Erdmagnetfelds}
 Wie in \ref{sec_durch} beschrieben, wird die Resonanzfrequenz der RF-Spule stetig erhöht und ebenfalls das Magnetfeld der Horizontalspulen dahingehend,
 dass die Transmission der Dampfzelle stark abnimmt. In Tabelle \ref{tab_SpulenHor} sind die Kenndaten der Horizontalspulen aufgeführt, die zur Umrechnung
@@ -164,8 +163,45 @@ was schließlich zu einer Horizontalkomponente führt von
  B_{\text{hor}} = 8,27(1\pm12,7\% )\mu T.
 \end{equation}
 \subsection{Landé-Faktoren des Atoms}
+\label{sec_lande}
+Neben der Horizontalkomponente des Erdmagnetfelds kann man aus den Gleichungen \eqref{eq_nu1} und \eqref{eq_nu2} ebenfalls die Landé-Faktoren des
+Atoms $g_F$ nach Gleichung \eqref{eq_nuB.g_F} errechnen, wo der Proportionalitätsfaktor mit $a$ bzw. $c$ identifiziert wird
+\begin{equation}
+ g_{F,1} = 0,511(1 \pm 0,67\%) \hspace{1cm}\text{und}\hspace{1cm}g_{F,2} = 0,339(1\pm 0,7\%) 
+\end{equation}
+Desweiteren lassen sich aus der Elektronenkonfiguration von Rubidium die Drehimpulse bestimmen, sowie der Landé-Faktor der Elektronenhülle $g_J$.
+Die Drehimpulse sind hierbei
+\begin{equation}
+ L = 0 , \qquad S=\frac12 , \qquad J = L+S = \frac12, \qquad F = I+J= I + \frac12,
+\end{equation}
+was nach \eqref{eq_gj} zu einem Faktor führt zu
+\begin{equation}
+ g_J = 2,0023. 
+\end{equation}
+
 \subsection{Kernspin $I$ der Rubidiumisotope}
+Mit den Ergebnissen aus \ref{sec_lande} lassen sich nun nach \eqref{eq_gF(I)} die Kernspins der auftretenden Rubidiumisotope errechnen. Die etwas
+längliche Formel ergibt umgestellt nach dem Kernspin
+\begin{equation}
+ I_k = \frac{1}{4\frac{g_{F,k}}{g_J}} \left[\left(1-4\frac{g_{F,k}}{g_J}\right) + \sqrt{\left(-1+4\frac{g_{F,k}}{g_J}\right)^2-12\frac{g_{F,k}}{g_J}\left(\frac{g_{F,k}}{g_J}-1\right)}\right]
+\end{equation}
+und führt zu
+\begin{equation}
+ I_1 = 1,459 \approx \frac32 \hspace{3cm} I_2=	2,459 \approx \frac52.
+\end{equation}
+
 \subsection{Isotopenverhältnis von $^{85}$Rb und $^{87}$Rb}
+Durch das Auftauchen von zwei Resonanzfrequenzen bei denen die Transparenz der Probe einbricht, wird davon ausgegangen, dass es sich um zwei verschiedene
+Isotope innerhalb der Probe handelt. Das Verhältnis ihres Vorkommens $N_i$ hängt mit dem Verhältnis der Transparenzaufhebung $A_i$ direkt zusammen
+Die Bestimmung der Amplituden geschieht durch Ablesen am Oszilloskop in Abbildung \ref{pic_verh}
+\begin{figure}[h]
+\includegraphics[width=0.8\textwidth]{pics/v21Verh.jpg}
+\caption{Typische Aufnahme am Oszilloskop, hier bei $\nu$ = 100 kHz}
+\label{pic_verh}
+\end{figure}\begin{equation}
+ \frac{N_1}{N_2} = \frac{A_1}{A_2} = \frac{5,5}{2,5}= 2,2.
+\end{equation}
+
 
 \section{Diskussion}
 
