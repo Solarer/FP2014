@@ -1,12 +1,12 @@
 #-----Beschriftungen-----#
 set encoding iso_8859_1
 
-#set terminal pdf
-#set output 'Polarisation.pdf'
+set terminal pdfcairo enhanced
+set output 'Polarisation.pdf'
 
 set title ""
 set xlabel "Polarisation [°]"
-set ylabel "Strom [micro Ampere]"
+set ylabel "Strom [{/Symbol m}A]"
 
 set key top right
 
