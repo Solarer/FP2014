@@ -122,7 +122,8 @@ Da $\vec J$ nicht zwingend parallel zu $\vec \mu_j$ ist, kann man sich einen par
 senkrechte Komponente wird dabei null, was unter klassischer Betrachtung einer Präzession um die von außen vorgegebene Richtung gleich kommt, 
 die im zeitlichen Mittel verschwindet. In \eqref{eq_mujls} die magnetischen Momente eingesetzt führt zu folgender Form
 \begin{align}
- \vec \mu_J \approx \mu_B\sqrt{J(J+1)}\underbrace{\frac{3J(J+1+S(S+1)-L(L+1)}{2J(J+1)}} = \mu_B\sqrt{J(J+1)} \,g_J ,
+ \vec \mu_J \approx \mu_B\sqrt{J(J+1)}\underbrace{\frac{3J(J+1+S(S+1)-L(L+1)}{2J(J+1)}}_{g_J} = \mu_B\sqrt{J(J+1)} \,g_J ,
+ \label{eq_lande}
 \end{align}
 mit $g_J$ als Landé-Faktor des betreffenden Atoms.
 
@@ -145,9 +146,65 @@ Hieran sieht man, dass für $B\neq0$ das Energieniveau $E_0$ in $2J+1$ äquidist
 \label{pic_Eniv}
 \end{figure}
 Zwischen den hinzukommenden Energieniveaus ist es nun möglich, dass Übergänge auftreten. Dieser Effekt wird als Zeeman-Effekt bezeichnet.
-Die Anzahl dieser Linien hängt davon ab, welche Übergänge überhaupt möglich sind, ob es also Auswahlregeln gibt, die den Übergang festlegen.  
+Die Anzahl dieser Linien hängt davon ab, welche Übergänge überhaupt möglich sind, ob es also Auswahlregeln gibt, die den Übergang festlegen.
+
+Um sie zu ermitteln, wird die zeitabhängige Schrödingergleichung
+\begin{align}
+ \text{i}\hbar \frac{\partial}{\partial t}\psi(\vec r, t) = \left(-\frac{\hbar^2}{2m}\Delta + V\right) \psi(\vec r,t)
+ \label{eq_schroedinger}
+\end{align}
+mit den Lösungen
+\begin{align}
+ \psi_1 (\vec r, t) = \psi_1(\vec r) \exp(-\text{i}\frac{E_\alpha}{\hbar}t)
+\end{align}
+betrachtet, mit $\Delta$ als Laplace-Operator, $V$ als ein Potenzial, $E_i$ als Energieeigenwert und $\psi_i(\vec r,t)$ als Wellenfunktion, die
+von den Quantenzahlen $n_i, l_i$ und $m_i$ abhängt. Eine weitere Lösung von \eqref{eq_schroedinger} $\psi_2(\vec r,t)$ mit entsprechenden Quantenzahlen
+soll existieren. Beide Lösungen bilden eine Linearkombination
+\begin{align}
+ \Psi(\vec r,t) = C_1\psi_1(\vec r,t) + C_2 \psi_2(\vec r,t),
+\end{align}
+die ebenfalls eine Lösungen der Schrödingergleichung ist und $C_i \in \mathbb{C}$. Aus der Berechnung der zeitabhängigen Dichteverteilung 
+$\rho=\int\Psi^{*} \Psi \dx V$ ergibt sich, dass sie Schwingungen von Elektronen mit der Frequenz
+\begin{align}
+ \nu_{12} = \frac{E_1-E_2}{h}
+\end{align}
+beschreibt. Die damit verbundene Strahlungsintensität fordert ein Dipolmoment des schwingendne Elektrons, welches Komponenten in alle Raumrichtungen
+hat. Diese berechnen sich zu
+\begin{align}
+ D_\alpha = -e_0 \int \alpha \Psi^*\Psi \dx V \hspace{1cm} \text{mit } \alpha = x,y,z.
+\end{align}
+Hier wird die Komponente $\alpha$ eines beliebig orientierten Dipols mit Frequenz $\nu_{12}$ beschrieben. Die hierin auftretenden Ausdrücke
+\begin{align}
+ \alpha_{12} = \int \alpha \psi_1^*\psi_2
+ \label{eq_matrixelements}
+\end{align}
+werden Matrixelemente genannt, die für die Berechnung der Strahlungsintensität über den Poynting-Vektor $\vec S_{12}$ entscheidend sind
+\begin{align}
+\left| \vec S_{12}\right| \sim \left[\sum_\alpha\left| \alpha_{12}\right|\right]\sin^2\gamma.
+\label{eq_poynting}
+\end{align}
+Errechnet werden die Elemente durch den kugelsymmetrischen Ansatz der Wellenfunktionen und die Tranformation in Kugelkoordinaten
+\begin{align}
+ \Psi = \frac{1}{\sqrt{2}}R(r)\Theta(\vartheta)\e^{\text{i}m\varphi} \hspace{1cm}\begin{pmatrix} x \\ y\\z \end{pmatrix}=r\begin{pmatrix}\cos\varphi\sin\vartheta \\ \sin\varphi\sin\vartheta \\ \cos\vartheta \end{pmatrix}
+\end{align}
+Nach Einsetzen in \eqref{eq_matrixelements} folgen die Auswahlregeln
+\begin{align}
+ m_2 = m_1, \hspace{0.5cm} m_2 = m_1\pm1
+\end{align}
+Folglich gibt es drei Konfigurationen, bei denen ein Übergang auftreten kann. Nun werden die Eigenschaften dieser Übergänge untersucht. Für 
+$\Delta m = 0$  ist die Richtung des Dipols parallel zur Magnetfeldrichtung. Die Winkelabhängigkeit aus \eqref{eq_poynting} bedingt, dass nicht
+in Feldrichtung abgestrahlt wird. Die Emission ist senkrecht zum Magnetfeld maximal, was bedeutet, dass diese Strahlung zu $\vec B$ parallel 
+linear polarisiert ist. Betrachtungen von $\Delta m = \pm 1$ beschreiben um die Magnetfeldrichtung zirkularpolarisierte Schwingung mit jeweiliger
+Drehrichtung.
 
 \subsection{normaler und anormaler Zeeman-Effekt}                  
+Die Einschränkung, dass \eqref{eq_schroedinger} nicht den Elektronenspin enthält bedingt, dass die Ergebnisse nur für den Spezialfall $S=0$ gelten.
+Dies nennt man den normalen Zeeman-Effekt. Es folgt, dass $g_J$ nach \eqref{eq_lande} 1 für alle J ist und daher von den Quantenzahlen unabhängig ist
+Daher gilt für die Verschiebung der Energieniveaus
+\begin{align}
+ \Delta E = m \mu_B B \hspace{1cm} \text{mit } -J \leq m \leq J.
+\end{align}
+
 
 \section{Durchführung}
 
