@@ -198,11 +198,28 @@ linear polarisiert ist. Betrachtungen von $\Delta m = \pm 1$ beschreiben um die 
 Drehrichtung.
 
 \subsection{normaler und anormaler Zeeman-Effekt}                  
-Die Einschränkung, dass \eqref{eq_schroedinger} nicht den Elektronenspin enthält bedingt, dass die Ergebnisse nur für den Spezialfall $S=0$ gelten.
+Die Einschränkung, dass \eqref{eq_schroedinger} nicht den Elektronenspin enthält, bedingt, dass die Ergebnisse nur für den Spezialfall $S=0$ gelten.
 Dies nennt man den normalen Zeeman-Effekt. Es folgt, dass $g_J$ nach \eqref{eq_lande} 1 für alle J ist und daher von den Quantenzahlen unabhängig ist
 Daher gilt für die Verschiebung der Energieniveaus
 \begin{align}
- \Delta E = m \mu_B B \hspace{1cm} \text{mit } -J \leq m \leq J
+ \Delta E = m \mu_B B \hspace{1cm} \text{mit } -J \leq m \leq J.
+\end{align}
+Wie man Abbildung \ref{pic_norZee} entnehmen kann, sind effektiv nur drei Linien zu beobachten. Übergänge mit gleichem $\Delta m$ sind energetisch
+identisch.
+\begin{figure}[H]
+\includegraphics[width=0.7\textwidth]{../pics/norZee.png}
+\caption{Aufspaltung und Polarisation beim Normalen Zeemaneffekt}
+\label{pic_norZee}
+\end{figure}
+Die Polarisation bedingt, dass die emittierte Strahlung nicht in allen Beobachtungsrichtungen erkannt wird. Übergänge mit $\Delta m$ haben im Vergleich
+zum Fall ohne ein Magnetfeld keine Energieänderung. Daher ist wie bereits gezeigt linear polarisiert und wird $\pi$-Komponente bezeichnet. Sie wird
+daher nur transversal zur Feldrichtung beobachtet. Die anderen beiden Komponenten werden mit $\sigma$ bezeichnet und sind zirkular polarisiert und 
+erscheinen bei transversaler Beobachtung linear polarisiert.
+
+Der verallgemeinerte Zeeman-Effekt ist der mit $S\neq0$ und wird anormaler Zeeman-Effekt genannt. Aus der spinabhängigen Schrödingergleichung ergeben
+sich dieselben Auswahlregeln. Relativ zur feldfreien Energie ergibt sich hier bei Übergängen zwischen zwei Niveaus folgende Energiedifferenz
+\begin{align}
+ \Delta E = [m_1 g(L_1,S_1,J_1)\, - \,m_2g(L_2,S_2,J_2)]\mu B
 \end{align}
 
 
