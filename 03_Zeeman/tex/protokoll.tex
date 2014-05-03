@@ -230,11 +230,40 @@ Der Landé-Faktor hängt hier von den Drehimpulsen ab, sodass die Aufspaltung li
 \end{figure}
 
 \section{Durchführung}
-bla
-\section{Auswertung}
+Die Lichtquelle mit roter Linie (normaler Zeeman-Effekt) und blauer Line (anormaler Zeeman-Effekt) ist eine Cd-Lampe, die zwischen die Polschuhe eines
+Elektromagneten gebracht wird. Die Emissionslinien werden kollimiert und vom Geradsichtprisma nach Wellenlänge separiert. Polarisationsfilter und
+Spalt werden je nach untersuchtem Übergang ausgesucht und der Strahl auf die Eintrittsfläche einer Lummer-Gehrke Platte abgebildet. Das hierdurch
+entstehende Interferenzmuster wird mit einer Digitalkamera aufgenommen. Den schematischen Aufbau kann man Abbildung \ref{pic_aufbauZee} entnehmen.
 
-\parskip 340pt
-\Large{Literatur}\\\\
+\begin{figure}[H]
+\includegraphics[width=1\textwidth]{../pics/aufbauZee.png}
+\caption{Aufspaltung und Polarisation beim Anormalen Zeemaneffekt}
+\label{pic_aufbauZee}
+\end{figure}
+Die Lummer-Gehrke Platte nutzt zur hohen Auflösung ($10^5$) Interferenz an planparallelen Platten. Ein internes Prisma sorgt dafür, dass das Licht
+innerhalb der planparallelen Platten reflektiert wird. Die Reflexion ist nicht vollständig, sodass bei jeder Reflexion auch ein Teil transmittiert wird,
+der mit anderen transmittierten Strahlen nach der Bragg-Bedingung interferieren kann, wobei $d$ die Plattendicke, $\lambda$ die Wellenlänge, $n$ die Ordnung und $\vartheta$
+der Einfallswinkel zum Plattenlot ist.
+\begin{align}
+ 2d\cos(\vartheta) = n\lambda
+\end{align}
+Der Gangunterschied der Interferenzstreifen beträgt die eingstrahlte Wellenlänge $\lambda$. Bei Anwesenheit eines Magnetfelds ändert sich die Wellelänge
+um $\delta \lambda$, was zu einer Verschiebung der Streifen um $\delta s$ zufolge hat. Das Dispersionsgebiet ist die Differenz, die zwei Wellenlängen
+haben müssen, damit sie interferieren können. 
+\begin{align}
+ \Delta \lambda_D = \frac{\lambda^2}{2d}\sqrt{\frac{1}{n^2-1}}
+\end{align}
+Das Auflösungsvermögen $A$ hängt von der Länge der Lummer-Gehrcke Platte $L$, dem Brechungsindex $n$ und der Wellenlänge $\lambda$ ab
+\begin{align}
+  A = \frac{\lambda}{\Delta \lambda}=\frac{L}{\lambda}(n^2-1).
+\end{align}
+Zu Beginn wird der Elektromagnet geeicht, indem die magnetische Flussdichte $B$ in Abhängigkeit des Feldsstroms $I$ gemessen wird. Für geeignete 
+Magnetfelder sollen nun die Wellenlängenaufspaltungen für verschiedene Ordnungen der roten (= 643,8 nm) und der blauen (= 480,0 nm) Linie 
+des Cd-Spektrums gemessen werden. Dazu wird die Apparatur optimal entsprechend Abbildung \ref{pic_aufbauZee} aufgebaut, sodass die Intensität
+bestmöglich aufrecht erhalten und scharfe Abbildungen entstehen können.
+
+
+\section{Auswertung}
 
 % ========================================
 %	Literaturverzeichnis
