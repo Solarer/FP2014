@@ -1,0 +1,224 @@
+% ========================================
+%	Header einbinden
+% ========================================
+
+\input{longheader.tex}
+\usepackage{multirow}
+
+% ========================================
+%	Angaben für das Titelblatt
+% ========================================
+
+\title{Versuch 48 - Dipolrelaxation in Ionenkristallen\\				% Titel des Versuchs 
+\large TU Dortmund, Fakultät Physik\\ 
+\normalsize Fortgeschrittenen-Praktikum}
+
+\author{Jan Adam\\			% Name Praktikumspartner A
+{\small \href{jan.adam@tu-dortmund.de}{jan.adam@tu-dortmund.de}}	% Erzeugt interaktiven einen Link
+\and						% um einen weiteren Author hinzuzfügen
+Dimitrios Skodras\\					% Name Praktikumspartner B
+{\small \href{dimitrios.skodras@tu-dortmund.de}{dimitrios.skodras@tu-dortmund.de}}		% Erzeugt interaktiven einen Link
+}
+\date{16. April 2014}				% Das Datum der Versuchsdurchführung
+
+% ========================================
+%	Das Dokument beginnt
+% ========================================
+
+\begin{document}
+
+% ========================================
+%	Titelblatt erzeugen
+% ========================================
+
+\maketitle					% Jetzt wird die Titelseite erzeugt
+\thispagestyle{empty} 				% Weder Kopfzeile noch Fußzeile
+
+% ========================================
+%	Der Vorspann
+% ========================================
+
+%\newpage					% Wenn Verzeichnisse auf einer neuen Seite beginnen sollen
+%\pagestyle{empty}				% Weder Kopf- noch Fußzeile für Verzeichnisse
+
+\tableofcontents
+
+%\newpage					% eine neue Seite
+%\thispagestyle{empty}				% Weder Kopf- noch Fußzeile für Verzeichnisse
+%\listoffigures					% Abbildungsverzeichnis
+
+%\newpage					% eine neue Seite
+%\thispagestyle{empty}				% Weder Kopf- noch Fußzeile für Verzeichnisse
+%\listoftables					% Tabellenverzeichnis
+\newpage					% eine neue Seite
+
+
+% ========================================
+%	Kapitel
+% ========================================
+
+%\section{Einleitung}				% Bei Bedarf
+
+\section{Theorie}
+\setcounter{page}{1}
+\subsection{Ionengitter}
+Ein einwertiger Ionenkristall (CsJ) erfährt einen Einbau eines zweiwertigen Kations (Sr$^{++}$), wodurch ein permanenter Dipol entsteht. Denn aufgrund
+der Ladungserhaltung entsteht mit dem zweiwertigen Kation eine Leerstelle, die gemeinsam entsprechend Abbildung \ref{pic_dipGitt} den Dipol bilden.
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{../pics/dipGitt.png}
+\caption{Entstehung eines Dipols im Ionengitter}
+\label{pic_dipGitt}
+\end{figure}
+Wegen der diskreten Gitterpunkte sind nur diskrete Dipolausrichtung möglich, wobei unterhalb von 500 $^\circ$C sich ausschließlich die Leerstellen bewegen.
+Die Potentialschwelle die zu dieser Leerstellendiffusion die durch den periodischen Verlauf des Gitterpotentials festgelegt ist, muss überwunden werden.
+Damit ist eine Aktivierungsenergie $W$ verbunden. Der Anteil der Dipole, die diese Energie mittels der thermischen Bewegung aufbringt ist
+verteilt nach der Boltzmann-Statistik $\exp(W/k_B\,T)$, mit $k_B$ als Boltzmann-Konstante. Die mittlere Zeit einer Dipolumorientierung wird Relaxationszeit
+$\tau$ genannt, die direkt proportional zur Boltzmann-Statistik sein muss
+\begin{align}
+ \tau(T) = \tau_0 \exp\left(\frac{W}{k_B\, T}\right),
+ \label{eq_tau(W)}
+\end{align}
+mit $\tau_0$ als charakteristische Relaxationszeit, die bei unendlicher Temperatur bestehen würde. Im Versuch sollen die Aktivierungsenergie und die
+charakteristische Relaxationszeit ermittelt werden.
+
+\subsection{Messverfahren}
+Die untersuchte mit Strontium dotierte Kaliumbromid-Probe ist kreisförmig und etwa 3-5 mm dick. Sie dient als Dielektrikum eines Plattenkondensators,
+an den eine Gleichspannung angeschlossen wird, sodass innerhalb der Probe ein elektrisches Feld $E$ wirkt. Die statistisch ausgerichteten 
+Dipole in der Probe richten sich entsprechend der Feldrichtung aus. Die Ausrichtung wird jedoch wird jedoch durch die thermische Bewegung der 
+Gitterbausteine gestört, sodass nur ein Bruchteil $y$ der Dipole in Feldrichtung zeigt. Dieser Anteil wird durch die Langevin-Funktion $L(x)$
+beschrieben
+\begin{align}
+ y = L(x) = \cot(x) - \frac{1}{x} \hspace{1cm}\text{mit }x=\frac{pE}{k_B T},
+\end{align}
+die für den Fall $pE\ll k_B T$ wird zu 
+\begin{align}
+ y = \frac{pE}{3k_B T}.
+ \label{eq_y(T)}
+\end{align}
+Um tatsächlich diesen Bruchteil zu erhalten, muss das Feld lange gegenüber der Relaxationszeit eingeschaltet sein. Bei eingeschaltetem E-Feld wird
+die Probe mit flüssigem Stickstoff schnell auf eine Temperatur $T_0$ gebracht. Wegen des exponentiellen Zusammenhangs, ist es möglich, diesen
+Polarisationszustand konstant zu halten. Nach Abschalten des Felds, wird der Kondensator kurzgeschlossen, was den Ladungsteil bei tiefen Temperaturen
+in Form von Elektronen verschwinden lässt. Mit konstanter Heizrate $b=\dx T/\dx t = const$ wird die Probe erhitzt, was dazu führt, dass die Dipole
+sich wieder statistisch ausrichten werden. Dieser Vorgang wird Dipolrelaxation genannt und bringt einen Depolarisationsstrom mit sich, der mit einem
+empfindlichen Strommessgerät gemessen werden kann. Zu Beginn steigt der Strom entsprechend Abbildung \ref{pic_i(T)} mit der Temperatur steil an, da $\tau$ schnell abnimmt, woraufhin er
+ein Maximum erreicht und wieder abnimmt, da nicht relaxierte Dipole weniger werden. Die Depolarisationsstromdichte $j(T)$ setzt sich zusammen aus dem
+Bruchteil $y$, der bei Polarisationstemperatur $T_p$ orientierten Dipole, dem Dipolmoment $p$ und der Zahl der pro Zeiteinheit relaxierenden Dipole
+$\dx N/\dx t$
+\begin{align}
+ j(T) = y(T_p)\, p\, \frac{\dx N}{\dx t}.
+ \label{eq_Depoldichte}
+\end{align}
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{../pics/i(T).png}
+\caption{Depolarisationsstromdichte}
+\label{pic_i(T)}
+\end{figure}
+Nach \eqref{eq_y(T)} ergibt sich 
+\begin{align}
+ y(T_p)p=\frac{p^2E}{3k_BT_p},
+\end{align}
+da es sich bei der Dipolrelaxation um einen thermischen Prozess handelt, ist $\dx N/\dx t$ proportional zur noch vorhandenen Zahl orientierter Dipole,
+wobei der Proportionalitätsfaktor die inverse Relaxationszeit ist
+\begin{align}
+ \frac{\dx N}{\dx t} = -\frac{N}{\tau(T)},
+\end{align}
+was eine Differentialgleichung darstellt, deren Lösung eine Exponentialfunktion darstellt und allsamt in \eqref{eq_Depoldichte} zu
+\begin{align}
+ j(T)=\frac{p^2E}{3k_BT_p}\frac{N_p}{\tau_0}\exp\left(-\frac{1}{b\tau_0}\int\limits_{T_0}^T \exp\left(\frac{W}{k_B\, T'}\right) \dx T'  \right) \exp\left(\frac{W}{k_B\, T}\right).
+ \label{eq_jlang}
+ \end{align}
+Für das Anfangsintervall ist $\exp(W/k_BT)$ klein, was zur Näherung führt
+\begin{align}
+ j(T) \approx \frac{p^2E}{3k_BT_p}\frac{N_p}{\tau_0}\exp\left(\frac{W}{k_B\, T}\right)
+\end{align}
+und in einem ($\ln j-1/T$)-Diagramm zu einer Geraden führt, aus deren Steigung sich die Aktivierungsenergie $W$ errechnen lässt. Größere Genauigkeit
+hierbei liefert die Betrachtung des gesamten Kurvenverlaufs. Die Polarisation $P$ ist dem Gesamtdipolmoment pro Volumeneinheit entsprechend und
+proportional zur Zahl orientierter Dipole. Beim Aufheizen gilt hier ebenfalls eine Relaxationsgleichung
+\begin{align}
+ \frac{\dx P}{\dx t} = - \frac{P(t)}{\tau(T(t))}.
+\end{align}
+Durch die Änderung der Polarisation wird ein äußerer Stromkreis $i$ erzeugt, der integriert führt zu
+\begin{align}
+ \int\limits_{t(T)}^\infty i(t)\dx t = \int\limits_{t(T)}^\infty F\frac{\dx P}{\dx t}\dx t = -FP(t),
+\end{align}
+wobei $P(\infty) = 0$. Durch einen linearen Zusammenhang von $t(T)$ und $T$ lässt sich nun schließlich $\tau$ schreiben als
+\begin{align}
+ \tau(T) = \frac{1}{b\,i(T)}\int\limits_T^\infty i(T')\dx T'
+\end{align}
+und mit \eqref{eq_tau(W)} die Aktivierungsenergie
+\begin{align}
+ W = k_BT \ln\left(\frac{1}{b\tau_0 i(T)}\int\limits_T^{T^*} i(T')\dx T'\right).
+\end{align}
+Durch Auftragen des $\ln$-Ausdrucks gegen $1/T$ kann $W$ aus dem Geradenanstieg errechnet werden, wobei $T^*$ eine beliebe, feste Temperatur ist,
+bei der $i(T^*)\approx 0$. $\tau_0$ lässt sich nun indirekt aus der Lage von $T_{max}$ aus Abbildung \ref{pic_i(T)} bestimmen. Durch Differenziation
+von \eqref{eq_jlang} ist eine Beziehung zwischen $T_{max}$ und $\tau(T_{max})$ herstellen. Durch Einsetzen des Wertepaars ($T_{max}$, $\tau(T_{max})$
+in \eqref{eq_tau(W)} lässt sich schließlich die charakteristische Relaxationszeit $\tau_0$ bestimmen.
+
+\section{Durchführung}
+Im Versuch sollen für mit Strontium dotiertes Kaliumbromid $i-T$-Kurven bei zwei verschiedenen Heizraten $b$ zwischen $2^\circ$C/min und $8^\circ$C/min
+aufgenommen werden. Der Temperaturverlauf der Relaxationszeit $\tau(T)$ soll angegeben werden, sowie die Aktivierungsenergie $W$ durch beide vorgestellten
+Methoden berechnet werden.
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{../pics/dipolAufbau.png}
+\caption{Schematischer Aufbau der Messapparatur}
+\label{pic_dipolaufbau}
+\end{figure}
+Die Probe befindet sich auf dem Boden des Probenbehälters. Da die Kristalle hygroskopisch sind, muss der Probenbehälter auf etwa 10$^{-2}$ bar
+evakuiert werden. Anschließend wird das elektrische Feld bei einer Spannung zwischen $U = 600-900$ V über 900 s bei $T_p=320$ K erzeugt. Nach der
+Polarisation wird die Probe mit flüssigem Stickstoff auf 210 K gekühlt. Das E-Feld wird abgeschaltet und der Kondensator entladen. Nun wird das
+Picoamperemeter angeschlossen und bei stabiler Anzeige der Aufheizprozess begonnen. Um konstante Heizraten zu erhalten ist es nötig den Temperaturverlauf
+ständig beobachten und die Heizleistung nach Tabelle \ref{tab_heizrate} angepasst werden.
+\begin{table}[H]
+ \begin{tabular}{c|c|c}
+ $b$ in $^\circ$C/min & $T$ in $^\circ$C & $I_{Heiz}$ in A\\
+ \hline
+ \multirow{8}{0mm}{2} &-50&0,8\\
+ &-18 & 0,9\\
+ &-3 & 1,0 \\
+ &+5 & 1,1 \\
+ &+33 & 1,2 \\
+ &+44 & 1,3 \\
+ &+52 & 1,4 \\
+ &+58 & 1,5 \\
+ \hline
+ \multirow{6}{0mm}{3} &-50&1,0\\
+ &-20&1,1\\
+ &+2&1,3\\
+ &+28&1,4\\
+ &+41&1,5\\
+ &+51&1,7\\
+ \hline
+ \multirow{6}{0mm}{4} &-50&1,5\\
+ &-30&1,6\\
+ &-7&1,7\\
+ &+25&2,0\\
+ &+44&2,2\\
+ &+65&2,5\\
+ \hline
+ \multirow{6}{0mm}{5} &-50&1,7\\
+ &-16&2,0\\
+ &+26&2,2\\
+ &+44&2,3\\
+ &+60&2,6\\ 
+ \end{tabular}
+\caption{Heizstrom für konsante Temperaturerhöhungen bei verschiedenen Heizraten}
+\label{tab_heizrate}
+\end{table}
+
+\section{Auswertung}
+
+\parskip 340pt
+\Large{Literatur}\\\\
+
+% ========================================
+%	Literaturverzeichnis
+% ========================================
+
+%\bibliographystyle{plainnat}			% Bibliographie-Style auswählen
+%\bibliography{BIBDATEI}			% Literaturverzeichnis
+
+% ========================================
+%	Das Dokument endent
+% ========================================
+
+\end{document}

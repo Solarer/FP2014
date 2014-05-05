@@ -140,7 +140,7 @@ Der Zusammenhang zwischen $\nu$ und $B_r$ wird zweimal mit einem linearen Ansatz
 getestet und die Koeffizienten $a,b,c$ und $d$ durch GNUplot bestimmt. In Abbildung \ref{pic_nuB} sind die Messwerte dargestellt, sowie die eben
 genannten linearen Ansätze als Fitgeraden.
 \begin{figure}[h]
-\includegraphics[width=0.8\textwidth]{pics/v21B-nu.pdf}
+\includegraphics[width=0.8\textwidth]{../pics/v21B-nu.pdf}
 \caption{Zusammenhang zwischen Resonanzfrequenz und Magnetfeld}
 \label{pic_nuB}
 \end{figure}
@@ -169,7 +169,7 @@ Atoms $g_F$ nach Gleichung \eqref{eq_nuB.g_F} errechnen, wo der Proportionalitä
 \begin{equation}
  g_{F,1} = 0,511(1 \pm 0,67\%) \hspace{1cm}\text{und}\hspace{1cm}g_{F,2} = 0,339(1\pm 0,7\%) 
 \end{equation}
-Desweiteren lassen sich aus der Elektronenkonfiguration von Rubidium die Drehimpulse bestimmen, sowie der Landé-Faktor der Elektronenhülle $g_J$.
+Desweiteren lassen sich aus der Elektronenkonfiguration von Rubidium \cite{EKonf} die Drehimpulse bestimmen, sowie der Landé-Faktor der Elektronenhülle $g_J$.
 Die Drehimpulse sind hierbei
 \begin{equation}
  L = 0 , \qquad S=\frac12 , \qquad J = L+S = \frac12, \qquad F = I+J= I + \frac12,
@@ -195,17 +195,38 @@ Durch das Auftauchen von zwei Resonanzfrequenzen bei denen die Transparenz der P
 Isotope innerhalb der Probe handelt. Das Verhältnis ihres Vorkommens $N_i$ hängt mit dem Verhältnis der Transparenzaufhebung $A_i$ direkt zusammen
 Die Bestimmung der Amplituden geschieht durch Ablesen am Oszilloskop in Abbildung \ref{pic_verh}
 \begin{figure}[h]
-\includegraphics[width=0.8\textwidth]{pics/v21Verh.jpg}
+\includegraphics[width=0.8\textwidth]{../pics/v21Verh.jpg}
 \caption{Typische Aufnahme am Oszilloskop, hier bei $\nu$ = 100 kHz}
 \label{pic_verh}
 \end{figure}\begin{equation}
  \frac{N_1}{N_2} = \frac{A_1}{A_2} = \frac{5,5}{2,5}= 2,2.
 \end{equation}
 
-
 \section{Diskussion}
+\subsection{Erdmagnetfeld}
+Die ermittelten Werte für die Vertikal- und Horizontalkomponente des Erdmagnetfelds sind anfolgend mit den Literaturwerten \cite{ErdB} verglichen. Die erheblichen
+Fehler sind wohl auf ein ungenau Ausrichtung der Apparatur in Nord-Süd-Richtung zurückzuführen
+\begin{equation}
+ \frac{B_{\text{vert}}}{B_{\text{vert,Lit}}} = 70\% \hspace{3cm} \frac{B_{\text{hor}}}{B_{\text{hor,Lit}}} = 41\%
+\end{equation}
+\subsection{Eigenschaften von Rubidium}
+Die erittelten Werte für die Landé-Faktoren $g_F$ haben zu den zwei Kernspins $I_1$ und $I_2$ geführt und werden anhand einer Nuklidkarte \cite{Spin} Rubidiumisotope
+zugewiesen
+\begin{equation}
+ I_1 \approx \frac32 \rightarrow\, ^{87}\text{Rb} \hspace{2cm} I_2 \approx \frac52 \rightarrow\, ^{85}\text{Rb}.
+\end{equation}
+Das Verhältnis der Rb-Isotope \cite{Spin} wird mit dem Verhältnis der Amplituden verglichen, was zu folgender Übereinstimmung führt
+\begin{equation}
+ \frac{A_1}{A_2}\, /\, \frac{N_{^{85}\text{Rb}}}{N_{^{87}\text{Rb}}} = 2,2 \,/\, \frac{72,17\%}{27,83\%} =85\% .
+\end{equation}
 
 
+
+\begin{thebibliography}{xxxxxxxxxxx}
+ \bibitem[PSE]{EKonf}Periodensystem der Elemente\\ \href{http://www.periodensystem.info/elemente/rubidium/}{periodensystem.info/elemente/rubidium/}
+ \bibitem[Chemie.de]{ErdB}Form und Stärke des Erdmagnetfelds\\ \href{http://www.chemie.de/lexikon/Erdmagnetfeld.html#Form_und_St.C3.A4rke_des_Erdmagnetfeldes}{chemie.de/lexikon/Erdmagnetfeld}
+ \bibitem[KAERI]{Spin}Nuklidkarte des \textit{Korea Atomic Energy Research Institute}\\ \href{http://atom.kaeri.re.kr/}{atom.kaeri.re.kr/}
+\end{thebibliography}
 
 
 
