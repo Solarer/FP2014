@@ -155,9 +155,10 @@ durch ein Gitter bzw. einen Spalt berechnen.
 \section{Auswertung}
 \subsection{Stabilitätsbedingungen}
 Zunächst werden die Stabilitätsbedingungen überprüft. Folgenden Tabellen können die Aufgenommenen Wertepaare (Abstand/Stromstärke) entnommen werden, wobei die Werte aus Tabelle \ref{tab_kk} mit zwei Konkavspiegeln und die Werte aus Tabelle \ref{tab_kf} mit einem Konkav- und einem Planspiegel aufgenommen wurden.
-\begin{table}[htbp]
+\begin{table}[H]
 	% minipage mit (Blind-)Text
 	\begin{minipage}[t]{0.45\textwidth} 
+	\renewcommand{\arraystretch}{0.9}
 	\begin{tabular}[t]{c|c}
 	cm & nA\\ \hline
 	50,4 &   32,0\\
@@ -178,7 +179,7 @@ Zunächst werden die Stabilitätsbedingungen überprüft. Folgenden Tabellen kö
  	173     &2,0\\
  	176     &1,0
 	\end{tabular}
-	\caption{Messwerte für Spiegel $r_1=1,4 r_2=1,4$}
+	\caption{Messwerte für Spiegel\newline $r_1=1,4$ $r_2=1,4$}
 	\label{tab_kk}
 	\end{minipage}
 	\begin{minipage}[t]{0.45\textwidth} 
@@ -192,19 +193,20 @@ Zunächst werden die Stabilitätsbedingungen überprüft. Folgenden Tabellen kö
 	59,5&    3,5\\
 	63,0&    4,0
 	\end{tabular}
-	\caption{Messwerte für Spiegel $r_1=1,4 r_2=1,0$}
+	\renewcommand{\arraystretch}{1}
+	\caption{Messwerte für Spiegel \newline $r_1=1,4$  $r_2=1,0$}
 	\label{tab_kf}
 	\end{minipage}
 \end{table}
 
-Eingetragen in ein Diagramm ergibt sich folgendes Bild:
+Eingetragen in ein Diagramm ergibt sich aus den Messwerten folgendes Bild:
 \begin{figure}[htbp]
 \includegraphics[scale=1]{../gnu/Abstand.pdf}
 \caption{Beide Messreihen in ein Diagramm eingetragen}
 \label{gra_abstand}
 \end{figure}
 
-Wie in dem Graphen zu erkennen ist, lässt sich der Laserstrahl bei zwei gleich gekrümmten Spiegeln deutlich länger aufrecht erhalten, als bei zwei Spiegeln, die unterschiedlich stark gekrümmt sind. Als Referenz dazu die theoretisch berechneten Stabilitätsbedingungen entsprechend Gleichung \eqref{eq_ResBedingung}:
+Wie in dem Graphen zu erkennen ist, lässt sich der Laserstrahl bei zwei gleich gekrümmten Spiegeln deutlich länger aufrecht erhalten, als bei zwei Spiegeln, die unterschiedlich stark gekrümmt sind. Als Referenz dazu die theoretisch berechneten Stabilitätsbedingungen entsprechend Gleichung \eqref{eq_ResBedingung} geplottet:
 \begin{figure}[h!]
 \includegraphics[scale=1]{../gnu/stabilitaetsparameter.pdf}
 \caption{Theoretische Stabilitätbedingungen}
@@ -216,10 +218,10 @@ Der Graph der Vorhersage stimmt sehr gut mit den tatsächlich gemessenen Resonat
 \subsection{Longitudinale Mode}
 Durch das Einbringen eines schmalen Drahtes in den Resonator, wird die TEM-00 Mode absorbiert und es wird die deutlich schwächere TEM-01 Mode sichtbar. Mit eingeführtem Draht wurden beim Durchlaufen des Strahls mit einer Photodiode folgende Werte aufgenommen:
 
-\begin{table}[htbp]
-	% minipage mit (Blind-)Text
-	\begin{minipage}[t]{0.45\textwidth} 
-	\begin{tabular}[t]{c|c}
+\begin{table}[H]
+
+\begin{minipage}[t]{0.45\textwidth} 
+\begin{tabular}[t]{c|c}
 	cm & nA\\ \hline
 6.0    & 29 \\
 5.0    & 55\\
@@ -233,13 +235,11 @@ Durch das Einbringen eines schmalen Drahtes in den Resonator, wird die TEM-00 Mo
 -0.5   & 177\\
 -1.0   & 136\\
 -2.0   & 96\\
-
-	\end{tabular}
-
-	\end{minipage}
-	\begin{minipage}[t]{0.45\textwidth} 
-	\begin{tabular}[t]{c|c}
-	Fortsetzung\\ \hline
+\end{tabular}
+\end{minipage}
+\begin{minipage}[t]{0.45\textwidth} 
+\begin{tabular}[t]{c|c}
+Fortsetzung\\ \hline
 -3.0   & 31\\
 -3.5   & 11\\
 -5.5   & 17\\
@@ -251,18 +251,24 @@ Durch das Einbringen eines schmalen Drahtes in den Resonator, wird die TEM-00 Mo
 -10.0  & 28\\
 -11.0  & 13\\
 -12.0  & 5
-	\end{tabular}
-	\end{minipage}
+\end{tabular}
+\end{minipage}
 \caption{Messwerte bei eingeführtem Draht}
 \end{table}
 
 Eingetragen in ein Diagramm ergeben die Messwerte folgendes Bild:
-
-\begin{figure}[htbp]
-\includegraphics[scale=1]{../gnu/Draht.pdf}
+\begin{figure}[H]
+\includegraphics[scale=0.8]{../gnu/Draht.pdf}
 \caption{Stromstärke gegen die relative X-Koordinate aufgetragen - zwei Gaußkurven wurden an die Messwerte gefittet}
+\label{pic_mode}
+\end{figure}
 
-An die beiden Intensitätsmaxima wurde jeweils eine Gaußfunktion vom Typ $f(x)=\frac{A}{\sqrt{2\pi \cdot \sigma ^2}} \cdot e^{-\frac{(x-\mu )^2}{(2\sigma^2)}}$ gefittet. Es ergaben sich folgende Parameter:
+An die beiden Intensitätsmaxima wurde jeweils eine Gaußfunktion vom Typ 
+\begin{align*}
+f(x)=\frac{A}{\sqrt{2\pi \cdot \sigma ^2}} \cdot e^{-\frac{(x-\mu )^2}{(2\sigma^2)}}
+\end{align*}
+gefittet.\\
+Es ergaben sich folgende Parameter:
 \begin{align*}
 A_1&= 220.3 		\pm 	8.8       	\\
 \mu_1 &=-8.05	\pm	 	0.081    	\\
@@ -272,7 +278,6 @@ A_2&=1234.27          \pm 47.61	\\
 \mu_2 &=0.978204         \pm 0.09369	\\
 \sigma_2&=2.13489         \pm 0.09393
 \end{align*}
-\end{figure}
 
 \subsection{Polarisation}
 Zuletzt soll die Polarisation des Laserlichtes bestimmt werden. Hierzu wird ein Polfilter in den Strahl gehalten und die Intensität des durchdringenden Laserstrahls in Abhängigkeit vom Polarisationswinkel geplottet.\\
@@ -289,9 +294,16 @@ A&=(36.0 \pm 0.19)\text{ nA} \\
 \phi&=(-44.05 \pm 0.016) ^\circ
 \end{align*}
 
+\section{Auswertung}
+Aufbau und Justage des Lasers sind erfolgreich verlaufen. Es gelang, den Laser in Betrieb zu nehmen und die Graphen sehen erwartungsgemäß aus. Wie zu erwarten war, sind die theoretischen Werte aus den Stabilitätsbedingungen nicht zu erreichen, da der Laser als hochempfindliches Gerät schon durch kleine Materialfehler und Unebenheiten im Aufbau negativ beeinflusst wird.\\
+
+Die longitudinale Mode ist in Abbildung \ref{pic_mode} sehr gut durch die Ausbildung zweier Gauß-Funktionen zu erkennen. Warum das erste Intensitätsmaximum deutlich kleiner als das zweite ist, wird nicht ganz klar, jedoch kann dies an einer Vielzahl von Einflüssen liegen. Am wahrscheinlichsten ist, dass der Laser die Laserbank nicht ganz mittig durchquert hat und am linken Rand von der Apparatur einiges an Intensität absorbiert wurde. Der gaußförmige Verlauf ist dennoch gut zu erkennen.\\
+
+Die Polarisations-Messreihe passt sehr gut zu der theoretischen Vorhersage eines Sinus. Die Fehler von Frequenz und Phase betragen ebenfalls nur einige Prozent und sind damit äußerst präzise.\\
 
 \parskip 340pt
 \Large{Literatur}\\\\
+Versuchsanleitung V61 (TU Dortmund, 03.10.11)
 
 % ========================================
 %	Literaturverzeichnis
