@@ -1,12 +1,12 @@
 #-----Beschriftungen-----#
 set encoding iso_8859_1
 
-#set terminal pdf
-#set output 'Polarisation.pdf'
+set terminal pdfcairo enhanced
+set output 'Polarisation.pdf'
 
 set title ""
 set xlabel "Polarisation [°]"
-set ylabel "Strom [micro Ampere]"
+set ylabel "Strom [{/Symbol m}A]"
 
 set key top right
 
@@ -34,7 +34,7 @@ r4=1.0
 
 
 #-----Fitfunktion-----#
-f(x)=a*sin(b*x+c)+d
+f(x)=a*sin(b*x+c)+a
 g(x)=c*(x)+d
 a=30; b=0.01
 c=-40; d=40
@@ -45,7 +45,7 @@ p(x)=(1.57**2*x)/(x+17.2)**2
 g(x)=1/(r3*r4)*x**2-x*((r3+r4)/(r3*r4))+1
 
 #-----Fitting-----#
-fit f(x) "data" index 3 using 1:2 via a,b,c,d
+fit f(x) "data" index 3 using 1:2 via a,b,c
 #fit g(x) "daten" index 3 using ($4):($2+3.5) via c,d
 
 #fit f(x) "daten" index 1 using (($2)/1000):($1) via a,b
@@ -61,7 +61,7 @@ fit f(x) "data" index 3 using 1:2 via a,b,c,d
 #plot "data" index 1 using 1:2 title "X-Koordinate gegen Strom"
 
 #Polarisation
-plot "data" index 3 using 1:2 pt 2 title "Messpunkte", f(x) title "Fit: Sinus(x)" lc rgb "blue"
+plot "data" index 3 using 1:2 pt 2 title "Messpunkte", f(x) title "gefitteter Sinus" lc rgb "blue"
 
 ####Spiegelabstand
 #konkav-konkav
