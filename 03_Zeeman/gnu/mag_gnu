@@ -1,0 +1,75 @@
+#-----Beschriftungen-----#
+set encoding iso_8859_1
+
+set terminal pdf
+set output 'Magnet.pdf'
+
+set title ""
+set xlabel "Strom [A]"
+set ylabel "Magnetfeld [mT]"
+
+set key top left
+
+
+#-----Formatierung-----#
+set grid
+#set xrange [0:14.5]
+#set yrange [0:2100]
+#set logscale x
+#set logscale y
+
+
+
+#-----Konstanten definieren-----#
+pi=3.1415926
+c0=299792458
+
+
+#-----Rechenfunktionen-----#
+
+
+#-----Fitfunktion-----#
+
+f(x)=a*x
+#f(x)=(1-x/r1)*(1-x/r2)
+#f(x)=1/(r1*r2)*x**2-x*((r1+r2)/(r1*r2))+1
+#g(x)=1/(r3*r4)*x**2-x*((r3+r4)/(r3*r4))+1
+
+#-----Fitting-----#
+#fit f(x) "data" index 3 using 1:2 via a,b 
+fit f(x) "daten" index 0 using 1:2 via a
+
+#fit f(x) "daten" index 1 using (($2)/1000):($1) via a,b
+#fit f(x) "daten" index 2 using (($2)/1000):($1) via a,b
+
+#fit p(x) "daten" index 0 using ($1/($2/1000)):($1*($2/1000)) via a,b,c
+
+#-----Plot-----#
+# BFeld
+plot "daten" index 0 using 1:2 title "Strom gegen B-Feld",f(x) title "Ausgleichsgerade"
+
+#Draht
+#plot "data" index 1 using 1:2 title "X-Koordinate gegen Strom"
+
+#Polarisation
+#plot "data" index 2 using 1:2 title "Grad° gegen Strom"
+
+#plot "data" index 4 using 1:2 pt 12 lc rgb "blue" title "konkav-konkav", "data" index 5 using 1:2 pt 12 lc rgb "red" title "konkav-flach"
+
+
+
+#plot f(x) title "r1=1,4m r2=1,4m" linecolor rgb "red", g(x) title "r1=1,4m r2=1,0m" linecolor rgb "green", 1 title "g1*g2=1" linecolor rgb "black"
+
+#-----Sonderkram-----#
+#set arrow from 0,-26 to 1.6,-26 lc 2 lw 3 front nohead
+
+
+
+#-----Zurücksetzen-----#
+
+unset logscale x
+unset logscale y
+
+set terminal wxt
+replot
+pause -1
