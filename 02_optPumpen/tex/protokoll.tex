@@ -92,7 +92,20 @@ oder
 |\vec{\mu_L}|&=g_J \mu_B \sqrt{L(L+1)}\\
 |\vec{\mu_S}|&=g_J \mu_B \sqrt{S(S+1)}
 \end{align*}
-mit $g_S = 2,00232$ dem Lande-Faktor des freien Elektrons. Das Gesamtmoment $\vec{\mu_J} = \vec{\mu_L}+\vec{\mu_S}$ führt nun eine Präzessionsbewegung um die $\vec{J}$-Richtung aus. Dabei mittelt sich die senkrechte Komponente von $\vec{\mu_B}$ heraus und wegen der Richtungsquantelung kann die Parallelkomponente nur ganzzahlige Vielfache $M_J$ annehmen:
+mit $g_S = 2,00232$ dem Lande-Faktor des freien Elektrons.
+Aus diesen vier Gleichungen folgt über den Kosinussatz mit:
+\begin{align}
+g_J = \frac{3,0023 J(J+1)+1,0023[S(S+1)-L(L+1)]}{2J(J+1)}
+\label{eq_gj}
+\end{align}
+und weiter: 
+\begin{align}
+g_F \approx g_J \frac{F(F+1)+J(J1)-I(I+1)}{2F(F+1)}
+\label{eq_gF}
+\end{align}
+eine Möglichkeit den theoretischen Wert von $g_J$ zu bestimmen.\\
+ 
+Das Gesamtmoment $\vec{\mu_J} = \vec{\mu_L}+\vec{\mu_S}$ führt nun eine Präzessionsbewegung um die $\vec{J}$-Richtung aus. Dabei mittelt sich die senkrechte Komponente von $\vec{\mu_B}$ heraus und wegen der Richtungsquantelung kann die Parallelkomponente nur ganzzahlige Vielfache $M_J$ annehmen:
 \begin{align}
 U_{mag}= M_Jg_J \mu_B B
 \end{align}
@@ -105,7 +118,7 @@ Hat das Atom einen von Null verschiedenen Kernspin I, so koppeln I und J zum Ges
 \end{align*}
 und erzeugen eine weitere Aufspaltung der Energieniveaus, wie man in Grafik \ref{} sehen kann:
 \begin{figure}[h]
-\includegraphics[scale=1]{/pics/zeehyper.jpg}
+\includegraphics[scale=1]{../pics/zeehyper.pdf}
 \caption{Hyperfeinstruktur und Zeeman-Aufspaltung eines Atoms mit $I=3/2$}
 \end{figure}
 Auch hier findet sich wieder ein Lande-Faktor $g_F$:
@@ -120,34 +133,36 @@ g_F\approx g_J \frac{F(F+1)+J(J+1)-I(I+1)}{2F(F+1)}
 \subsection{Optisches Pumpen}
 Ist das Atom im thermischen Gleichgewicht, so wird man keine Übergänge von Elektronen auf den Schalen erkennen können. Besetzt man die Schalen jedoch anders, so können Elektronen spontan oder durch Anregung ihre Schale wechseln. Dies erreicht man durch das Einstrahlen von Lichtquanten mit der passenden Energie (siehe Gleichung \eqref{eq_quant}). Da die Energieniveaus jedoch auch in den Spins aufspalten, muss nicht nur auf die Energie, sondern auch auf die richtige Polarisation des Lichtes geachtet werden, damit der Drehimpuls beim Übergang erhalten bleibt. Beispielhaft ist dies in Abbildung \ref{pic_uebergang} erkennbar:
 \begin{figure}[h]
-\includegraphics[scale=1]{./pics/uebergaenge.jpg}
+\includegraphics[scale=.6]{../pics/uebergaenge.pdf}
 \caption{Zeeman-Aufspaltung mit möglichen Übergängen und ihren Drehimpulsbeiträgen M}
 \label{pic_uebergang}
 \end{figure}
 Es sind also mit $\Delta M_J =0,\pm 1$ insgesamt vier Strahlungsübergänge möglich, die alle verschiedene Energien und Polarisationen haben. Ein  $\sigma^+$-Übergang (mit  $M_J = +1$) entspricht rechtszirkular-polarisiertem Licht, das heißt, der Spin der Lichtquanten steht antiparallel zu ihrer Ausbreitungsrichtung; während beim $\sigma^-$-Übergang (  $M_J = -1$) Spin und Ausbreitungsrichtung parallel sind. Bei den $\pi$-Übergängen ($M_J$ = 0) wird
 hingegen linear polarisiertes Licht emittiert und absorbiert. Die Polarisationsrichtung ist dabei parallel zu $\vec{B}$. Wegen des Dipolcharakters des Strahlungsfeldes erfolgt bei $\pi$-Übergängen keine Abstrahlung parallel zu $\vec{B}$; senkrecht zu $\vec{B}$ ist die Strahlungsintensität maximal. Dagegen beobachtet man das bei den $\sigma$-Übergängen emittierte zirkular-polarisierte Licht ausschließlich in Richtung von $\vec{B}$. In allen dazu senkrechten Richtungen erscheint es linear polarisiert.\\
 
-Sind nun Alkali-Atome in einem Dampf im thermischen Gleichgewicht, so ist das $M_J=+\frac{1}{2}$ Niveau schwächer besetzt, als das energieärmere  $M_J=-\frac{1}{2}$ Niveau. Strahlt man nun rechtszirkular-polarisiertes $D_1$-Licht ein, so werden im Dampf Übergänge von $^2S_{\frac{1}{2}}M_J=-\frac{1}{2}$ nach $^2P_{\frac{1}{2}}M_J=+\frac{1}{2}$ induziert und der angeregte Zustand geht durch spontane Emission nach ca. $10^{-8}$s wieder in beide S-Grundzustände über. Wegen $\DeltaM_J=1$ werden aus dem $^2S_{\frac{1}{2}}M_J=+\frac{1}{2}$ Zustand jedoch keine Elektronen mehr durch Quanten angeregt, so dass mit der Zeit alle Elektronen der $^2S_{\frac{1}{2}}$-Zustände von $M_J=-\frac{1}{2}$ nach $M_J=\frac{1}{2}$ gepumpt werden. Je leerer das Niveau wird, desto weniger Quanten können absorbiert werden und desto durchsichtiger wird der Stoff für Licht der entsprechenden Wellenlänge und Polarisation.\\
+Sind nun Alkali-Atome in einem Dampf im thermischen Gleichgewicht, so ist das $M_J=+\frac{1}{2}$ Niveau schwächer besetzt, als das energieärmere  $M_J=-\frac{1}{2}$ Niveau.
+Strahlt man nun rechtszirkular-polarisiertes $D_1$-Licht ein, so werden im Dampf Übergänge von $^2S_{\frac{1}{2}}M_J=-\frac{1}{2}$ nach $^2P_{\frac{1}{2}}M_J=+\frac{1}{2}$ induziert und der angeregte Zustand geht durch spontane Emission nach ca. $10^{-8}$s wieder in beide S-Grundzustände über.
+Wegen $\Delta M_J=1$ werden aus dem $^2S_{\frac{1}{2}}M_J=+\frac{1}{2}$ Zustand jedoch keine Elektronen mehr durch Quanten angeregt, so dass mit der Zeit alle Elektronen der $^2S_{\frac{1}{2}}$-Zustände von $M_J=-\frac{1}{2}$ nach $M_J=\frac{1}{2}$ gepumpt werden.
+Je leerer das Niveau wird, desto weniger Quanten können absorbiert werden und desto durchsichtiger wird der Stoff für Licht der entsprechenden Wellenlänge und Polarisation.\\
 
 Zwar kann theoretisch auch durch spontane Emission das untere Niveau wieder gefüllt werden, allerdings zeigt die Wahrscheinlichkeit für spontane Emission eine-$\nu^3$-Abhängigkeit, so dass für Übergänge im Zeeman-Bereich eine $10^{25}$ geringere Wahrscheinlichkeit für einen spontanen Übergang vorliegt. Diese Übergänge sind daher im Vergleich zu induzierter Emission hier vernachlässigbar.
 
 \section{Aufbau und Durchführung}
+\label{sec_durch}
 Die Apparatur besteht im wesentlichen aus einer beheizten Dampfzelle und einer Spektrallampe mit einer optischen Schiene, auf der Filter und Linsen angebracht sind. Die Linsen werden so ausgerichtet, dass die Probe durchstrahlt wird und das Licht anschließend auf eine Photodiode gebündelt wird. Den genauen Aufbau kann man Abbildung \ref{pic_aufbau} entnehmen
-\begin{figure}
-\includegraphics[scale=1]{../pics/aufbau.jpg}
+\begin{figure}[h]
+\includegraphics[scale=1]{../pics/aufbau.pdf}
 \caption{Die im Versuch benutzte Apparatur}
 \label{pic_aufbau}
 \end{figure}
 Hochfrequenzfeld zum Pumpen und der von der Diode gemessene Strom werden dann an einen XY-Oszilloskop angeschlossen, wo Resonanzstellen sichtbar werden, wenn die richtige Frequenz getroffen wurde.\\
 
-Vor der eigentlichen Messung muss jedoch zunächst das Erd
+Vor der eigentlichen Messung muss jedoch zunächst das Erdmagnetfeld kompensiert werden. Dazu wird der Aufbau so gedreht, dass er parallel zur Horizontalkomponente ausgerichtet ist. Diese Komponente hat dann keinen Einfluss mehr auf die Durchführung.\\
+Um auch die senkrechte Komponente zu kompensieren, wird mit einer Helmholzspule ein Gegenfeld mit der gleichen Stärke induziert, welches antiparallel zum Erdmagnetfeld steht. Über die verwendete Stromstärke kann so zudem das Erdmagnetfeld sehr genau bestimmt werden.\\
 
+Anschließend soll der Landé-Faktor des Atoms mittels Gleichung \eqref{eq_nuB.g_F} und Gleichung \eqref{eq_gj} bestimmt werden.\\
 
-
-
-
-\section{Durchführung}
-\label{sec_durch}
+Mit den vorheringen Ergebnissen wird es dann möglich sein, den Kernspin der beiden Isotope zu bestimmen und abschließend das Verhältnis der beiden Isotope im Gemisch zu ermitteln.
 
 \section{Auswertung}
 \subsection{Vertikalkomponente des Erdmagnetfelds}
@@ -265,7 +280,7 @@ was nach \eqref{eq_gj} zu einem Faktor führt zu
 \end{equation}
 
 \subsection{Kernspin $I$ der Rubidiumisotope}
-Mit den Ergebnissen aus \ref{sec_lande} lassen sich nun nach \eqref{eq_gF(I)} die Kernspins der auftretenden Rubidiumisotope errechnen. Die etwas
+Mit den Ergebnissen aus \ref{sec_lande} lassen sich nun nach \eqref{eq_gF} die Kernspins der auftretenden Rubidiumisotope errechnen. Die etwas
 längliche Formel ergibt umgestellt nach dem Kernspin
 \begin{equation}
  I_k = \frac{1}{4\frac{g_{F,k}}{g_J}} \left[\left(1-4\frac{g_{F,k}}{g_J}\right) + \sqrt{\left(-1+4\frac{g_{F,k}}{g_J}\right)^2-12\frac{g_{F,k}}{g_J}\left(\frac{g_{F,k}}{g_J}-1\right)}\right]
