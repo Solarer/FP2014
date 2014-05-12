@@ -4,12 +4,13 @@
 
 \input{longheader.tex}
 \usepackage{multirow}
+\usepackage{color}
 
 % ========================================
 %	Angaben für das Titelblatt
 % ========================================
 
-\title{Versuch 48 - Dipolrelaxation in Ionenkristallen\\				% Titel des Versuchs 
+\title{Versuch 28 - Elektronenspinresonanz\\% Titel des Versuchs 
 \large TU Dortmund, Fakultät Physik\\ 
 \normalsize Fortgeschrittenen-Praktikum}
 
@@ -19,7 +20,7 @@
 Dimitrios Skodras\\					% Name Praktikumspartner B
 {\small \href{dimitrios.skodras@tu-dortmund.de}{dimitrios.skodras@tu-dortmund.de}}		% Erzeugt interaktiven einen Link
 }
-\date{16. April 2014}				% Das Datum der Versuchsdurchführung
+\date{30. April 2014}				% Das Datum der Versuchsdurchführung
 
 % ========================================
 %	Das Dokument beginnt
@@ -61,126 +62,215 @@ Dimitrios Skodras\\					% Name Praktikumspartner B
 
 \section{Theorie}
 \setcounter{page}{1}
-\subsection{Ionengitter}
-Ein einwertiger Ionenkristall (CsJ) erfährt einen Einbau eines zweiwertigen Kations (Sr$^{++}$), wodurch ein permanenter Dipol entsteht. Denn aufgrund
-der Ladungserhaltung entsteht mit dem zweiwertigen Kation eine Leerstelle, die gemeinsam entsprechend Abbildung \ref{pic_dipGitt} den Dipol bilden.
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{../pics/dipGitt.png}
-\caption{Entstehung eines Dipols im Ionengitter}
-\label{pic_dipGitt}
-\end{figure}
-Wegen der diskreten Gitterpunkte sind nur diskrete Dipolausrichtung möglich, wobei unterhalb von 500 $^\circ$C sich ausschließlich die Leerstellen bewegen.
-Die Potentialschwelle die zu dieser Leerstellendiffusion die durch den periodischen Verlauf des Gitterpotentials festgelegt ist, muss überwunden werden.
-Damit ist eine Aktivierungsenergie $W$ verbunden. Der Anteil der Dipole, die diese Energie mittels der thermischen Bewegung aufbringt ist
-verteilt nach der Boltzmann-Statistik $\exp(W/k_B\,T)$, mit $k_B$ als Boltzmann-Konstante. Die mittlere Zeit einer Dipolumorientierung wird Relaxationszeit
-$\tau$ genannt, die direkt proportional zur Boltzmann-Statistik sein muss
-\begin{align}
- \tau(T) = \tau_0 \exp\left(\frac{W}{k_B\, T}\right),
- \label{eq_tau(W)}
-\end{align}
-mit $\tau_0$ als charakteristische Relaxationszeit, die bei unendlicher Temperatur bestehen würde. Im Versuch sollen die Aktivierungsenergie und die
-charakteristische Relaxationszeit ermittelt werden.
-
-\subsection{Messverfahren}
-Die untersuchte mit Strontium dotierte Kaliumbromid-Probe ist kreisförmig und etwa 3-5 mm dick. Sie dient als Dielektrikum eines Plattenkondensators,
-an den eine Gleichspannung angeschlossen wird, sodass innerhalb der Probe ein elektrisches Feld $E$ wirkt. Die statistisch ausgerichteten 
-Dipole in der Probe richten sich entsprechend der Feldrichtung aus. Die Ausrichtung wird jedoch wird jedoch durch die thermische Bewegung der 
-Gitterbausteine gestört, sodass nur ein Bruchteil $y$ der Dipole in Feldrichtung zeigt. Dieser Anteil wird durch die Langevin-Funktion $L(x)$
-beschrieben
-\begin{align}
- y = L(x) = \cot(x) - \frac{1}{x} \hspace{1cm}\text{mit }x=\frac{pE}{k_B T},
-\end{align}
-die für den Fall $pE\ll k_B T$ wird zu 
-\begin{align}
- y = \frac{pE}{3k_B T}.
- \label{eq_y(T)}
-\end{align}
-Um tatsächlich diesen Bruchteil zu erhalten, muss das Feld lange gegenüber der Relaxationszeit eingeschaltet sein. Bei eingeschaltetem E-Feld wird
-die Probe mit flüssigem Stickstoff schnell auf eine Temperatur $T_0$ gebracht. Wegen des exponentiellen Zusammenhangs, ist es möglich, diesen
-Polarisationszustand konstant zu halten. Nach Abschalten des Felds, wird der Kondensator kurzgeschlossen, was den Ladungsteil bei tiefen Temperaturen
-in Form von Elektronen verschwinden lässt. Mit konstanter Heizrate $b=\dx T/\dx t = const$ wird die Probe erhitzt, was dazu führt, dass die Dipole
-sich wieder statistisch ausrichten werden. Dieser Vorgang wird Dipolrelaxation genannt und bringt einen Depolarisationsstrom mit sich, der mit einem
-empfindlichen Strommessgerät gemessen werden kann. Zu Beginn steigt der Strom entsprechend Abbildung \ref{pic_i(T)} mit der Temperatur steil an, da $\tau$ schnell abnimmt, woraufhin er
-ein Maximum erreicht und wieder abnimmt, da nicht relaxierte Dipole weniger werden. Die Depolarisationsstromdichte $j(T)$ setzt sich zusammen aus dem
-Bruchteil $y$, der bei Polarisationstemperatur $T_p$ orientierten Dipole, dem Dipolmoment $p$ und der Zahl der pro Zeiteinheit relaxierenden Dipole
-$\dx N/\dx t$
-\begin{align}
- j(T) = y(T_p)\, p\, \frac{\dx N}{\dx t}.
- \label{eq_Depoldichte}
-\end{align}
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{../pics/i(T).png}
-\caption{Depolarisationsstromdichte}
-\label{pic_i(T)}
-\end{figure}
-Nach \eqref{eq_y(T)} ergibt sich 
-\begin{align}
- y(T_p)p=\frac{p^2E}{3k_BT_p},
-\end{align}
-da es sich bei der Dipolrelaxation um einen thermischen Prozess handelt, ist $\dx N/\dx t$ proportional zur noch vorhandenen Zahl orientierter Dipole,
-wobei der Proportionalitätsfaktor die inverse Relaxationszeit ist
-\begin{align}
- \frac{\dx N}{\dx t} = -\frac{N}{\tau(T)},
-\end{align}
-was eine Differentialgleichung darstellt, deren Lösung eine Exponentialfunktion darstellt und allsamt in \eqref{eq_Depoldichte} zu
-\begin{align}
- j(T)=\frac{p^2E}{3k_BT_p}\frac{N_p}{\tau_0}\exp\left(-\frac{1}{b\tau_0}\int\limits_{T_0}^T \exp\left(\frac{W}{k_B\, T'}\right) \dx T'  \right) \exp\left(\frac{W}{k_B\, T}\right).
- \label{eq_jlang}
- \end{align}
-Für das Anfangsintervall ist $\exp(W/k_BT)$ klein, was zur Näherung führt
-\begin{align}
- j(T) \approx \frac{p^2E}{3k_BT_p}\frac{N_p}{\tau_0}\exp\left(\frac{W}{k_B\, T}\right)
-\end{align}
-und in einem ($\ln j-1/T$)-Diagramm zu einer Geraden führt, aus deren Steigung sich die Aktivierungsenergie $W$ errechnen lässt. Größere Genauigkeit
-hierbei liefert die Betrachtung des gesamten Kurvenverlaufs. Die Polarisation $P$ ist dem Gesamtdipolmoment pro Volumeneinheit entsprechend und
-proportional zur Zahl orientierter Dipole. Beim Aufheizen gilt hier ebenfalls eine Relaxationsgleichung
-\begin{align}
- \frac{\dx P}{\dx t} = - \frac{P(t)}{\tau(T(t))}.
-\end{align}
-Durch die Änderung der Polarisation wird ein äußerer Stromkreis $i$ erzeugt, der integriert führt zu
-\begin{align}
- \int\limits_{t(T)}^\infty i(t)\dx t = \int\limits_{t(T)}^\infty F\frac{\dx P}{\dx t}\dx t = -FP(t),
-\end{align}
-wobei $P(\infty) = 0$. Durch einen linearen Zusammenhang von $t(T)$ und $T$ lässt sich nun schließlich $\tau$ schreiben als
-\begin{align}
- \tau(T) = \frac{1}{b\,i(T)}\int\limits_T^\infty i(T')\dx T'
-\end{align}
-und mit \eqref{eq_tau(W)} die Aktivierungsenergie
-\begin{align}
- W = k_BT \ln\left(\frac{1}{b\tau_0 i(T)}\int\limits_T^{T^*} i(T')\dx T'\right).
-\end{align}
-Durch Auftragen des $\ln$-Ausdrucks gegen $1/T$ kann $W$ aus dem Geradenanstieg errechnet werden, wobei $T^*$ eine beliebe, feste Temperatur ist,
-bei der $i(T^*)\approx 0$. $\tau_0$ lässt sich nun indirekt aus der Lage von $T_{max}$ aus Abbildung \ref{pic_i(T)} bestimmen. Durch Differenziation
-von \eqref{eq_jlang} ist eine Beziehung zwischen $T_{max}$ und $\tau(T_{max})$ herstellen. Durch Einsetzen des Wertepaars ($T_{max}$, $\tau(T_{max})$
-in \eqref{eq_tau(W)} lässt sich schließlich die charakteristische Relaxationszeit $\tau_0$ bestimmen.
 
 \section{Durchführung}
-Im Versuch sollen für mit Strontium dotiertes Kaliumbromid $i-T$-Kurven bei zwei verschiedenen Heizraten $b$ zwischen $2^\circ$C/min und $8^\circ$C/min
-aufgenommen werden. Der Temperaturverlauf der Relaxationszeit $\tau(T)$ soll angegeben werden, sowie die Aktivierungsenergie $W$ durch beide vorgestellten
-Methoden berechnet werden.
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{../pics/dipolAufbau.png}
-\caption{Schematischer Aufbau der Messapparatur}
-\label{pic_dipolaufbau}
-\end{figure}
-Die Probe befindet sich auf dem Boden des Probenbehälters. Da die Kristalle hygroskopisch sind, muss der Probenbehälter auf etwa 10$^{-2}$ bar
-evakuiert werden. Anschließend wird das elektrische Feld bei einer Spannung zwischen $U = 600-900$ V über 900 s bei $T_p=320$ K erzeugt. Nach der
-Polarisation wird die Probe mit flüssigem Stickstoff auf 210 K gekühlt. Das E-Feld wird abgeschaltet und der Kondensator entladen. Nun wird das
-Picoamperemeter angeschlossen und bei stabiler Anzeige der Aufheizprozess begonnen. Um konstante Heizraten zu erhalten ist es nötig den Temperaturverlauf
-ständig beobachten und die Heizleistung nach Tabelle \ref{tab_heizrate} angepasst werden.
-\begin{table}[H]
- \begin{tabular}{c|c|c}
- $b$ in $^\circ$C/min & $T$ in $^\circ$ & $I_{Heiz}$ in A\\
- \hline
- \multirow{8}{12mm}{2} &-50&0,8\\
- \end{tabular}
-
-\end{table}
 
 \section{Auswertung}
+\subsection{Kalibrierung der Messachsen}
+\label{sec_Kalib}
+Zur Bestimmung der für die Auswertung relevanten Resonanzstellen, ist es erforderlich, die im Anhang aufgeführten Messkurven entlang der X-Achse
+nach den gemessenen Spannungen $U_\text{Rampe}$ = $U_\text{R}$ zu kalibrieren. 
+\begin{equation}
+ U_\text{R} = m\cdot x + U_0
+\end{equation}
 
-\parskip 340pt
-\Large{Literatur}\\\\
+Hierzu dienen die Werte aus den Tabellen \ref{tab_xAxisKalib15MHz} bis
+\ref{tab_xAxisKalib30MHz}. Rot geschriebene Zahlen zeichnen hier die Resonanzstelle
+\renewcommand{\arraystretch}{1.2}
+\begin{table}[H]
+ \begin{tabular}{c|c|c|c||c|c|c|c}
+  $x$ in cm & $y$ in cm & $U_\text{R}$ in V & $U_\text{B} $ in mV & $x$ in cm & $y$ in cm & $U_\text{R}$ in V & $U_\text{B}$ in mV \\
+ \hline
+ 0,0&	0,0&	10,0&	181,0&	0,0&	0,0&		5,0&	173,0\\
+4,0&	0,0&	14,1&	181,0&	4,0&	0,0&		9,8&	173,0\\
+7,0&	0,3&	17,2&	183,5&	7,0&	0,2&		13,5&	174,0\\
+8,0&	0,5&	18,2&	185,2&	9,0&	0,5&		15,9&	175,5\\
+9,0&	0,6&	\textcolor{red}{19,2}&	\textcolor{red}{186,0}&	10,0&	0,6&		\textcolor{red}{17,1}&	\textcolor{red}{176,0}\\
+10,0&	0,6&	\textcolor{red}{20,2}&	\textcolor{red}{186,0}&	11,0&	0,5&		18,3&	175,5\\
+11,0&	0,5&	21,3&	185,2&	12,0&	0,4&		19,5&	175,0\\
+12,0&	0,4&	22,3&	184,3&	13,0&	0,2&		20,8&	174,0\\
+14,0&	0,1&	24,3&	181,8&	16,0&	0,0&		24,4&	173,0\\
+17,0&	0,0&	27,4&	181,0&	19,8&	0,0&		29,0&	173,0\\ 
+21,5&	-0,1&	32,0&	180,2&	&	&		&	\\
+
+ \end{tabular}
+ \caption{Messkurven bei $\nu_e$ = 14,798 kHz; links $B_\text{parallel}$ und rechts $B_\text{parallel}$}
+ \label{tab_xAxisKalib15MHz}
+\end{table}
+\begin{table}[H]
+ \begin{tabular}{c|c|c|c||c|c|c|c}
+  $x$ in cm & $y$ in cm & $U_\text{R}$ in V & $U_\text{B} $ in mV & $x$ in cm & $y$ in cm & $U_\text{R}$ in V & $U_\text{B}$ in mV \\
+ \hline
+0,0	&0,0&	15,0&	182,8	&0,0&	0&	14,0&	156,0\\
+2,0&	0,2&	16,8&	183,9&	3,0&	0&	17,5&	156,0\\
+4,0&	0,3&	18,7&	184,5&	6,0&	0,3&	20,9&	158,1\\
+6,0&	0,9&	20,5&	187,8&	7,0&	0,5&	22,1&	159,6\\
+8,0&	2,3&	22,4&	195,5&	8,0&	0,7&	\textcolor{red}{23,2}&	\textcolor{red}{161,0}\\
+9,0&	3,1&	23,3&	199,9&	9,0&	0,6&	24,4&	160,3\\
+10,0&	3,9&	24,2&	204,4&	10,0&	0,6&	25,5&	160,3\\
+10,5&	4,6&	24,7&	208,2&	12,0&	0,2&	27,8&	157,4\\
+11,0&	4,9&	25,1&	209,9&	16,5&	0,1&	33,0&	156,7\\
+11,5&	5,1&	\textcolor{red}{25,6}&	\textcolor{red}{211,0}&		&&		&\\
+12,0&	5,1&	\textcolor{red}{26,1}&	\textcolor{red}{211,0}&		&&		&\\
+12,5&	4,9&	26,5&	209,9&		&&		&\\
+13,0&	4,6&	27,0&	208,2&		&&		&\\
+13,5&	4,3&	27,4&	206,6&		&&		&\\
+14,0&	3,9&	27,9&	204,4&		&&		&\\
+15,0&	3,0&	28,8&	199,4&		&&		&\\
+16,0&	2,6&	29,7&	197,2&		&&		&\\
+17,0&	2,1&	30,7&	194,4&		&&		&\\
+19,0&	1,4&	32,5&	190,6&		&&		& \\
+
+ \end{tabular}
+ \caption{Messkurven bei $\nu_e$ = 19,448 kHz; links $B_\text{parallel}$ und rechts $B_\text{parallel}$}
+ \label{tab_xAxisKalib20MHz}
+\end{table}
+\begin{table}[H]
+ \begin{tabular}{c|c|c|c||c|c|c|c}
+  $x$ in cm & $y$ in cm & $U_\text{R}$ in V & $U_\text{B} $ in mV & $x$ in cm & $y$ in cm & $U_\text{R}$ in V & $U_\text{B}$ in mV \\
+ \hline
+0,0 &	0,0&	23,0&	177,0&	0,0&	0,7&	17,0&	211,0\\
+2,0&	0,1&	25,1&	177,8&	1,0&	0,0&	18,3&	205,0\\
+4,0&	0,7&	27,1&	182,4&	2,0&	0,0&	19,6&	205,0\\
+5,0&	0,9&	28,1&	184,0&	3,0&	0,3&	20,9&	207,6\\
+6,0&	1,4&	29,2&	187,9&	4,0&	0,9&	22,2&	212,7\\
+6,5&	1,6&	29,7&	189,4&	5,0&	1,6&	23,5&	218,7\\
+7,0&	1,7&	30,2&	190,2&	6,0&	2,8&	24,9&	229,0\\
+7,5&	1,8&	\textcolor{red}{30,7}&	\textcolor{red}{191,0}&	7,0&	4,5&	26,2&	243,6\\
+8,0&	1,8&	\textcolor{red}{31,2}&	\textcolor{red}{191,0}&	7,5&	5,4&	26,8&	251,3\\
+9,0&	1,4&	32,3&	187,9&	8,0&	6,3&	27,5&	259,0\\
+10,0&	1,0&	33,3&	184,8&	8,5&	6,9&	28,1&	264,1\\
+11,0&	0,8&	34,3&	183,2&	9,0&	7,0&	\textcolor{red}{28,8}&	\textcolor{red}{265,0}\\
+13,0&	0,3&	36,4&	179,3&	9,5&	6,9&	29,4&	264,1\\
+15,0&	0,1&	38,4&	177,8&	10,0&	6,5&	30,1&	260,7\\
+17,5&	-0,1&	41,0&	176,2&	10,5&	5,6&	30,8&	253,0\\
+&	&	&	&	11,0&	4,6&	31,4&	244,4\\
+&	&	&	&	11,5&	3,8&	32,1&	237,6\\
+&	&	&	&	13,0&	2,5&	34,0&	226,4\\
+&	&	&	&	14,0&	1,4&	35,3&	217,0\\
+&	&	&	&	14,5&	1,1&	36,0&	214,4\\
+&	&	&	&	16,8&	1,1&	39,0&	214,4 \\
+
+ \end{tabular}
+ \caption{Messkurven bei $\nu_e$ = 23,888 kHz; links $B_\text{parallel}$ und rechts $B_\text{parallel}$}
+ \label{tab_xAxisKalib24MHz}
+\end{table}
+\begin{table}[H]
+ \begin{tabular}{c|c|c|c||c|c|c|c}
+  $x$ in cm & $y$ in cm & $U_\text{R}$ in V & $U_\text{B} $ in mV & $x$ in cm & $y$ in cm & $U_\text{R}$ in V & $U_\text{B}$ in mV \\
+ \hline
+0,0 &	0,0&	24,0&	222,0&	0,0&	0,1&	26,0&	181,7\\
+2,0&	0,1&	26,1&	222,7&	1,0&	0,0&	27,1&	181,0\\
+4,0&	0,2&	28,3&	223,4&	1,5&	0,1&	27,6&	181,7\\
+6,0&	0,5&	30,4&	225,4&	2,0&	0,3&	28,2&	183,1\\
+7,0&	0,7&	31,5&	226,8&	4,0&	0,6&	30,3&	185,1\\
+8,0&	1,1&	32,6&	229,5&	5,0&	0,5&	31,4&	184,4\\
+8,5&	1,5&	33,1&	232,2&	6,0&	0,8&	32,5&	186,5\\
+9,0&	2,2&	33,6&	237,0&	7,0&	1,2&	33,5&	189,3\\
+10,0&	2,8&	34,7&	241,1&	8,0&	1,5&	34,6&	191,3\\
+10,5&	3,3&	35,3&	244,5&	8,5&	1,6&	\textcolor{red}{35,2}&	\textcolor{red}{192,0}\\
+11,0&	3,6&	35,8&	246,6&	9,0&	1,6&	\textcolor{red}{35,7}&	\textcolor{red}{192,0}\\
+12,0&	4,0&	36,9&	249,3&	9,5&	1,5&	36,2&	191,3\\
+12,5&	4,1&	\textcolor{red}{37,4}&	\textcolor{red}{250,0}&	11,5&	0,8&	38,4&	186,5\\
+13,0&	4,0&	37,9&	249,3&	12,5&	0,8&	39,5&	186,5\\
+14,0&	3,5&	39,0&	245,9&	15,0&	0,4&	42,2&	183,8\\
+15,0&	2,8&	40,1&	241,1&	17,0&	0,3&	44,3&	183,1\\
+15,5&	2,1&	40,6&	236,3&	19,5&	0,2&	47,0&	182,4\\
+16,0&	1,7&	41,1&	233,6&	&	&	&	\\
+17,0&	1,3&	42,2&	230,9&	&	&	&	\\
+19,0&	0,7&	44,4&	226,8&	&	&	&	\\
+19,6&	0,6&	45,0&	226,1&	&	&	&	\\
+
+ \end{tabular}
+ \caption{Messkurven bei $\nu_e$ = 29,448 kHz; links $B_\text{parallel}$ und rechts $B_\text{parallel}$}
+ \label{tab_xAxisKalib30MHz}
+\end{table}
+Hieraus ergeben sich nun die jeweiligen Kalibrierungsfaktoren in Tabelle \ref{tab_xAxisKalibTOTAL}. Mit einem Widerstand von 50 $\Omega$ lassen sich
+die Rampengeneratorspannungen in Ströme $I$ umrechnen.
+\begin{table}[H]
+ \begin{tabular}{c|c|c|c}
+  $\nu_e$ in MHz & $m$ in V/cm & $U_\text{res}$ in V & $I_\text{res}$ in mA\\
+  \hline
+  14,798 & 1,02 & 19,72 & 394,4 \\
+  & 1,21&17,12 & 342,4\\
+  19,448&0,92 &25,82 & 516,4\\
+  &1,15&23,21& 464,2\\
+  23,888&1,03&30,97& 619,4\\
+  &1,31&28,79&575,7\\
+  29,448&1,07&37,39&747,8\\
+  &1,08&35,42&708,5\\
+ \end{tabular}
+\caption{Zusammengefasste Werte}
+\label{tab_xAxisKalibTOTAL}
+\end{table}
+
+\subsection{Magnetische Flussdichte der Erde}
+Mit den Ergebnissen aus Abschnitt \ref{sec_Kalib} lässt sich nun das Erdmagnetfeld bestimmen. Hierzu werden die Ströme $I_\text{res}$ aus Tabelle
+\ref{tab_xAxisKalibTOTAL} nach der Gleichung für die Helmholtzspulen \eqref{eq_helmholtz.113} in magnetische Flussdichten umgerechnet, wobei der Radius
+$r$ = 0,1 m und die Windungszahl N = 156 ist. Da für gleiche Frequenzen $\nu_e$ die Resonanzstellen verschieden sind, bewirkt das Erdmagnetfeld einen
+Einfluss in die jeweilige Richtung, je nachdem, ob die Spule parallel oder antiparallel dazu ausgerichtet ist. Diesen Einfluss kann man ermitteln,
+indem die zueinander gehörenden Flussdichten voneinander abgezogen und das Ergebnis halbiert wird
+\begin{equation}
+ B_\text{Erde} = \frac12 ( B_\text{par} - B_\text{antipar}).
+\end{equation}
+In Tabelle \ref{tab_erdMagnetfeld} sind die jeweiligen Magnetfelder und das errechnete Erdmagnetfeld aufgeführt,
+\begin{table}[H]
+ \begin{tabular}{c|c|c}
+ $B_\text{par}$ in $\mu$T & $B_\text{antipar}$ in $\mu$T& $B_\text{Erde}$ in $\mu$T\\
+ \hline
+ 553,3 &	480,3&	36,5\\
+724,4&	651,2&	36,6 \\
+868,9&	807,6&	30,7\\
+1049,0&	993,8&	27,6\\
+ \end{tabular}
+\caption{magnetische Flussdichte der Erde}
+\label{tab_erdMagnetfeld}
+\end{table}
+was zu einem Erdmagnetfeld führt von 
+\begin{equation}
+ B_\text{Erde} = 32,8 \pm 1,9 \mu\text{T}.
+\end{equation}
+
+\renewcommand{\arraystretch}{1.0}
+\subsection{gyromagnetisches Verhältnis des Elektrons}
+Mit den vom Erdmagnetfeld bereinigten Spulenfeldern lässt sich nun schließlich das gyromagnetische Verhältnis des Elektrons nach \eqref{eq_nu(B).18}
+berechnen. Hierzu wird eine Fitgerade 
+\begin{equation}
+ B = \frac{h}{\mu_B \cdot g} \nu = m_\text{gyro} \cdot \nu
+\end{equation}
+mit GNUplot durch die Wertepaare \{$\nu_{e,i},B_{\text{res},i}$\} gelegt, was in Abbildung \ref{pic_gyro} zu sehen ist
+\begin{figure}[H]
+\includegraphics[width=0.8\textwidth]{../pics/landefaktor.pdf}
+\caption{Gyromagnetisches Verhältnis oder Landéfaktor des Elektrons}
+\label{pic_gyro}
+\end{figure}
+und zu einem Steigungsparameter 
+\begin{equation}
+m_\text{gyro} = 0,0343 \pm 0,0006 \text{ Ts}
+\end{equation}
+führt und damit schließlich den Landéfaktor berechnen lässt.
+\begin{equation}
+ g = \frac{h}{\mu_B\cdot m_\text{gyro}} = 2,082 \pm 0,037
+\end{equation}
+
+
+\section{Diskussion}
+\subsection{Erdmagnetfeld}
+Der berechnete Wert für das Erdmagnetfeld steht in folgendem Verhältnis zum Literaturwert \cite{ErdB}
+\begin{equation}
+ \frac{B_\text{Mess}}{B_\text{Lit}} = 68,3 \%.
+\end{equation}
+Die etwas hohe Abweichung spricht für eine unpräzise Ausrichtung der Helmholtzspule, was auf die sehr empfindliche Bussole zurückführbar ist, die
+auf diverse andere elektrische Geräte reagiert.
+
+\subsection{Landéfaktor}
+
+
+
+\begin{thebibliography}{xxxxxxxxxxxxxxxxx}
+ \bibitem[Chemie.de]{ErdB}Form und Stärke des Erdmagnetfelds\\ \href{http://www.chemie.de/lexikon/Erdmagnetfeld.html#Form_und_St.C3.A4rke_des_Erdmagnetfeldes}{chemie.de/lexikon/Erdmagnetfeld}
+ \bibitem[Universal Lexikon]{Gyro}Landé-Faktor\\ \href{http://universal\_lexikon.deacademic.com/144745/}{universal\_lexikon.deacademic.com/144745/}
+\end{thebibliography}
 
 % ========================================
 %	Literaturverzeichnis
