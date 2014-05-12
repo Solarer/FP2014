@@ -116,19 +116,22 @@ Hat das Atom einen von Null verschiedenen Kernspin I, so koppeln I und J zum Ges
 \begin{align*}
 \vec{F}=\vec{I}+\vec{J}
 \end{align*}
-und erzeugen eine weitere Aufspaltung der Energieniveaus, wie man in Grafik \ref{} sehen kann:
+und erzeugen eine weitere Aufspaltung der Energieniveaus, die Hyperfeinstruktur, wie man in Grafik \ref{pic_zeehyper} sehen kann.
 \begin{figure}[h]
 \includegraphics[scale=1]{../pics/zeehyper.pdf}
 \caption{Hyperfeinstruktur und Zeeman-Aufspaltung eines Atoms mit $I=3/2$}
+\label{pic_zeehyper}
 \end{figure}
-Auch hier findet sich wieder ein Lande-Faktor $g_F$:
+Auch hier gibt es wieder einen Landé-Faktor $g_F$:
 \begin{align*}
 |\vec{\mu_F}|&=g_F \mu_B \sqrt{F(F+1)}
 \end{align*}
 Diese Gleichung lässt sich aber noch umschreiben zu
 \begin{align}
-g_F\approx g_J \frac{F(F+1)+J(J+1)-I(I+1)}{2F(F+1)}
+g_F\approx g_J \frac{F(F+1)+J(J+1)-I(I+1)}{2F(F+1)},
 \end{align}
+wodurch sich $g_F$ ohne jede Messung nur durch theoretische Werte bestimmen lässt.
+
 
 \subsection{Optisches Pumpen}
 Ist das Atom im thermischen Gleichgewicht, so wird man keine Übergänge von Elektronen auf den Schalen erkennen können. Besetzt man die Schalen jedoch anders, so können Elektronen spontan oder durch Anregung ihre Schale wechseln. Dies erreicht man durch das Einstrahlen von Lichtquanten mit der passenden Energie (siehe Gleichung \eqref{eq_quant}). Da die Energieniveaus jedoch auch in den Spins aufspalten, muss nicht nur auf die Energie, sondern auch auf die richtige Polarisation des Lichtes geachtet werden, damit der Drehimpuls beim Übergang erhalten bleibt. Beispielhaft ist dies in Abbildung \ref{pic_uebergang} erkennbar:
@@ -157,8 +160,25 @@ Die Apparatur besteht im wesentlichen aus einer beheizten Dampfzelle und einer S
 \end{figure}
 Hochfrequenzfeld zum Pumpen und der von der Diode gemessene Strom werden dann an einen XY-Oszilloskop angeschlossen, wo Resonanzstellen sichtbar werden, wenn die richtige Frequenz getroffen wurde.\\
 
+Im Falle einer Resonanz, entsteht auf dem Oszilloskop ein Bild vergleichbar mit Abbildung \ref{pic_resonanz}. 
+\begin{figure}
+\includegraphics[scale=.3]{../pics/resonanz.pdf}
+\caption{Transparenz einer Alkali-Dampfzelle für rechtszirkular-polarisiertes Licht in Abhängigkeit vom Magnetfeld bei angelegtem Hochfrequenzfeld (idealisiert)}
+\label{pic_resonanz}
+\end{figure}
+$B_m$ errechnet sich dabei zu
+\begin{align*}
+h\nu = g_J \mu_B B_m \Delta M_J
+\end{align*}
+bzw.
+\begin{align}
+B_m=\frac{4\pi m_0}{e_0 g_J}\nu
+\label{eq_nuB.g_F}
+\end{align}
+Hat das Magnetfeld B die Feldstärke $B_m$, so sind die Abstände im Spektrum genau so groß, dass das Niveau durch das Hochfrequenzfeld leergepumpt wird. Neue Photonen können absorbiert werden und die Transparenz der Probe sinkt ab. 
+
 Vor der eigentlichen Messung muss jedoch zunächst das Erdmagnetfeld kompensiert werden. Dazu wird der Aufbau so gedreht, dass er parallel zur Horizontalkomponente ausgerichtet ist. Diese Komponente hat dann keinen Einfluss mehr auf die Durchführung.\\
-Um auch die senkrechte Komponente zu kompensieren, wird mit einer Helmholzspule ein Gegenfeld mit der gleichen Stärke induziert, welches antiparallel zum Erdmagnetfeld steht. Über die verwendete Stromstärke kann so zudem das Erdmagnetfeld sehr genau bestimmt werden.\\
+Um auch die senkrechte Komponente zu kompensieren, wird mit einer Helmholzspule ein Gegenfeld mit der gleichen Stärke induziert, welches antiparallel zum Erdmagnetfeld steht. Über die verwendete Stromstärke kann so zudem das Erdmagnetfeld sehr genau bestimmt werden. Dazu wählt man die Einstellung, unter der der Peak bei $B=0$ besonders stark ausgeprägt ist.\\
 
 Anschließend soll der Landé-Faktor des Atoms mittels Gleichung \eqref{eq_nuB.g_F} und Gleichung \eqref{eq_gj} bestimmt werden.\\
 
