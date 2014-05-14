@@ -220,6 +220,7 @@ Der verallgemeinerte Zeeman-Effekt ist der mit $S\neq0$ und wird anormaler Zeema
 sich dieselben Auswahlregeln. Relativ zur feldfreien Energie ergibt sich hier bei Übergängen zwischen zwei Niveaus folgende Energiedifferenz
 \begin{align}
  \Delta E = [m_1 g(L_1,S_1,J_1)\, - \,m_2g(L_2,S_2,J_2)]\mu B
+ \label{eq_DeltaE}
 \end{align}
 Der Landé-Faktor hängt hier von den Drehimpulsen ab, sodass die Aufspaltung linienreicher wird, was beispielhaft an einem Alkali-Dublett in Abbildung
 \ref{pic_anorZee} dargestellt ist.
@@ -264,9 +265,44 @@ des Cd-Spektrums gemessen werden. Dazu wird die Apparatur optimal entsprechend A
 bestmöglich aufrecht erhalten und scharfe Abbildungen entstehen können.
 
 
-\section{Auswertung}
+\section{Vorbereitung und Auswertung}
+Als vorbereitende Aufgabe sollten bereits einige g-Faktoren aus theoretischen Werten bestimmt werden, damit diese anschließend mit den gemessenen verglichen werden können. Über Gleichung \eqref{eq_DeltaE} erhält man damit in folgender Tabelle eingetragene Werte:
+\begin{figure}[htbp]
+\includegraphics[scale=0.5]{../pics/theo1.pdf}
+\caption{Zur roten Spektrallinie gehörige Quantenzahlen und g-Faktoren}
+\label{tab_über_r}
+\end{figure}
+
+\begin{figure}[htbp]
+\includegraphics[scale=0.5]{../pics/theo1.pdf}
+\caption{Zur blauen Spektrallinie gehörige Quantenzahlen und g-Faktoren}
+\label{tab_über_b}
+\end{figure}
+\newpage
+Bevor die eigentliche Messung durchgeführt werden kann, muss noch der Magnet geeicht werden. Hierzu wird eine Hallsonde zwischen die Eisenkerne gehalten und das gemessene B-Feld gegen den Spulenstrom aufgetragen. Man erhält den in Abbildung \ref{pic_mag} dargestellten Verlauf.
+\begin{figure}
+\includegraphics[scale=1]{../gnu/Magnet.pdf}
+\caption{Verlauf des angelegten Magnetfeldes in Abhängigkeit zum Spulenstrom}
+\label{pic_mag}
+\end{figure}
+Als Regressionsgerade wurde eine Gerade durch den Nullpunkt verwendet. Als Steigung m ergab sich für diese der Wert:
+\begin{align*}
+m=59.6  \pm 0.41
+\end{align*}
+
 Nachdem die Apparatur korrekt eingestellt wurde, werden mit der Kamera bei verschiedenen Magnetfeld-Stärken bilder aufgenommen. Bei den folgenden Bildern handelt es sich um Gegenüberstellungen von Aufnahmen mit Feld (unten) und ohne Feld (oben), so dass die Aufspaltung der Linien gut sichtbar wird.\\
 Für die Analyse wird anschließend der Abstand zwischen den Spektrallinien im feldfreien Fall $\Delta S$ und im Falle eines angelegten Magnetfeldes $\delta S$ in Pixeln gemessen. Mittels Gleichungen \eqref{eq_lamdaD} und \eqref{} kann dann schließlich der g-Faktor bestimmt werden.
+\newpage
+\begin{figure}[htbp]
+\includegraphics[scale=.5]{../pics/red1.pdf}
+\caption{Aufnahme der Spektrallinien für rotes Licht mit B=633mT ($\pi$-Übergang)}
+\label{pic_red1}
+\end{figure}
+\begin{figure}[htbp]
+\includegraphics[scale=.5]{../pics/red2.pdf}
+\caption{Aufnahme der Spektrallinien für rotes Licht mit B=633mT ($\sigma$-Übergang)}
+\label{pic_red2}
+\end{figure}
 \begin{table}[htbp]
     \begin{tabular}{|c|c|c|c|c|c|}
         Ordnung & $\Delta S$ [Pixel]    & $\delta S$ [Pixel]    &$\delta \lambda$ [pm]  & $\delta \nu$ $[10^{18}\text{Hz}]$ &   $g$\\\hline
@@ -285,11 +321,15 @@ Für die Analyse wird anschließend der Abstand zwischen den Spektrallinien im f
     \label{tab_red_sigma}
 \end{table}
 
-Bei dem roten Licht gibt es nur für den $\sigma$-Übergang eine Aufspaltung der Spektrallinien. Für den $\pi$-Übergang ist somit g=0. Mit den Werten aus Tabelle \ref{tab_red_sigma} werden Mittelwert und Standardabweichung des $\sigma$-Übergangs bestimmt:
+Bei dem roten Licht gibt es nur für den $\sigma$-Übergang eine Aufspaltung der Spektrallinien, wie man in Abbildung \ref{pic_red1} sehen kann. Für den $\pi$-Übergang ist somit g=0. Mit den Werten aus Tabelle \ref{tab_red_sigma} werden Mittelwert und Standardabweichung des $\sigma$-Übergangs in Abbildung \ref{pic_red2} bestimmt:
 \begin{align*}
 g_{\text{rot,}\sigma}=1,095\pm0,064
 \end{align*}
-
+\begin{figure}[htbp]
+\includegraphics[scale=.5]{../pics/blue1.pdf}
+\caption{Aufnahme der Spektrallinien für blaues Licht mit B=323mT ($\sigma$-Übergang)}
+\label{pic_blue2}
+\end{figure}
 \begin{table}[htbp]
     \begin{tabular}{|c|c|c|c|c|c|}
         Ordnung & $\Delta S$ [Pixel]    & $\delta S$ [Pixel]    &$\delta \lambda$ [pm]  & $\delta \nu$ $[10^{18}\text{Hz}]$ &   $g$\\\hline
@@ -311,12 +351,17 @@ g_{\text{rot,}\sigma}=1,095\pm0,064
     \label{tab_blue_sigma}
 \end{table}
 
-Für das blaue Licht lässt sich mit den Werten aus Tabelle \ref{tab_blue_sigma} Mittelwert und Standardabweichung für den $\sigma$-Übergan bestimmen:
+Für das blaue Licht lässt sich mit den Werten aus Tabelle \ref{tab_blue_sigma} Mittelwert und Standardabweichung für den $\sigma$-Übergang bestimmen aus Abbildung \ref{pic_blue1}:
+
 \begin{align*}
 g_{\text{blau,}\sigma}=2,069\pm0,130
 \end{align*}
-
-\begin{table}[htbp]
+\begin{figure}[H]
+\includegraphics[scale=.5]{../pics/blue2.pdf}
+\caption{Aufnahme der Spektrallinien für blaues Licht mit B=1023mT ($\pi$-Übergang)}
+\label{pic_blue1}
+\end{figure}
+\begin{table}[H]
     \begin{tabular}{|c|c|c|c|c|c|}
         Ordnung & $\Delta S$ [Pixel]    & $\delta S$ [Pixel]    &$\delta \lambda$ [pm]  & $\delta \nu$ $[10^{18}\text{Hz}]$ &   $g$\\\hline
         1&  101&   45&  6,004&  49,97&  0,546\\\hline
@@ -348,12 +393,22 @@ g_{\text{blue,}\pi}=0,839\pm0,145
 
 \section{Diskussion}
 Im Vergleich zu den Literaturwerten werden zu den im Versuch aufgenommenen Werten folgende Abweichungen sichtbar:
+\begin{table}[htbp]
+\begin{tabular}{|c|c|c|c|c|}
+Wellenlänge $[\lambda]$ & Übergang & Literaturwert g& gemessen g& Abweichung [\%]\\\hline
+648,3nm (rot) 	& $\pi$		&	0,00	&	0,000	&	0,0\%	\\\hline
+				& $\sigma$	&	1,00	&	$1,095\pm0,064$	&	9,5\%	\\\hline
+480nm (blau)	& $\sigma$	&	1,75	&	2,069	&	18,2\%\\\hline
+				& $\pi$		&	0,50	&	0,839	&	67,8\%\\\hline
+\end{tabular}
+\end{table}
 
-
-Bei der  $\sigma$-Aufspaltung der blauen Linie muss dabei berücksichtigt werden, dass der Wert des theoretischen g-Faktors zwei Werte annehmen kann (siehe Tabelle \ref{}). Da beide Übergänge gleich wahrscheinlich sind, wird hier der Mittelwert der beiden theoretischen Werte gebildet und als Vergleichswert benutzt.
+Bei der  $\sigma$-Aufspaltung der blauen Linie muss dabei berücksichtigt werden, dass der Wert des theoretischen g-Faktors zwei Werte annehmen kann (siehe Tabellen \ref{tab_über_r} und \ref{tab_über_b}). Da beide Übergänge gleich wahrscheinlich sind, wird hier der Mittelwert der beiden theoretischen Werte gebildet und als Vergleichswert benutzt.
 
 Wie anhand der prozentualen Abweichung erkennbar ist, stimmt der errechnete Wert für die rote Spektrallinie sehr gut mit dem theoretischen überein.\\
-Bei der blauen Linie gibt es jedoch
+Bei der blauen Linie gibt es jedoch massive Abweichungen. Dies kann insbesondere dadurch erklärt werden, dass die Aufnahmen von den blauen Spektrallinien viel stärker verschwommen waren, als von der roten. Es ist somit nicht eindeutig zu bestimmen, wie weit genau die Linien auseinander liegen. Außerdem wurde vermutlich in der letzten Aufnahme die Kamera leicht von ihrer ursprünglichen Position wegbewegt, was man daran erkennen kann, dass die Spektrallinien zur höheren Ordnung hin immer weniger deckungsgleich mit den Feldfreien sind. Dennoch sind auch diese Landé-Faktoren immer noch in der richtigen Größenordnung und daher noch akzeptabel.\\
+
+Dennoch sollte für eine solche Präzisionsmessung besser auf eine höher auflösende Kamera mit einem größeren Display zugegriffen werden um brauchbare Ergebnisse zu erhalten.
 % ========================================
 %	Literaturverzeichnis
 % ========================================
