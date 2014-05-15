@@ -4,6 +4,7 @@
 
 \input{longheader.tex}
 \usepackage{multirow}
+\usepackage{epstopdf}
 
 % ========================================
 %	Angaben für das Titelblatt
@@ -130,6 +131,7 @@ was eine Differentialgleichung darstellt, deren Lösung eine Exponentialfunktion
 Für das Anfangsintervall ist $\exp(W/k_BT)$ klein, was zur Näherung führt
 \begin{align}
  j(T) \approx \frac{p^2E}{3k_BT_p}\frac{N_p}{\tau_0}\exp\left(\frac{W}{k_B\, T}\right)
+ \label{eq_j(T)}
 \end{align}
 und in einem ($\ln j-1/T$)-Diagramm zu einer Geraden führt, aus deren Steigung sich die Aktivierungsenergie $W$ errechnen lässt. Größere Genauigkeit
 hierbei liefert die Betrachtung des gesamten Kurvenverlaufs. Die Polarisation $P$ ist dem Gesamtdipolmoment pro Volumeneinheit entsprechend und
@@ -206,6 +208,134 @@ ständig beobachten und die Heizleistung nach Tabelle \ref{tab_heizrate} angepas
 \end{table}
 
 \section{Auswertung}
+Bei diesem Versuch wird die durch ein Amperemeter gemessene Stromstäker in Abhängigkeit von der Probentemperatur aufgezeichnet. Aufgenommen wurden folgende zwei Messreihen\\
+\begin{table}
+\begin{tabular}{|c|c|}
+Temp. [$C^\circ$] & Strom [$10^{-12}A$]\\\hline
+-61,1	&0,05\\\hline
+-59,1	&0,01\\\hline
+-55,6	&0,04\\\hline
+-53,5	&0,50\\\hline
+-52,2	&0,70\\\hline
+-50,6	&2,50\\\hline
+-48,5	&3,00\\\hline
+-46,6	&3,30\\\hline
+-44,7	&3,50\\\hline
+-42,9	&3,50\\\hline
+-41,1	&3,50\\\hline
+-39,5	&4,00\\\hline
+-37,8	&3,50\\\hline
+-36,2	&4,00\\\hline
+-34,4	&3,90\\\hline
+-32,7	&4,20\\\hline
+-30,9	&4,00\\\hline
+-29,1	&4,20\\\hline
+-27,2	&4,10\\\hline
+-25,2	&4,10\\\hline
+-23,1	&4,20\\\hline
+-21,0	&4,30\\\hline
+-18,9	&4,20\\\hline
+-16,9	&4,00\\\hline
+-14,7	&4,10\\\hline
+-13,0	&4,00\\\hline
+-11,2	&3,90\\\hline
+-5,3	&4,10\\\hline
+-7,6	&3,50\\\hline
+-5,8	&3,50\\\hline
+-4,1	&3,40\\\hline
+-2,2	&3,20\\\hline
+-0,1	&3,00\\\hline
+2,2		&2,80\\\hline
+4,5		&2,20\\\hline
+6,6		&2,30\\\hline
+8,3		&2,00\\\hline
+10,0	&1,80\\\hline
+11,8	&1,30\\\hline
+14,0	&1,20\\\hline
+16,3	&0,50\\\hline
+18,7	&0,00\\\hline
+20,8	&0,00\\\hline
+22,9	&0,01\\\hline
+24,9	&0,12\\\hline
+26,9	&0,14\\\hline
+28,8	&0,15\\\hline
+30,6	&0,20\\\hline
+32,5	&0,25\\\hline
+34,5	&0,33\\\hline
+36,6	&0,41\\\hline
+38,7	&0,50\\\hline
+40,8	&0,62\\\hline
+42,8	&0,75\\\hline
+44,7	&0,92\\\hline
+48,6	&4,50\\\hline
+50,4	&4,00\\\hline
+\end{tabular}
+\end{table}
+
+\begin{table}
+\begin{tabular}{|c|c|}
+Temp. [$C^\circ$] & Strom [$10^{-12}A$]\\\hline
+-58.9	&3.00\\\hline
+-56.0	&4.90\\\hline
+-49.3	&5.20\\\hline
+-41.3	&5.60\\\hline
+-35.1	&6.00\\\hline
+-30.3	&6.10\\\hline
+-26.2	&6.10\\\hline
+-22.1	&6.10\\\hline
+-17.7	&6.10\\\hline
+-12.9	&6.30\\\hline
+-7.9	&6.20\\\hline
+-2.9	&6.20\\\hline
+2.0		&6.10\\\hline
+6.9		&6.00\\\hline
+11.9	&6.00\\\hline
+16.7	&5.80\\\hline
+21.7	&5.70\\\hline
+26.7	&5.60\\\hline
+31.7	&5.40\\\hline
+36.7	&5.30\\\hline
+41.5	&5.20\\\hline
+46.3	&5.00\\\hline
+51.6	&4.80\\\hline
+57.0	&4.20\\\hline
+62.1	&3.70\\\hline
+66.9	&2.70\\\hline
+71.4	&1.30\\\hline
+76.0	&0.60\\\hline
+80.8	&0.60\\\hline
+85.9	&0.65\\\hline
+90.8	&1.00\\\hline
+\end{tabular}
+\end{table}
+
+Trägt man beide Messreihen in ein Diagramm ein, so wird ersichtlich, das der Nullpunkt linear mit der Temperatur angehoben wird. Um dieses Verhalten herauszukorrigieren, wird mit einer Regressionsgeraden die Steigung bestimmt und die Kurve um diesen Wert abgesenkt. In Diagramm \ref{pic_dia1} und \ref{pic_dia1} sind sowohl Messwerte als auch die lineare Regression eingezeichnet.
+
+\begin{figure}[htbp]
+\includegraphics[scale=0.8]{../gnu/relax1.pdf}
+\caption{Erste Messreihe. Die in grün umrahmten Werte wurden für die lineare Regression mit einer Geraden durch den Ursprung benutzt.}
+\label{pic_dia1}
+\end{figure}
+\begin{figure}[htbp]
+\includegraphics[scale=0.8]{../gnu/relax2.pdf}
+\caption{Zweite Messreihe. Die in grün umrahmten Werte wurden für die lineare Regression mit einer Geraden durch den Ursprung benutzt.}
+\label{pic_dia2}
+\end{figure}
+
+Als Fitparameter wurde die Steigung $m_i$ der beiden Geraden verwendet. Folgende Werte wurden errechnet:\\
+\begin{align}
+m_1&=(2,4  \pm 1,003) \cdot10^{-4} \frac{A}{T}\\
+\label{eq_korr1}
+m_2&=(2,00\pm 0.26)\cdot10^{-3}\frac{A}{T}
+\end{align}
+
+Im Folgenden wurden die in \eqref{eq_korr1} berechneten Korrekturen bereits angewendet. Es soll nun die Aktivierungsenergie $W$ berechnet werden. Dazu wird ausgenutzt, dass für den frühen Kurvenverlauf die Gesetzmäßigkeit in \eqref{eq_j(T)} gilt. Aus den korrigierten Werte wird daher der Logarithmus gebildet und dieser dann gegen $\frac{1}{x}$ aufgetragen. Die Steigung der Geraden entspricht der Aktivierungsenergie.\\
+
+Es wurden folgende Aktivierungsenergien gemessen:
+\begin{align}
+W_1&=-480,0 \pm 92,0\\
+W_2&=-296,0 \pm 39,5
+\end{align}
 
 \parskip 340pt
 \Large{Literatur}\\\\
