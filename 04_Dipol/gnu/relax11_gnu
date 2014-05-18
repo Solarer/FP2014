@@ -5,10 +5,10 @@ set terminal postscript eps enhanced color dashed
 set output 'relax11.eps'
 
 set title ""
-set xlabel "Temperatur^{-1} [K^{-1}]"
-set ylabel "log(Strom [10^{-12}A])"
+set xlabel "Temperatur [K]"
+set ylabel "Strom [A]"
 
-set key bottom right 
+set key top right 
 
 
 #-----Formatierung-----#
@@ -31,17 +31,17 @@ c0=299792458
 #-----Fitfunktion-----#
 
 f(x)=a*x
-g(x)=c*x+d
+g(x)=c*x
 
 #-----Fitting-----#
 #fit f(x) "data" index 1 using ($1+273):2 via a
-fit g(x) "data" index 2 using (1/($1+273)):(log($2-0.00024*$1)) via c,d
+fit g(x) "data" index 1 using (($1+273)):($2/1000000000000) via c
 
 #-----Plot-----#
 
 #plot "data" index 0 using ($1+273):2 title "Messwerte"ps 2,"data" index 1 using (($1+273)):2 title "für Fit verwendet" pt 12 ps 1, f(x) title "Regressionsgerade"
 
-plot "data" index 0 using (1/($1+273)):(log($2-0.00024*$1)) title "korrigierte Messwerte"  ,"data" index 2 using (1/($1+273)):(log($2-0.00024*$1)) title "für Fit verwendet" pt 12 ,g(x) title "Ausgleichsgerade"
+plot "data" index 0 using (($1+273)):($2/1000000000000) title "Messwerte"  ,"data" index 1 using (($1+273)):($2/1000000000000) title "für Fit verwendet" pt 12 ,g(x) title "Ausgleichsgerade"
 
 
  
