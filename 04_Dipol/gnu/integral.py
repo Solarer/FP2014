@@ -8,11 +8,12 @@ def trapez(list):
     for pos,element in enumerate(list):
         x[pos]=element[0]
         y[pos]=element[1]
-    # print(x)
-    # print(y)
+    print(x)
+    print(y)
 
     for i in range(size-1,0,-1):
         # print(i)
+        print(np.absolute((x[i]-x[i-1]))/2*(y[i]+y[i-1]))
         output[i-1]+=output[i]+np.absolute((x[i]-x[i-1]))/2*(y[i]+y[i-1])
     print(output)
 
@@ -27,8 +28,8 @@ for cnt,line in enumerate(file):
         if(cnt>42):
             input2.append((float(line[0]),float(line[1])))
 
-print('Input1: ',input1)
-print('Input2: ',input2)
+# print('Input1: ',input1)
+# print('Input2: ',input2)
 
 trapez(input1)
 trapez(input2)
