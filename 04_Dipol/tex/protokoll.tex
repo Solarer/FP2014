@@ -150,6 +150,7 @@ wobei $P(\infty) = 0$. Durch einen linearen Zusammenhang von $t(T)$ und $T$ läs
 und mit \eqref{eq_tau(W)} die Aktivierungsenergie
 \begin{align}
  W = k_BT \ln\left(\frac{1}{b\tau_0 i(T)}\int\limits_T^{T^*} i(T')\dx T'\right).
+ \label{eq_int}
 \end{align}
 Durch Auftragen des $\ln$-Ausdrucks gegen $1/T$ kann $W$ aus dem Geradenanstieg errechnet werden, wobei $T^*$ eine beliebe, feste Temperatur ist,
 bei der $i(T^*)\approx 0$. $\tau_0$ lässt sich nun indirekt aus der Lage von $T_{max}$ aus Abbildung \ref{pic_i(T)} bestimmen. Durch Differenziation
@@ -210,7 +211,8 @@ ständig beobachten und die Heizleistung nach Tabelle \ref{tab_heizrate} angepas
 \section{Auswertung}
 Bei diesem Versuch wird die durch ein Amperemeter gemessene Stromstäker in Abhängigkeit von der Probentemperatur aufgezeichnet. Aufgenommen wurden folgende zwei Messreihen\\
 \begin{table}
-\begin{tabular}{|c|c|}
+\begin{minipage}{0.45\textwidth}
+\begin{tabular}{c|c}
 Temp. [$C^\circ$] & Strom [$10^{-12}A$]\\\hline
 -61,1	&0,05\\\hline
 -59,1	&0,01\\\hline
@@ -241,6 +243,11 @@ Temp. [$C^\circ$] & Strom [$10^{-12}A$]\\\hline
 -11,2	&3,90\\\hline
 -5,3	&4,10\\\hline
 -7,6	&3,50\\\hline
+\end{tabular}
+\end{minipage}
+\begin{minipage}{0.45\textwidth}
+\begin{tabular}{c|c}
+Fortsetzung & \\\hline
 -5,8	&3,50\\\hline
 -4,1	&3,40\\\hline
 -2,2	&3,20\\\hline
@@ -270,10 +277,14 @@ Temp. [$C^\circ$] & Strom [$10^{-12}A$]\\\hline
 48,6	&4,50\\\hline
 50,4	&4,00\\\hline
 \end{tabular}
+\end{minipage}
+\caption{Messwerte der ersten Messreihe}
+\label{tab_werte1}
 \end{table}
 
 \begin{table}
-\begin{tabular}{|c|c|}
+\begin{minipage}{0.45\textwidth}
+\begin{tabular}{c|c}
 Temp. [$C^\circ$] & Strom [$10^{-12}A$]\\\hline
 -58.9	&3.00\\\hline
 -56.0	&4.90\\\hline
@@ -291,6 +302,11 @@ Temp. [$C^\circ$] & Strom [$10^{-12}A$]\\\hline
 6.9		&6.00\\\hline
 11.9	&6.00\\\hline
 16.7	&5.80\\\hline
+\end{tabular}
+\end{minipage}
+\begin{minipage}{0.45\textwidth}
+\begin{tabular}{c|c}
+Fortsetzung & \\\hline
 21.7	&5.70\\\hline
 26.7	&5.60\\\hline
 31.7	&5.40\\\hline
@@ -307,35 +323,175 @@ Temp. [$C^\circ$] & Strom [$10^{-12}A$]\\\hline
 85.9	&0.65\\\hline
 90.8	&1.00\\\hline
 \end{tabular}
+\end{minipage}
+\caption{Messwerte der zweiten Messreihe}
+\label{tab_werte2}
 \end{table}
 
-Trägt man beide Messreihen in ein Diagramm ein, so wird ersichtlich, das der Nullpunkt linear mit der Temperatur angehoben wird. Um dieses Verhalten herauszukorrigieren, wird mit einer Regressionsgeraden die Steigung bestimmt und die Kurve um diesen Wert abgesenkt. In Diagramm \ref{pic_dia1} und \ref{pic_dia1} sind sowohl Messwerte als auch die lineare Regression eingezeichnet.
+Trägt man beide Messreihen in ein Diagramm ein, so wird ersichtlich, das der Nullpunkt linear mit der Temperatur angehoben wird. Um dieses Verhalten heraus zu korrigieren, wird mit einer Regressionsgeraden die Steigung bestimmt und die Kurve um diesen Wert abgesenkt. In Diagramm \ref{pic_dia1} und \ref{pic_dia1} sind sowohl Messwerte als auch die lineare Regression eingezeichnet.
 
 \begin{figure}[htbp]
-\includegraphics[scale=0.8]{../gnu/relax1.pdf}
+\includegraphics[scale=0.8]{../gnu/relax11.pdf}
 \caption{Erste Messreihe. Die in grün umrahmten Werte wurden für die lineare Regression mit einer Geraden durch den Ursprung benutzt.}
 \label{pic_dia1}
 \end{figure}
 \begin{figure}[htbp]
-\includegraphics[scale=0.8]{../gnu/relax2.pdf}
+\includegraphics[scale=0.8]{../gnu/relax12.pdf}
 \caption{Zweite Messreihe. Die in grün umrahmten Werte wurden für die lineare Regression mit einer Geraden durch den Ursprung benutzt.}
 \label{pic_dia2}
 \end{figure}
 
 Als Fitparameter wurde die Steigung $m_i$ der beiden Geraden verwendet. Folgende Werte wurden errechnet:\\
 \begin{align}
-m_1&=(2,4  \pm 1,003) \cdot10^{-4} \frac{A}{T}\\
+m_1&=(2,21     \pm 0,73) \cdot10^{-16} \frac{A}{T}\\
 \label{eq_korr1}
-m_2&=(2,00\pm 0.26)\cdot10^{-3}\frac{A}{T}
+m_2&=( 2,00  \pm0,26)\cdot10^{-15}\frac{A}{T}
 \end{align}
 
-Im Folgenden wurden die in \eqref{eq_korr1} berechneten Korrekturen bereits angewendet. Es soll nun die Aktivierungsenergie $W$ berechnet werden. Dazu wird ausgenutzt, dass für den frühen Kurvenverlauf die Gesetzmäßigkeit in \eqref{eq_j(T)} gilt. Aus den korrigierten Werte wird daher der Logarithmus gebildet und dieser dann gegen $\frac{1}{x}$ aufgetragen. Die Steigung der Geraden entspricht der Aktivierungsenergie.\\
+\subsection{Erste Methode}
+Im Folgenden wurden die in \eqref{eq_korr1} berechneten Korrekturen bereits angewendet. Es soll nun die Aktivierungsenergie $W$ berechnet werden. Dazu wird ausgenutzt, dass für den frühen Kurvenverlauf die Gesetzmäßigkeit in \eqref{eq_j(T)} gilt. Aus den korrigierten Werte wird daher der Logarithmus gebildet und dieser dann gegen $\frac{1}{x}$ aufgetragen. Die Kurven sind in Abbildung \ref{pic_21} und \ref{pic_22} Die Steigung der Geraden entspricht der Aktivierungsenergie.\\
+
+\begin{figure}[H]
+\includegraphics[scale=0.8]{../gnu/relax21.pdf}
+\caption{Erste Messreihe logarithmisch aufgetragen. Die in grün umrahmten Werte wurden für die lineare Regression verwendet}
+\label{pic_21}
+\end{figure}
 
 Es wurden folgende Aktivierungsenergien gemessen:
 \begin{align}
-W_1&=-480,0 \pm 92,0\\
-W_2&=-296,0 \pm 39,5
+W_1&=-480,8 \pm 92,0\\
+W_2&=-317,3 \pm 40,1
 \end{align}
+\begin{figure}[H]
+\includegraphics[scale=0.8]{../gnu/relax22.pdf}
+\caption{Zweite Messreihe logarithmisch aufgetragen. Die in grün umrahmten Werte wurden für die lineare Regression verwendet}
+\label{pic_22}
+\end{figure}
+
+\subsection{Zweite Methode}
+Anschließend wird die Aktivierungsenergie über eine zweite Methode bestimmt. Entsprechend Gleichung \eqref{eq_int} lässt sich die Aktivierungsenergie auch durch die Fläche der Kurve bestimmen. Aus den Messpunkte wird dafür mittels der Trapezregel die Kurvenfläche bestimmt und diese dann gegen $\frac{1}{T}$ aufgetragen. Die durch Integration erhaltenen Werte stehen in Tabellen \ref{tab_int1} und \ref{tab_int2}. Es ergibt sich dabei der Graph in Abbildungen \ref{pic_int1} und \ref{pic_int2}. Die Aktivierungsenergie lässt sich wieder als Steigung der Ausgleichsgeraden ablesen.
+
+\begin{table}[htbp]
+\begin{minipage}[t]{0.45\textwidth}
+\centering
+\begin{tabular}{c|c}
+Temperatur $[C^\circ]$ & $\int ^{T^*}_{T} i(T')dT'$\\\hline
+-59.1 &245.11\\\hline
+-55.6 &245.02\\\hline
+-53.5 &244.46\\\hline
+-52.2 &243.68\\\hline
+-50.6 &241.12\\\hline
+-48.5 &235.34\\\hline
+-46.6 &229.36\\\hline
+-44.7 &222.90\\\hline
+-42.9 &216.60\\\hline
+-41.1 &210.30\\\hline
+-39.5 &204.30\\\hline
+-37.8 &197.92\\\hline
+-36.2 &191.92\\\hline
+-34.4 &184.81\\\hline
+-32.7 &177.93\\\hline
+-30.9 &170.55\\\hline
+-29.1 &163.17\\\hline
+-27.2 &155.28\\\hline
+-25.2 &147.08\\\hline
+-23.1 &138.37\\\hline
+-21.0 &129.44\\
+\end{tabular}
+\end{minipage}
+\begin{minipage}[t]{0.45\textwidth}
+\centering
+\begin{tabular}{c|c}
+Fortsetzung & \\\hline
+-18.9 &120.52\\\hline
+-16.9 &112.32\\\hline
+-14.7 &103.41\\\hline
+-13.0 &96.52\\\hline
+-11.2 &89.41\\\hline
+-9.3 &65.81\\\hline
+-7.6 &57.07\\\hline
+-5.8 &50.77\\\hline
+-4.1 &44.91\\\hline
+-2.2 &38.64\\\hline
+-0.1 &32.13\\\hline
+2.2 &25.46\\\hline
+4.5 &19.71\\\hline
+6.6 &14.98\\\hline
+8.3 &11.33\\\hline
+10.0 &8.10\\\hline
+11.8 &5.31\\\hline
+14.0 &2.56\\\hline
+16.3 &0.60\\\hline
+18.7 &0.00\\\hline
+\end{tabular}
+\end{minipage}
+\caption{Messwerte, die durch Integration der zweiten Messreihe entstanden sind. Verwendet wurde die Trapez-Methode }
+\label{tab_int1}
+\end{table}
+
+\begin{table}[htbp]
+\begin{minipage}[t]{0.45\textwidth}
+\centering
+\begin{tabular}{c|c}
+Temperatur $[C^\circ]$ & $\int ^{T^*}_{T} i(T')dT'$\\\hline
+-58.9 &700.535\\\hline
+-56.0 &689.08\\\hline
+-49.3 &655.245\\\hline
+-41.3 &612.045\\\hline
+-35.1 &576.085\\\hline
+-30.3 &547.045\\\hline
+-26.2 &522.035\\\hline
+-22.1 &497.025\\\hline
+-17.7 &470.185\\\hline
+-12.9 &440.425\\\hline
+-7.9 &409.175\\\hline
+-2.9 &378.175\\\hline
+2.0 &348.04\\\hline
+6.9 &318.395\\
+\end{tabular}
+\end{minipage}
+\begin{minipage}[t]{0.45\textwidth}
+\centering
+\begin{tabular}{c|c}
+Fortsetzung & \\\hline
+11.9 &288.395\\\hline
+16.7 &260.075\\\hline
+21.7 &231.325\\\hline
+26.7 &203.075\\\hline
+31.7 &175.575\\\hline
+36.7 &148.825\\\hline
+41.5 &123.625\\\hline
+46.3 &99.145\\\hline
+51.6 &73.175\\\hline
+57.0 &48.875\\\hline
+62.1 &28.73\\\hline
+66.9 &13.37\\\hline
+71.4 &4.37\\\hline
+76.0 &0.0\\\hline
+\end{tabular}
+\end{minipage}
+\caption{Messwerte, die durch Integration der ersten Messreihe entstanden sind. Verwendet wurde die Trapez-Methode}
+\label{tab_int2}
+\end{table}
+
+\begin{figure}[H]
+\includegraphics[scale=0.8]{../gnu/relax31.pdf}
+\caption{Integrierte Werte der ersten Messreihe gegen $\frac{1}{T}$ aufgetragen. Die blau umrahmten Werte wurden für die lineare Regression verwendet}
+\label{pic_int1}
+\end{figure}
+\begin{figure}[H]
+\includegraphics[scale=0.8]{../gnu/relax32.pdf}
+\caption{Integrierte Werte der zweiten Messreihe gegen $\frac{1}{T}$ aufgetragen. Die blau umrahmten Werte wurden für die lineare Regression verwendet}
+\label{pic_int2}
+\end{figure}
+
+Es wurden folgende Aktivierungsenergien gemessen:
+\begin{align}
+W_1&=(2,39    \pm 0,057)\cdot 10^{-7}\\
+W_2&=(4,20	\pm 0,08)\cdot 10^{-7}
+\end{align}
+
+
 
 \parskip 340pt
 \Large{Literatur}\\\\
