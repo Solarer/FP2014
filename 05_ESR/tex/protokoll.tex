@@ -62,8 +62,56 @@ Dimitrios Skodras\\					% Name Praktikumspartner B
 
 \section{Theorie}
 \setcounter{page}{1}
+Die Hüllenelektronen eines Atoms, die einen Bahndrehimpuls besitzen, erzeugen auch
+ein magnetisches Moment. Laut einiger Experimente haben Elektronen jedoch außerdem einen "Eigendrehimpuls" genannt "Spin", der experimentell zu Tage tritt, wenn der Gesamtdrehimpuls der Elektronenhülle verschwindet. Dies ist klassisch nicht zu erklären, da Elektronen punktförmig sind und keine Ausdehnung haben.\\
+In diesem Experiment soll nun versucht werden, den Betrag dieses Drehimpulses zu bestimmen.\\
 
-\section{Durchführung}
+Mit Überlegungen aus der Quantenmechanik lässt sich das gesuchte Bohrsche Magneton herleiten: Die Stromdichte eines Teilchenstroms aus Elektronen ist 
+\begin{align}
+\vec{S} = \frac{\hbar}{2im_0} (\Psi^* \nabla \Psi - \Psi \nabla \Psi^*)
+\end{align}
+Mit $\hbar$ dem Planckschen Wirkungsquantum und $m_0$ der Elektronenmasse.\\
+
+Setzt man für $\Psi$ die Kugelförmige Wellenfunktion des Elektrons ein und integriert über die Querschnittsfläche der Elektronenhülle, so erhält man das Bohrsche Magneton $\mu_B$:
+\begin{align}
+\mu_B := -\frac{1}{2}\frac{e_0}{m_0}\hbar= (9,274015 \pm 0,000003)\cdot10^{-24} \frac{J}{T}
+\end{align}
+Neben dem Betrag des Drehimpulses ist auch seine Richtung gequantelt. Bezüglicher einer ausgezeichneten Raumachse kann die Komponente $l_z$ nur ganzzahlige Vielfache von $\hbar$ annehmen:
+\begin{align}
+l_z=m_l\hbar
+\end{align}
+Mit $m_l = 0, \pm 1, \pm 2,\cdots , \pm l$\\
+
+Wird dieses magnetische Moment in ein äußeres Magnetfeld eingeführt, so erhält es, abhängig von seiner Ausrichtung, potentielle Energie. Seine Grundenergie $E_0$ spaltet in $2l+1$ Unterniveaus auf, der Zeeman-Effekt wird beobachtet.\\
+
+Das Magnetische Moment wird nun zweckmäßigerweise in Einheiten des Bohrschen Magnetons ausgedrückt der dabei auftretende Proportionalitätsfaktor wird \glqq Landé-Faktor\grqq $g$  genannt. Dieser soll im Folgenden berechnet werden.
+\section{Durchführung und Aufbau}
+Zur Bestimmung des g-Faktors wird die Elektronenspin-Resonanz-Methode (ESR) benutzt. Dazu wird eine Substanz mit freien Elektronen in ein homogenes Magnetfeld eingeführt und das Energieniveau $E_0$ mittels Zeeman-Effekt aufgespalten.\\
+
+\begin{figure}[H]
+\includegraphics[scale=0.5]{../pics/aufsp.pdf}
+\caption{Darstellung der Aufspaltung des Grundniveaus in zwei weitere Niveaus für $B\neq 0$}
+\label{pic_aufspaltung}
+\end{figure}
+
+Gemäß der Maxwell-Boltzmann-Verteilung ist der obere Zustand schwächer besetzt als der untere. Durch Einstrahlung von Lichtquanten mit der Differenzenergie von etwa $\hbar\nu \approx 6\cdot10^{-7}eV \Rightarrow \nu \approx 140 \text{MHz}$ kann man die Elektronen in das höhere Niveau anheben, wobei sie ihren Spin umklappen. Dies ist die sog. "Elektronenspin-Resonanz".\\
+
+Das Hochfrequenzfeld wird durch eine kleine Spule induziert. Das homogene Magnetfeld erzeugt eine Helmholtzspule. Wird die Resonanzfrequenz erreicht, so ändert sich die makroskopische Magnetisierung der Probe und diese wird an der angeschlossenen Brückenspannung sichtbar, da diese nun aus ihrer abgeglichenen Einstellung verstimmt wird.
+
+In Abbildung \ref{pic_aufbau} ist der Aufbau der Messapparatur zu erkennen.
+\begin{figure}[H]
+\includegraphics[scale=0.4]{../pics/aufbau.pdf}
+\caption{Aufbau der im Versuch verwendeten Messapparatur}
+\label{pic_aufbau}
+\end{figure}
+
+Die Brückenspannung wird nun verstärkt, gefiltert und zusammen mit dem Output eines Rampengenerators für die Spulenspannung an einen X-Y-Schreiber angeschlossen. Im Idealfall sollte eine Resonanz in Form von Abbildung \ref{pic_resonanz} sichtbar werden. Aus dieser kann dann g berechnet werden.
+\begin{figure}
+\includegraphics[scale=0.5]{../pics/resonanz.pdf}
+\caption{Absorbtions-Resonanzsignal}
+\label{pic_resonanz}
+\end{figure}
+
 
 \section{Auswertung}
 \subsection{Kalibrierung der Messachsen}
@@ -206,7 +254,11 @@ die Rampengeneratorspannungen in Ströme $I$ umrechnen.
 
 \subsection{Magnetische Flussdichte der Erde}
 Mit den Ergebnissen aus Abschnitt \ref{sec_Kalib} lässt sich nun das Erdmagnetfeld bestimmen. Hierzu werden die Ströme $I_\text{res}$ aus Tabelle
-\ref{tab_xAxisKalibTOTAL} nach der Gleichung für die Helmholtzspulen \eqref{eq_helmholtz.113} in magnetische Flussdichten umgerechnet, wobei der Radius
+\ref{tab_xAxisKalibTOTAL} nach der Gleichung für die Helmholtzspulen 
+\begin{align}
+B(I)=\frac{8}{\sqrt{125}} \mu_0 \frac{n}{r}I
+\end{align}
+in magnetische Flussdichten umgerechnet, wobei der Radius
 $r$ = 0,1 m und die Windungszahl N = 156 ist. Da für gleiche Frequenzen $\nu_e$ die Resonanzstellen verschieden sind, bewirkt das Erdmagnetfeld einen
 Einfluss in die jeweilige Richtung, je nachdem, ob die Spule parallel oder antiparallel dazu ausgerichtet ist. Diesen Einfluss kann man ermitteln,
 indem die zueinander gehörenden Flussdichten voneinander abgezogen und das Ergebnis halbiert wird
@@ -276,6 +328,7 @@ Unabhängig von den Abweichungen vom Erdmagnetfeld ist eine sehr gute Bestimmung
 \begin{thebibliography}{xxxxxxxxxxxxxxxxx}
  \bibitem[Chemie.de]{ErdB}Form und Stärke des Erdmagnetfelds\\ \href{http://www.chemie.de/lexikon/Erdmagnetfeld.html#Form_und_St.C3.A4rke_des_Erdmagnetfeldes}{chemie.de/lexikon/Erdmagnetfeld}
  \bibitem[Universal Lexikon]{Gyro}Landé-Faktor\\ \href{http://universal\_lexikon.deacademic.com/144745/}{universal\_lexikon.deacademic.com/144745/}
+ \bibitem[Versuchsanleitung]{}{Versuch V28 Elektronen-Spin-Resonanz }
 \end{thebibliography}
 
 % ========================================
