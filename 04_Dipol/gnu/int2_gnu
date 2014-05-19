@@ -1,0 +1,57 @@
+#-----Beschriftungen-----#
+set encoding iso_8859_1
+
+set terminal post eps enhanced color dashed 
+set output 'relax32.eps'
+
+set title ""
+set xlabel "Temperatur^{-1} [K^{-1}]"
+set ylabel "aufintegrierte Werte"
+
+set key bottom right 
+
+
+#-----Formatierung-----#
+set grid
+#set xrange [0:14.5]
+#set yrange [0:2100]
+#set logscale x
+#set logscale y
+
+
+
+#-----Konstanten definieren-----#
+pi=3.1415926
+c0=299792458
+
+
+#-----Rechenfunktionen-----#
+
+
+#-----Fitfunktion-----#
+
+f(x)=a*x+b
+g(x)=d*x+e
+
+#-----Fitting-----#
+fit f(x) "output2" index 0 using (1/($1+273)):($2/1000000000000) via a,b 
+#fit g(x) "data" index 5 using (1/($1+273)):(log($2-0.002*$1)) via d,e
+
+#-----Plot-----#
+#plot "data" index 3 using ($1+273):2 title "Messwerte" ps 2 ,"data" index 3 using (($1+273)):2 title "für Fit verwendet" pt 12 ps 1,f(x) title "Ausgleichsgerade"
+plot "output2" index 0 using (1/($1+273)):($2/1000000000000) title "integrierte Messwerte" ps 2, "output2" index 1 using (1/($1+273)):($2/1000000000000) title "für Fit verwendet" ps 2 pt 12 lc 3, f(x) title "Regressionsgerade" 
+
+
+#-----Sonderkram-----#
+#set arrow from 0,-26 to 1.6,-26 lc 2 lw 3 front nohead
+
+
+
+#-----Zurücksetzen-----#
+
+unset logscale x
+unset logscale y
+
+set terminal x11 
+replot
+pause -1
