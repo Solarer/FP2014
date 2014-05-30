@@ -84,33 +84,54 @@ Mit $m_l = 0, \pm 1, \pm 2,\cdots , \pm l$\\
 
 Wird dieses magnetische Moment in ein äußeres Magnetfeld eingeführt, so erhält es, abhängig von seiner Ausrichtung, potentielle Energie. Seine Grundenergie $E_0$ spaltet in $2l+1$ Unterniveaus auf, der Zeeman-Effekt wird beobachtet.\\
 
-Das Magnetische Moment wird nun zweckmäßigerweise in Einheiten des Bohrschen Magnetons ausgedrückt der dabei auftretende Proportionalitätsfaktor wird \glqq Landé-Faktor\grqq $g$  genannt. Dieser soll im Folgenden berechnet werden.
+Der Eigenspin der Elektronen kann, wie im Stern-Gerlach-Versuch sichtbar wird, immer nur zwei Werte annehmen: $m_s=\pm \frac{1}{2}$ und damit folgt für die z-Komponente $S_z$:
+\begin{align*}
+S_z=m_s\hbar=\pm\frac{1}{2}\hbar
+\end{align*}
+
+Das Magnetische Moment wird nun zweckmäßigerweise in Einheiten des Bohrschen Magnetons ausgedrückt
+\begin{align*}
+\mu S_z=-gm_s\mu_B=-g\frac{1}{2}\mu_B
+\end{align*}
+der dabei auftretende Proportionalitätsfaktor wird \glqq Landé-Faktor\grqq $g$  genannt. Dieser kann $\neq 1$ sein, wodurch ein anderer Zusammenhang als beim Bahndrehimpuls impliziert wird und der genaue Wert soll im Folgenden berechnet werden.
 \section{Durchführung und Aufbau}
 Zur Bestimmung des g-Faktors wird die Elektronenspin-Resonanz-Methode (ESR) benutzt. Dazu wird eine Substanz mit freien Elektronen in ein homogenes Magnetfeld eingeführt und das Energieniveau $E_0$ mittels Zeeman-Effekt aufgespalten.\\
 
 \begin{figure}[H]
 \includegraphics[scale=0.5]{../pics/aufsp.pdf}
-\caption{Darstellung der Aufspaltung des Grundniveaus in zwei weitere Niveaus für $B\neq 0$}
+\caption{Darstellung der Aufspaltung des Grundniveaus in zwei weitere Niveaus für $B\neq 0$\protect\footnotemark}
 \label{pic_aufspaltung}
 \end{figure}
+\footnotetext{Abbildung aus der Versuchsanleitung entnommen}
 
-Gemäß der Maxwell-Boltzmann-Verteilung ist der obere Zustand schwächer besetzt als der untere. Durch Einstrahlung von Lichtquanten mit der Differenzenergie von etwa $\hbar\nu \approx 6\cdot10^{-7}eV \Rightarrow \nu \approx 140 \text{MHz}$ kann man die Elektronen in das höhere Niveau anheben, wobei sie ihren Spin umklappen. Dies ist die sog. "Elektronenspin-Resonanz".\\
+Die Energie-Differenz zwischen den beiden Niveaus beträgt dabei
+\begin{align}
+h\nu = g \mu_B B
+\label{eq_energie}
+\end{align}
 
-Das Hochfrequenzfeld wird durch eine kleine Spule induziert. Das homogene Magnetfeld erzeugt eine Helmholtzspule. Wird die Resonanzfrequenz erreicht, so ändert sich die makroskopische Magnetisierung der Probe und diese wird an der angeschlossenen Brückenspannung sichtbar, da diese nun aus ihrer abgeglichenen Einstellung verstimmt wird.
+Gemäß der Maxwell-Boltzmann-Verteilung ist der obere Zustand schwächer besetzt als der untere. Durch Einstrahlung von Lichtquanten mit der Differenzenergie von etwa $\hbar\nu \approx 6\cdot10^{-7}eV \Rightarrow \nu \approx 140 \text{MHz}$ bei einem Magnetfeld von $B=10\text{mT}$ kann man die Elektronen in das höhere Niveau anheben, wobei sie ihren Spin umklappen. Dies ist die sog. "Elektronenspin-Resonanz".\\
+
+Das Hochfrequenzfeld wird durch eine kleine Spule induziert. Das homogene Magnetfeld erzeugt eine Helmholtzspule. Wird die Resonanzfrequenz erreicht, so ändert sich die makroskopische Magnetisierung der Probe und damit die Impendanz der HF-Spule. Diese Verstimmung wird an der angeschlossenen Brückenschaltung durch eine Differenz-Spannung sichtbar, die auf einem empfindlichen Messinstrument abgelesen werden kann.
 
 In Abbildung \ref{pic_aufbau} ist der Aufbau der Messapparatur zu erkennen.
 \begin{figure}[H]
 \includegraphics[scale=0.4]{../pics/aufbau.pdf}
-\caption{Aufbau der im Versuch verwendeten Messapparatur}
+\caption{Aufbau der im Versuch verwendeten Messapparatur\protect\footnotemark[2]}
 \label{pic_aufbau}
 \end{figure}
+\footnotetext[2]{Abbildung aus der Versuchsanleitung entnommen}
 
-Die Brückenspannung wird nun verstärkt, gefiltert und zusammen mit dem Output eines Rampengenerators für die Spulenspannung an einen X-Y-Schreiber angeschlossen. Im Idealfall sollte eine Resonanz in Form von Abbildung \ref{pic_resonanz} sichtbar werden. Aus dieser kann dann g berechnet werden.
-\begin{figure}
+Die Brückenspannung wird nun verstärkt, gefiltert und zusammen mit dem Output eines Rampengenerators für die Spulenspannung an einen X-Y-Schreiber angeschlossen. Im Idealfall sollte eine Resonanz in Form von Abbildung \ref{pic_resonanz} 
+\begin{figure}[H]
 \includegraphics[scale=0.5]{../pics/resonanz.pdf}
-\caption{Absorbtions-Resonanzsignal}
+\caption{Absorbtions-Resonanzsignal\protect\footnotemark[3]}
 \label{pic_resonanz}
 \end{figure}
+\footnotetext[3]{Abbildung aus der Versuchsanleitung entnommen}
+sichtbar werden. Aus dieser kann dann g berechnet werden.
+
+
 
 
 \section{Auswertung}
@@ -203,7 +224,7 @@ In Tabelle \ref{tab_erdMagnetfeld} sind die jeweiligen Magnetfelder und das erre
 
 \renewcommand{\arraystretch}{1.0}
 \subsection{Gyromagnetisches Verhältnis des Elektrons}
-Mit den vom Erdmagnetfeld bereinigten Spulenfeldern lässt sich nun schließlich das gyromagnetische Verhältnis des Elektrons nach \eqref{eq_nu(B).18}
+Mit den vom Erdmagnetfeld bereinigten Spulenfeldern lässt sich nun schließlich das gyromagnetische Verhältnis des Elektrons nach Gleichung \eqref{eq_energie}
 berechnen. Hierzu wird eine Fitgerade 
 \begin{equation}
  B = \frac{h}{\mu_B \cdot g} \nu = m_\text{gyro} \cdot \nu
@@ -239,7 +260,6 @@ Das gyromagnetische Verhältnis wurde durch einen Fit ermittelt und hat eine Üb
  \frac{g_\text{Mess}}{g_\text{Lit}} = 103,4 \%.
 \end{equation}
 Unabhängig von den Abweichungen vom Erdmagnetfeld ist eine sehr gute Bestimmung des Landéfaktors gelungen. 
-
 
 
 
