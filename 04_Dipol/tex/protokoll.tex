@@ -209,14 +209,13 @@ ständig zu beobachten und die Heizleistung nach Tabelle \ref{tab_heizrate} ange
 \end{table}
 
 \section{Auswertung}
-Bei diesem Versuch wird die durch ein Amperemeter gemessene Stromstäker in Abhängigkeit von der Probentemperatur aufgezeichnet. Aufgenommen wurden folgende zwei Messreihen\\
 \begin{table}
 \begin{minipage}{0.45\textwidth}
 \begin{tabular}{c|c}
-Temp. [$C^\circ$] & Strom [$10^{-12}A$]\\\hline
+Temp. [$\text{C}^\circ$] & Strom [$10^{-12}A$]\\\hline
 -61,1	&0,05\\\hline
 -59,1	&0,01\\\hline
--55,6	&0,04\\\hline
+-55,6	&0,40\\\hline
 -53,5	&0,50\\\hline
 -52,2	&0,70\\\hline
 -50,6	&2,50\\\hline
@@ -278,14 +277,14 @@ Fortsetzung & \\\hline
 50,4	&4,00\\\hline
 \end{tabular}
 \end{minipage}
-\caption{Messwerte der ersten Messreihe}
+\caption{Messwerte der Messreihe: $2^\circ$C pro Minute}
 \label{tab_werte1}
 \end{table}
 
 \begin{table}
 \begin{minipage}{0.45\textwidth}
 \begin{tabular}{c|c}
-Temp. [$C^\circ$] & Strom [$10^{-12}A$]\\\hline
+Temp. [$\text{C}^\circ$] & Strom [$10^{-12}A$]\\\hline
 -58,9	&3,00\\\hline
 -56,0	&4,90\\\hline
 -49,3	&5,20\\\hline
@@ -324,20 +323,20 @@ Fortsetzung & \\\hline
 90,8	&1,00\\\hline
 \end{tabular}
 \end{minipage}
-\caption{Messwerte der zweiten Messreihe}
+\caption{Messwerte der Messreihe: $5^\circ$C pro Minute}
 \label{tab_werte2}
 \end{table}
 
-Trägt man beide Messreihen in ein Diagramm ein, so wird ersichtlich, das der Nullpunkt linear mit der Temperatur angehoben wird. Um dieses Verhalten heraus zu korrigieren, wird mit einer Regressionsgeraden die Steigung bestimmt und die Kurve um diesen Wert abgesenkt. In Diagramm \ref{pic_dia1} und \ref{pic_dia1} sind sowohl Messwerte als auch die lineare Regression eingezeichnet.
+Trägt man beide Messreihen in ein Diagramm ein, so wird ersichtlich, das der Nullpunkt linear mit der Temperatur angehoben wird. Um dieses Verhalten heraus zu korrigieren, wird mit einer Regressionsgeraden die Steigung bestimmt und die Kurve um diesen Wert abgesenkt. In Diagramm \ref{pic_dia1} und \ref{pic_dia2} sind sowohl Messwerte als auch die lineare Regression eingezeichnet.
 
 \begin{figure}[htbp]
 \includegraphics[scale=0.8]{../gnu/relax11.pdf}
-\caption{Erste Messreihe. Die in grün umrahmten Werte wurden für die lineare Regression mit einer Geraden durch den Ursprung benutzt.}
+\caption{Messreihe: $2^\circ$C pro Minute. Die in grün umrahmten Werte wurden für die lineare Regression mit einer Geraden durch den Ursprung benutzt.}
 \label{pic_dia1}
 \end{figure}
 \begin{figure}[htbp]
 \includegraphics[scale=0.8]{../gnu/relax12.pdf}
-\caption{Zweite Messreihe. Die in grün umrahmten Werte wurden für die lineare Regression mit einer Geraden durch den Ursprung benutzt.}
+\caption{Messreihe: $5^\circ$C pro Minute. Die in grün umrahmten Werte wurden für die lineare Regression mit einer Geraden durch den Ursprung benutzt.}
 \label{pic_dia2}
 \end{figure}
 
@@ -345,26 +344,27 @@ Als Fitparameter wurde die Steigung $m_i$ der beiden Geraden verwendet. Folgende
 \begin{align}
 m_1&=(2,21     \pm 0,73) \cdot10^{-16} \frac{A}{T}\\
 \label{eq_korr1}
-m_2&=( 2,00  \pm0,26)\cdot10^{-15}\frac{A}{T}
+m_2&=( 2,00  \pm0,26)\cdot10^{-15}\frac{A}{T}\\
+b_{1,2}&=0 A
 \end{align}
 
 \subsection{Erste Methode}
-Im Folgenden wurden die in \eqref{eq_korr1} berechneten Korrekturen bereits angewendet. Es soll nun die Aktivierungsenergie $W$ berechnet werden. Dazu wird ausgenutzt, dass für den frühen Kurvenverlauf die Gesetzmäßigkeit in \eqref{eq_j(T)} gilt. Aus den korrigierten Werte wird daher der Logarithmus gebildet und dieser dann gegen $\frac{1}{x}$ aufgetragen. Die Kurven sind in Abbildung \ref{pic_21} und \ref{pic_22} Die Steigung der Geraden entspricht der Aktivierungsenergie.\\
+Im Folgenden wurden die in \eqref{eq_korr1} berechneten Korrekturen bereits angewendet. Es soll nun die Aktivierungsenergie $W$ berechnet werden. Dazu wird ausgenutzt, dass für den frühen Kurvenverlauf die Gesetzmäßigkeit in \eqref{eq_j(T)} gilt. Aus den korrigierten Werte wird daher der Logarithmus gebildet und dieser dann gegen $\frac{1}{x}$ aufgetragen. Die Kurven sind in Abbildung \ref{pic_21} und \ref{pic_22} zu sehen. Die Steigungen der Geraden entsprechen den Aktivierungsenergien.\\
 
 \begin{figure}[H]
 \includegraphics[scale=0.8]{../gnu/relax21.pdf}
-\caption{Erste Messreihe logarithmisch aufgetragen. Die in grün umrahmten Werte wurden für die lineare Regression verwendet}
+\caption{Messwerte: $2^\circ$C pro Minute logarithmisch aufgetragen. Die in grün umrahmten Werte wurden für die lineare Regression verwendet}
 \label{pic_21}
 \end{figure}
 
 Es wurden folgende Aktivierungsenergien gemessen:
 \begin{align}
-W_1&=(-3,48\pm 0,67)\cdot10^{25} J\\
-W_2&=(-2,298 \pm 0,29)\cdot10^{25} J
+W_1&=(-2,17\pm 0,42)\cdot10^{44} eV\\
+W_2&=(-1,43 \pm 0,18)\cdot10^{44} eV
 \end{align}
 \begin{figure}[H]
 \includegraphics[scale=0.8]{../gnu/relax22.pdf}
-\caption{Zweite Messreihe logarithmisch aufgetragen. Die in grün umrahmten Werte wurden für die lineare Regression verwendet}
+\caption{Messreihe: $5^\circ$C pro Minute  logarithmisch aufgetragen. Die in grün umrahmten Werte wurden für die lineare Regression verwendet}
 \label{pic_22}
 \end{figure}
 
@@ -375,7 +375,7 @@ Anschließend wird die Aktivierungsenergie über eine zweite Methode bestimmt. E
 \begin{minipage}[t]{0.45\textwidth}
 \centering
 \begin{tabular}{c|c}
-Temperatur $[C^\circ]$ & $\int ^{T^*}_{T} i(T')dT'$\\\hline
+Temperatur $[\text{C}^\circ]$ & $\int ^{T^*}_{T} i(T')dT'$\\\hline
 -59,1 &245,11\\\hline
 -55,6 &245,02\\\hline
 -53,5 &244,46\\\hline
@@ -425,7 +425,7 @@ Fortsetzung & \\\hline
 18,7 &0,00\\\hline
 \end{tabular}
 \end{minipage}
-\caption{Messwerte, die durch Integration der zweiten Messreihe entstanden sind. Verwendet wurde die Trapez-Methode }
+\caption{Messwerte, die durch Integration der Messreihe: $5^\circ$C pro Minute entstanden sind. Verwendet wurde die Trapez-Methode }
 \label{tab_int1}
 \end{table}
 
@@ -433,7 +433,7 @@ Fortsetzung & \\\hline
 \begin{minipage}[t]{0.45\textwidth}
 \centering
 \begin{tabular}{c|c}
-Temperatur $[C^\circ]$ & $\int ^{T^*}_{T} i(T')dT'$\\\hline
+Temperatur $[\text{C}^\circ]$ & $\int ^{T^*}_{T} i(T')dT'$\\\hline
 -58,9 &700,535\\\hline
 -56,0 &689,08\\\hline
 -49,3 &655,245\\\hline
@@ -470,29 +470,40 @@ Fortsetzung & \\\hline
 76,0 &0,0\\\hline
 \end{tabular}
 \end{minipage}
-\caption{Messwerte, die durch Integration der ersten Messreihe entstanden sind. Verwendet wurde die Trapez-Methode}
+\caption{Messwerte, die durch Integration der  Messreihe: $2^\circ$C pro Minute entstanden sind. Verwendet wurde die Trapez-Methode}
 \label{tab_int2}
 \end{table}
 
 \begin{figure}[H]
 \includegraphics[scale=0.8]{../gnu/relax31.pdf}
-\caption{Integrierte Werte der ersten Messreihe gegen $\frac{1}{T}$ aufgetragen. Die blau umrahmten Werte wurden für die lineare Regression verwendet}
+\caption{Integrierte Werte der Messreihe: $2^\circ$C pro Minute gegen $\frac{1}{T}$ aufgetragen. Die blau umrahmten Werte wurden für die lineare Regression verwendet}
 \label{pic_int1}
 \end{figure}
 \begin{figure}[H]
 \includegraphics[scale=0.8]{../gnu/relax32.pdf}
-\caption{Integrierte Werte der zweiten Messreihe gegen $\frac{1}{T}$ aufgetragen. Die blau umrahmten Werte wurden für die lineare Regression verwendet}
+\caption{Integrierte Werte der Messreihe: $5^\circ$C pro Minute gegen $\frac{1}{T}$ aufgetragen. Die blau umrahmten Werte wurden für die lineare Regression verwendet}
 \label{pic_int2}
 \end{figure}
 
 Es wurden folgende Aktivierungsenergien gemessen:
 \begin{align}
-W_1&=(1,73    \pm 0,041)\cdot 10^{16} J\\
-W_2&=(3,04	\pm 0,06)\cdot 10^{16}J
+W_1&=(1,08    \pm 0,03)\cdot 10^{35} eV\\
+W_2&=(1,90	\pm 0,04)\cdot 10^{35}eV
 \end{align}
 
 \section{Diskussion und Fazit}
-Die Berechnung der Aktivierungsenergie gelang mit beiden Methoden ohne große statistische Abweichungen. Dennoch liegen die Werte um 9 Größenordnungen auseinander. Plausibler sind die Werte, die mit der zweiten Methode bestimmt wurden, da diese kleiner sind\\
+Die berechneten Werte der Aktivierungsenergien von beiden Methoden  liegen um 9 Größenordnungen auseinander. 
+
+\begin{table}[H]
+\begin{tabular}{c|c|c}
+Heizrate & Methode & Ergebnis [eV]\\\hline
+$2^\circ$C pro Minute & 1 &	$(-2,17\pm 0,42)\cdot10^{44}$	\\
+ & 2 &		$(-1,43 \pm 0,18)\cdot10^{44}$\\\hline
+ $5^\circ$C pro Minute & 1 &	$(1,08    \pm 0,03)\cdot 10^{35}$	\\
+ & 2 &	$(1,90	\pm 0,04)\cdot 10^{35}$	\\
+\end{tabular}
+\end{table}
+Alle Ergebnisse sind jedoch sehr weit vom Literaturwert $W_\text{KBr}\approx0,5$eV liegen alle Ergebnisse
 Gut sichtbar wird bei den integrierten Werten in Abbildung \ref{pic_int1} ein Sprung der Messwerte, der jedoch das Ergebnis hier nicht weiter beeinflusst, da nur die Steigung der Ausgleichsgeraden von Bedeutung ist. Es ist jedoch gut möglich, dass sich dieser Sprung bei Verwendung der ersten Methode stärker bemerkbar macht und somit die Diskrepanz der Ergebnisse teilweise erklärt. Der Sprung rührt vermutlich daher, dass zu diesem Zeitpunkt die Sensibilität des Amperemeters verändert wurde.\\
 
 
