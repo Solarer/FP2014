@@ -70,10 +70,10 @@ der Ladungserhaltung entsteht mit dem zweiwertigen Kation eine Leerstelle, die g
 \caption{Entstehung eines elektrischen Dipols in einem Ionenkristall}
 \label{pic_dipGitt}
 \end{figure}
-Wegen der diskreten Gitterpunkte sind nur diskrete Dipolausrichtung möglich, wobei unterhalb von 500 $^\circ$C sich ausschließlich die Leerstellen bewegen.
+Wegen der diskreten Gitterpunkte sind nur diskrete Dipolausrichtung möglich, wobei unterhalb von 500$^\circ$C sich ausschließlich die Leerstellen bewegen.
 Die Potentialschwelle die zu dieser Leerstellendiffusion die durch den periodischen Verlauf des Gitterpotentials festgelegt ist, muss überwunden werden.
 Damit ist eine Aktivierungsenergie $W$ verbunden. Der Anteil der Dipole, die diese Energie mittels der thermischen Bewegung aufbringt ist
-verteilt nach der Boltzmann-Statistik $\exp(W/k_B\,T)$, mit $k_B$ als Boltzmann-Konstante. Die mittlere Zeit einer Dipolumorientierung wird Relaxationszeit
+verteilt nach der Boltzmann-Statistik $\exp(W/k_B\,T)$, mit $k_\text{B}$ als Boltzmann-Konstante. Die mittlere Zeit einer Dipolumorientierung wird Relaxationszeit
 $\tau$ genannt, die direkt proportional zur Boltzmann-Statistik sein muss
 \begin{align}
  \tau(T) = \tau_0 \exp\left(\frac{W}{k_B\, T}\right),
@@ -166,14 +166,14 @@ Methoden berechnet werden.
 \caption{Schematischer Aufbau der Messapparatur}
 \label{pic_dipolaufbau}
 \end{figure}
-Die Probe befindet sich auf dem Boden des Probenbehälters. Da die Kristalle hygroskopisch sind, muss der Probenbehälter auf etwa 10$^{-2}$ bar
-evakuiert werden. Anschließend wird das elektrische Feld bei einer Spannung zwischen $U = 600-900$ V über 900 s bei $T_p=320$ K erzeugt. Nach der
-Polarisation wird die Probe mit flüssigem Stickstoff auf 210 K gekühlt. Das E-Feld wird abgeschaltet und der Kondensator entladen. Nun wird das
+Die Probe befindet sich auf dem Boden des Probenbehälters. Da die Kristalle hygroskopisch sind, muss der Probenbehälter auf etwa 10bar$^{-2}$
+evakuiert werden. Anschließend wird das elektrische Feld bei einer Spannung zwischen $U = 600-900$V über 900s bei $T_\text{p}=320$K erzeugt. Nach der
+Polarisation wird die Probe mit flüssigem Stickstoff auf 210K gekühlt. Das E-Feld wird abgeschaltet und der Kondensator entladen. Nun wird das
 Picoamperemeter angeschlossen und bei stabiler Anzeige der Aufheizprozess begonnen. Um konstante Heizraten zu erhalten ist es nötig, den Temperaturverlauf
 ständig zu beobachten und die Heizleistung nach Tabelle \ref{tab_heizrate} angepasst werden.
 \begin{table}[H]
  \begin{tabular}{c|c|c}
- $b$ in $^\circ$C/min & $T$ in $^\circ$C & $I_{Heiz}$ in A\\
+ $b$ in $^\circ$C/min & $T$ in $^\circ$C & $I_\text{Heiz}$ in A\\
  \hline
  \multirow{8}{0mm}{2} &-50&0,8\\
  &-18 & 0,9\\
@@ -212,7 +212,7 @@ ständig zu beobachten und die Heizleistung nach Tabelle \ref{tab_heizrate} ange
 \begin{table}
 \begin{minipage}{0.45\textwidth}
 \begin{tabular}{c|c}
-Temp. [$\text{C}^\circ$] & Strom [$10^{-12}A$]\\\hline
+Temp. [$^\circ\text{C}$] & Strom [A]$\cdot 10^{-12}$\\\hline
 -61,1	&0,05\\\hline
 -59,1	&0,01\\\hline
 -55,6	&0,40\\\hline
@@ -277,7 +277,7 @@ Fortsetzung & \\\hline
 50,4	&4,00\\\hline
 \end{tabular}
 \end{minipage}
-\caption{Messwerte der Messreihe: $2^\circ$C pro Minute}
+\caption{Messwerte der Messreihe, die bei einer Heizrate von $2^\circ$C/min aufgenommen wurde}
 \label{tab_werte1}
 \end{table}
 
@@ -323,7 +323,7 @@ Fortsetzung & \\\hline
 90,8	&1,00\\\hline
 \end{tabular}
 \end{minipage}
-\caption{Messwerte der Messreihe: $5^\circ$C pro Minute}
+\caption{Messwerte der Messreihe, die bei einer Heizrate von $5^\circ$C/min aufgenommen wurde}
 \label{tab_werte2}
 \end{table}
 
@@ -331,21 +331,21 @@ Trägt man beide Messreihen in ein Diagramm ein, so wird ersichtlich, das der Nu
 
 \begin{figure}[htbp]
 \includegraphics[scale=0.8]{../gnu/relax11.pdf}
-\caption{Messreihe: $2^\circ$C pro Minute. Die in grün umrahmten Werte wurden für die lineare Regression mit einer Geraden durch den Ursprung benutzt.}
+\caption{Messreihe, die bei einer Heizrate von $2^\circ$C/min aufgenommen wurden. Die in grün umrahmten Werte wurden für die lineare Regression mit einer Geraden durch den Ursprung benutzt.}
 \label{pic_dia1}
 \end{figure}
 \begin{figure}[htbp]
 \includegraphics[scale=0.8]{../gnu/relax12.pdf}
-\caption{Messreihe: $5^\circ$C pro Minute. Die in grün umrahmten Werte wurden für die lineare Regression mit einer Geraden durch den Ursprung benutzt.}
+\caption{Messreihe, die bei einer Heizrate von $5^\circ$C/min aufgenommen wurden. Die in grün umrahmten Werte wurden für die lineare Regression mit einer Geraden durch den Ursprung benutzt.}
 \label{pic_dia2}
 \end{figure}
 
 Als Fitparameter wurde die Steigung $m_i$ der beiden Geraden verwendet. Folgende Werte wurden errechnet:\\
 \begin{align}
-m_1&=(2,21     \pm 0,73) \cdot10^{-16} \frac{A}{T}\\
+m_1&=(2,21     \pm 0,73) \cdot10^{-16} \frac{\text{A}}{\text{K}}\\
 \label{eq_korr1}
-m_2&=( 2,00  \pm0,26)\cdot10^{-15}\frac{A}{T}\\
-b_{1,2}&=0 A
+m_2&=( 2,00  \pm0,26)\cdot10^{-15}\frac{\text{A}}{\text{K}}\\
+b_{1,2}&=0 \text{A}
 \end{align}
 
 \subsection{Erste Methode}
@@ -357,25 +357,25 @@ Im Folgenden wurden die in \eqref{eq_korr1} berechneten Korrekturen bereits ange
 \label{pic_21}
 \end{figure}
 
-Es wurden folgende Aktivierungsenergien gemessen:
+Aus der Steigung ließen sich folgende Aktivierungsenergien errechnen:
 \begin{align}
-W_1&=(-2,17\pm 0,42)\cdot10^{44} eV\\
-W_2&=(-1,43 \pm 0,18)\cdot10^{44} eV
+W_1&=(-2,17\pm 0,42)\cdot10^{44} \text{eV}\\
+W_2&=(-1,43 \pm 0,18)\cdot10^{44} \text{eV}
 \end{align}
 \begin{figure}[H]
 \includegraphics[scale=0.8]{../gnu/relax22.pdf}
-\caption{Messreihe: $5^\circ$C pro Minute  logarithmisch aufgetragen. Die in grün umrahmten Werte wurden für die lineare Regression verwendet}
+\caption{Messreihe, die bei einer Heizrate von $5^\circ$C/min aufgenommen wurden logarithmisch aufgetragen. Die in grün umrahmten Werte wurden für die lineare Regression verwendet}
 \label{pic_22}
 \end{figure}
 
 \subsection{Zweite Methode}
-Anschließend wird die Aktivierungsenergie über eine zweite Methode bestimmt. Entsprechend Gleichung \eqref{eq_int} lässt sich die Aktivierungsenergie auch durch die Fläche der Kurve bestimmen. Aus den Messpunkte wird dafür mittels der Trapezregel die Kurvenfläche bestimmt und diese dann gegen $\frac{1}{T}$ aufgetragen. Die durch Integration erhaltenen Werte stehen in Tabellen \ref{tab_int1} und \ref{tab_int2}. Es ergibt sich dabei der Graph in Abbildungen \ref{pic_int1} und \ref{pic_int2}. Die Aktivierungsenergie lässt sich wieder als Steigung der Ausgleichsgeraden ablesen.
+Anschließend wird die Aktivierungsenergie über eine zweite Methode bestimmt. Entsprechend Gleichung \eqref{eq_int} lässt sich die Aktivierungsenergie auch durch die Fläche der Kurve bestimmen. Aus den Messpunkte wird dafür mittels der Trapezregel die Kurvenfläche bestimmt und diese dann gegen $\frac{1}{T}$ aufgetragen. Die durch Integration erhaltenen Werte stehen in Tabellen \ref{tab_int1} und \ref{tab_int2}. Graphisch dargestellt sind diese Werte in Abbildungen \ref{pic_int1} und \ref{pic_int2}. Die Aktivierungsenergie lässt sich wieder aus der Steigung der Ausgleichsgeraden errechnen.
 
 \begin{table}[htbp]
 \begin{minipage}[t]{0.45\textwidth}
 \centering
 \begin{tabular}{c|c}
-Temperatur $[\text{C}^\circ]$ & $\int ^{T^*}_{T} i(T')dT'$\\\hline
+Temperatur $[^\circ\text{C}]$ & $\int ^{T^*}_{T} i(T')dT'$\\\hline
 -59,1 &245,11\\\hline
 -55,6 &245,02\\\hline
 -53,5 &244,46\\\hline
@@ -433,7 +433,7 @@ Fortsetzung & \\\hline
 \begin{minipage}[t]{0.45\textwidth}
 \centering
 \begin{tabular}{c|c}
-Temperatur $[\text{C}^\circ]$ & $\int ^{T^*}_{T} i(T')dT'$\\\hline
+Temperatur $[^\circ\text{C}]$ & $\int ^{T^*}_{T} i(T')dT'$\\\hline
 -58,9 &700,535\\\hline
 -56,0 &689,08\\\hline
 -49,3 &655,245\\\hline
@@ -473,27 +473,54 @@ Fortsetzung & \\\hline
 \caption{Messwerte, die durch Integration der  Messreihe: $2^\circ$C pro Minute entstanden sind. Verwendet wurde die Trapez-Methode}
 \label{tab_int2}
 \end{table}
-
 \begin{figure}[H]
 \includegraphics[scale=0.8]{../gnu/relax31.pdf}
-\caption{Integrierte Werte der Messreihe: $2^\circ$C pro Minute gegen $\frac{1}{T}$ aufgetragen. Die blau umrahmten Werte wurden für die lineare Regression verwendet}
+\caption{Integrierte Werte aus Tabelle \ref{tab_int1} gegen $\frac{1}{T}$ aufgetragen. Die blau umrahmten Werte wurden für die lineare Regression verwendet}
 \label{pic_int1}
 \end{figure}
 \begin{figure}[H]
-\includegraphics[scale=0.8]{../gnu/relax32.pdf}
-\caption{Integrierte Werte der Messreihe: $5^\circ$C pro Minute gegen $\frac{1}{T}$ aufgetragen. Die blau umrahmten Werte wurden für die lineare Regression verwendet}
+\includegraphics[scale=0.75]{../gnu/relax32.pdf}
+\caption{Integrierte Werte aus Tabelle \ref{tab_int2} gegen $\frac{1}{T}$ aufgetragen. Die blau umrahmten Werte wurden für die lineare Regression verwendet}
 \label{pic_int2}
 \end{figure}
-
-Es wurden folgende Aktivierungsenergien gemessen:
+Die lineare Regression ergab folgende Parameter:
+\begin{align*}
+m_1&=(2,39   \pm 0,06)\cdot10^{-7}\\
+b_1&=-(8,30  \pm 0,2)\cdot10^{-10}\\
+m_2&=( 4,20      \pm 0,08)\cdot10^{-7}\\
+b_2&=-(1,20    \pm 0,03)\cdot10^{-9}
+\end{align*}
+Zwischen der Steigung der Geraden und der Aktivierungsenergie besteht dabei der Zusammenhang
 \begin{align}
-W_1&=(1,08    \pm 0,03)\cdot 10^{35} eV\\
-W_2&=(1,90	\pm 0,04)\cdot 10^{35}eV
+W=\frac{m_i}{k_\text{B}}
+\end{align}
+Damit errechnen sich folgende Aktivierungsenergien:
+\begin{align}
+W_1&=(1,08    \pm 0,03)\cdot 10^{35} \text{eV}\\
+W_2&=(1,90	\pm 0,04)\cdot 10^{35}\text{eV}
 \end{align}
 
-\section{Diskussion und Fazit}
-Die berechneten Werte der Aktivierungsenergien von beiden Methoden  liegen um 9 Größenordnungen auseinander. 
+\subsection{$\tau(T)$-Graph}
+Der Graph der Relaxations-Zeit $\tau(T)$ (Gleichung \eqref{eq_tau(W)}) soll graphisch dargestellt werden. Hierfür wird noch die Amplitude $\tau_0$ der Exponentialfunktion benötigt.
+Diese erhält man durch Differenzieren der Gleichung \eqref{eq_jlang}. Die Änderung der Stromdichte im Bereich um $T=T_\text{max}$ ist gleich 0, daraus folgt dann
+\begin{align*}
+\tau_0=\frac{k_\text{B}T^2_\text{max}}{bW}\text{exp}\left(-\frac{W}{k_\text{B}T_\text{max}}\right)
+\end{align*}
+Die Temperatur $T_\text{max}$ kann wie in Abbildung \ref{pic_i(T)} aus den Graphen abgelesen werden. Für die im Versuch auf genommenen Werte erhält man:
+\begin{align*}
+T_{\text{max},1}&=-21,0\text{C}^\circ=252,15\text{K}\\
+T_{\text{max},2}&=-12,9\text{C}^\circ=260,25\text{K}
+\end{align*}
+und mit den Werten für die Aktivierungsenergien folgt in beiden Fällen
+\begin{align*}
+\tau_{0,1}=\text{const}\cdot e^{-10^{16}}\approx 0\\
+\tau_{0,2}=\text{const}\cdot e^{-10^{25}}\approx 0
+\end{align*}
+Graphisch dargestellt ist dies ebenfalls konstant 0.
 
+\section{Diskussion und Fazit}
+Die im Versuch aufgenommenen Werte sind sehr schlecht.
+Die berechneten Werte der Aktivierungsenergien von beiden Methoden liegen um 9 Größenordnungen auseinander.  Nochmal deutlich größer ist die Abweichung zum Literaturwert, welcher in der Größenordnung weniger eV liegt.
 \begin{table}[H]
 \begin{tabular}{c|c|c}
 Heizrate & Methode & Ergebnis [eV]\\\hline
@@ -503,13 +530,15 @@ $2^\circ$C pro Minute & 1 &	$(-2,17\pm 0,42)\cdot10^{44}$	\\
  & 2 &	$(1,90	\pm 0,04)\cdot 10^{35}$	\\
 \end{tabular}
 \end{table}
-Alle Ergebnisse sind jedoch sehr weit vom Literaturwert $W_\text{KBr}\approx0,5$eV liegen alle Ergebnisse
-Gut sichtbar wird bei den integrierten Werten in Abbildung \ref{pic_int1} ein Sprung der Messwerte, der jedoch das Ergebnis hier nicht weiter beeinflusst, da nur die Steigung der Ausgleichsgeraden von Bedeutung ist. Es ist jedoch gut möglich, dass sich dieser Sprung bei Verwendung der ersten Methode stärker bemerkbar macht und somit die Diskrepanz der Ergebnisse teilweise erklärt. Der Sprung rührt vermutlich daher, dass zu diesem Zeitpunkt die Sensibilität des Amperemeters verändert wurde.\\
+
+Gut sichtbar wird zudem bei den integrierten Werten in Abbildung \ref{pic_int1} ein Sprung der Messwerte, der jedoch das Ergebnis hier nicht weiter beeinflusst, da nur die Steigung der Ausgleichsgeraden von Bedeutung ist. Es ist jedoch gut möglich, dass sich dieser Sprung bei Verwendung der ersten Methode stärker bemerkbar macht und somit die Diskrepanz der Ergebnisse teilweise erklärt. 
+
+Ein möglicher Grund für die schlechten Ergebnisse wäre zum Beispiel, dass die Probe nicht richtig vorbereitet wurde. Damit ein Strom gemessen werden kann, müssen sich zunächst möglichst alle Spins in der Probe im angelegten E-Feld ausrichten und dann muss diese Stellung durch ein rasches Abkühlen der Probe beibehalten werden. Geschieht dies nicht, so ist eine korrekte Datennahme im Anschluss daran nicht möglich. Vermutlich ist dies in diesem Datensatz nicht geschehen.\\
 
 
 \parskip 340pt
 \Large{Literatur}\\\\
-Versuchsanleitung - Versuch Nr. 48 Dipolrelaxation in Ionenkristallen
+Versuchsanleitung - Versuch Nr. 48 Dipolrelaxation in Ionenkristallen (FP Praktikum der TU-Dortmund)
 
 % ========================================
 %	Literaturverzeichnis

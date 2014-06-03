@@ -6,7 +6,7 @@ set output 'relax31.eps'
 
 set title ""
 set xlabel "Temperatur^{-1} [K^{-1}]"
-set ylabel "aufintegrierte Werte"
+set ylabel ""
 
 set key bottom right 
 
